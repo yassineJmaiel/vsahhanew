@@ -68,10 +68,50 @@
 </div>
 
 <style>
+
+
+@keyframes floating {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-30px) scale(1.3);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.overlay,
+.overlay_01,
+.overlay_02,
+.overlay_03,
+.overlay_04,
+.overlay_05,
+.overlay_06,
+.overlay_07,
+.overlay_08,
+.overlay_09,
+.overlay_10,
+.overlay_11,
+.overlay_12,
+.overlay_13,
+.overlay_14,
+.overlay_15,
+.overlay_16,
+.overlay_17,
+.overlay_18,
+.overlay_19,
+.overlay_20,
+.overlay_21{
+    animation: floating 6s ease-in-out infinite;
+}
 .medicalcrossdecorations_span {
   color: white;
   font-size: 120px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 300;
   line-height: 120px;
   word-wrap: break-word;
@@ -89,10 +129,13 @@
   flex-direction: column;
 }
 
+
+
 .medicalcross_span {
   color: white;
   font-size: 60px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
+
   font-weight: 300;
   line-height: 60px;
   word-wrap: break-word;
@@ -113,7 +156,7 @@
 .medicalcross_01_span {
   color: white;
   font-size: 80px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 300;
   line-height: 80px;
   word-wrap: break-word;
@@ -354,7 +397,7 @@
 .productname_span_01 {
   color: white;
   font-size: 40px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 800;
   word-wrap: break-word;
 }
@@ -362,7 +405,7 @@
 .productname_span_02 {
   color: white;
   font-size: 24px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -383,7 +426,7 @@
 .heading1thefutureofhealthinsurancemanagement_span_01 {
   color: white;
   font-size: 48px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 700;
   line-height: 48.30px;
   word-wrap: break-word;
@@ -392,7 +435,7 @@
 .heading1thefutureofhealthinsurancemanagement_span_02 {
   color: #26C6A0;
   font-size: 48px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 700;
   line-height: 48.30px;
   word-wrap: break-word;
@@ -401,7 +444,7 @@
 .heading1thefutureofhealthinsurancemanagement_span_03 {
   color: white;
   font-size: 48px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 700;
   line-height: 48.30px;
   word-wrap: break-word;
@@ -421,7 +464,7 @@
 .productdescription_span {
   color: rgba(255, 255, 255, 0.55);
   font-size: 24px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 400;
   line-height: 35px;
   word-wrap: break-word;
@@ -441,7 +484,7 @@
 .heading2welcomeback_span {
   color: #2D3748;
   font-size: 26px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 700;
   word-wrap: break-word;
 }
@@ -461,7 +504,7 @@
 .dashboarddescription_span {
   color: #4A5568;
   font-size: 14px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -480,7 +523,7 @@
 .labelemailaddress_span {
   color: #2D3748;
   font-size: 13px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 600;
   letter-spacing: 0.30px;
   word-wrap: break-word;
@@ -500,7 +543,7 @@
 .emailaddress_span {
   color: rgba(45, 55, 72, 0.42);
   font-size: 15px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -539,7 +582,7 @@
 .labelpassword_span {
   color: #2D3748;
   font-size: 13px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 600;
   letter-spacing: 0.30px;
   word-wrap: break-word;
@@ -559,7 +602,7 @@
 .username_span {
   color: rgba(45, 55, 72, 0.40);
   font-size: 15px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -610,7 +653,7 @@
 .labelrememberme_span {
   color: #4A5568;
   font-size: 13px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -629,7 +672,7 @@
 .linkforgotpassword_span {
   color: #0B4F8A;
   font-size: 13px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 500;
   word-wrap: break-word;
 }
@@ -648,7 +691,7 @@
 .buttonlabel_span {
   color: white;
   font-size: 15px;
-  font-family: Inter;
+  font-family:'Inter', sans-serif;
   font-weight: 600;
   letter-spacing: 0.30px;
   word-wrap: break-word;
@@ -706,7 +749,7 @@
 
 .animated-particles {
   width: 1885px;
-  height: 1080px;
+  height: 194px;
   left: 13px;
   top: 0px;
   position: absolute;
@@ -773,14 +816,32 @@
 }
 
 .background {
-  width: 1898px;
-  height: 1080px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  background: linear-gradient(0deg, white 0%, white 100%), linear-gradient(148deg, #0B4F8A 0%, #0D3D6E 50%, #062A55 100%);
-  background-blend-mode: multiply, normal;
-  overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        -45deg,
+        #0B4F8A,
+        #0D3D6E,
+        #062A55,
+        #0D3D6E
+    );
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .frame {
