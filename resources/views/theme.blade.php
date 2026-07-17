@@ -37,7 +37,9 @@
     .sidebar {
       min-width: 240px;
       max-width: 240px;
-      background-color: var(--sidebar-bg);
+      background: linear-gradient(0deg, #99590D 0%, #99590D 100%), #0B4F8A;
+      background-blend-mode: multiply, normal;
+      box-shadow: 4px 0 24px 0 rgba(11, 79, 138, 0.18);
       color: rgba(255, 255, 255, 0.7);
       min-height: 100vh;
       transition: all 0.3s;
@@ -279,10 +281,10 @@
       </div>
 
       <!-- Logout Button -->
-      <div class="mt-4 p-3 border-top border-secondary">
-        <a href="#" class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
-          <i class="bi bi-box-arrow-right"></i>
-          <span>Log out</span>
+      <div class="mt-4 p-3 border-top" style="border-color: rgba(255,255,255,0.08) !important;">
+        <a href="#" class="text-decoration-none" style="display: flex; width: 216px; height: 38px; padding: 10px 108px 10px 12px; align-items: flex-start; gap: 30px; flex-shrink: 0; border-radius: 10px; color: rgba(255, 255, 255, 0.6);">
+          <i class="bi bi-box-arrow-right fs-5" style="line-height: 1;"></i>
+          <span style="font-size: 0.85rem; white-space: nowrap; font-weight: 500;">Log out</span>
         </a>
       </div>
     </nav>
