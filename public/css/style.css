@@ -1041,14 +1041,21 @@
   position: absolute;
 }
 
+/* Base styles for all elements inside the icon */
+.company-building-icon div {
+  position: absolute;
+  box-sizing: border-box; /* Ensures borders don't break the layout math */
+  border-style: solid;
+  border-color: white;
+}
+
 .base {
   width: 96px;
   height: 72px;
   left: 12px;
   top: 24px;
-  position: absolute;
   border-radius: 8px;
-  border: 5px white solid;
+  border-width: 5px;
 }
 
 .roof {
@@ -1056,110 +1063,35 @@
   height: 12px;
   left: 24px;
   top: 12px;
-  position: absolute;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  border: 4px white solid;
+  border-width: 4px;
 }
 
-.rectangle {
+.window {
   width: 12px;
   height: 12px;
-  left: 20px;
-  top: 36px;
-  position: absolute;
   border-radius: 2px;
-  border: 3px white solid;
+  border-width: 3px;
 }
 
-.rectangle_01 {
-  width: 12px;
-  height: 12px;
-  left: 44px;
-  top: 36px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
+/* Window Rows */
+.row-1 { top: 38px; }
+.row-2 { top: 54px; }
+.row-3 { top: 70px; }
 
-.rectangle_02 {
-  width: 12px;
-  height: 12px;
-  left: 68px;
-  top: 36px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
+/* Window Columns */
+.col-1 { left: 30px; }
+.col-2 { left: 54px; }
+.col-3 { left: 78px; }
 
-.rectangle_03 {
-  width: 12px;
-  height: 12px;
-  left: 20px;
-  top: 52px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
-
-.rectangle_04 {
-  width: 12px;
-  height: 12px;
-  left: 44px;
-  top: 52px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
-
-.rectangle_05 {
-  width: 12px;
-  height: 12px;
-  left: 68px;
-  top: 52px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
-
-.rectangle_06 {
-  width: 12px;
-  height: 12px;
-  left: 20px;
-  top: 68px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
-
-.rectangle_07 {
-  width: 12px;
-  height: 12px;
-  left: 44px;
-  top: 68px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
-
-.rectangle_08 {
-  width: 12px;
-  height: 12px;
-  left: 68px;
-  top: 68px;
-  position: absolute;
-  border-radius: 2px;
-  border: 3px white solid;
-}
-
-.rectangle_09 {
+.stand {
   width: 24px;
   height: 12px;
   left: 48px;
   top: 96px;
-  position: absolute;
   border-radius: 4px;
-  border: 4px white solid;
+  border-width: 4px;
 }
 
 .totalpartners_span {
@@ -5051,8 +4983,8 @@
 }
 
 .company-building-icon {
-  width: 118px;
-  height: 116px;
+  width: 120px;
+  height: 120px;
   left: 212px;
   top: 49px;
   position: absolute;
