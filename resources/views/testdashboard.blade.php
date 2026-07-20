@@ -7,14 +7,14 @@
     <!-- Top Page Header -->
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 pb-3 border-bottom gap-3">
       <div>
-        <h1 class="h3 fw-bold text-dark mb-1" style="font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.5px;">General Management Dashboard</h1>
-        <p class="text-secondary mb-0" style="font-size: 0.9rem; font-weight: 400;">Global overview of partners, policies, claims, and medical network</p>
+        <h1 class="h3 fw-bold text-dark mb-1 dc-b364a0">General Management Dashboard</h1>
+        <p class="text-secondary mb-0 dc-00833f">Global overview of partners, policies, claims, and medical network</p>
       </div>
       <div class="d-flex align-items-center gap-2">
         <!-- Search Input in Header -->
         <div class="search-wrapper position-relative d-none d-md-block">
-          <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted" style="left: 14px;"></i>
-          <input type="text" class="form-control rounded-pill border-light-subtle bg-white shadow-sm" placeholder="Search metrics..." style="padding-left: 36px; width: 260px; font-size: 0.85rem; height: 40px;">
+          <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted dc-5faaa2"></i>
+          <input type="text" class="form-control rounded-pill border-light-subtle bg-white shadow-sm dc-dd17db" placeholder="Search metrics...">
         </div>
       </div>
     </div>
@@ -23,15 +23,15 @@
     <div class="row g-4 mb-4">
       <!-- Total Partners -->
       <div class="col-12 col-sm-6 col-xl-3">
-        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover" style="border-radius: 20px; background: linear-gradient(112deg, #1E3A8A 0%, #3B82F6 100%); box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.05);">
+        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover dc-fca4b5">
           <div class="d-flex align-items-center gap-3">
-            <div class="d-flex align-items-center justify-content-center rounded-4" style="width: 56px; height: 56px; background-color: rgba(255, 255, 255, 0.15);">
+            <div class="d-flex align-items-center justify-content-center rounded-4 dc-590ecb">
               <i class="bi bi-building fs-3 text-white"></i>
             </div>
             <div>
-              <span class="text-uppercase fw-semibold d-block" style="font-size: 0.75rem; letter-spacing: 1px; color: rgba(255, 255, 255, 0.7);">Total Partners</span>
+              <span class="text-uppercase fw-semibold d-block dc-57ebda">Total Partners</span>
               <div class="d-flex align-items-baseline gap-2">
-                <h2 class="mb-0 fw-bold text-white" style="font-size: 1.85rem; letter-spacing: -1px;">14</h2>
+                <h2 class="mb-0 fw-bold text-white dc-6791b0">14</h2>
               </div>
             </div>
           </div>
@@ -40,15 +40,15 @@
 
       <!-- Active Policies -->
       <div class="col-12 col-sm-6 col-xl-3">
-        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover" style="border-radius: 20px; background: linear-gradient(112deg, #047857 0%, #10B981 100%); box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.05);">
+        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover dc-a713eb">
           <div class="d-flex align-items-center gap-3">
-            <div class="d-flex align-items-center justify-content-center rounded-4" style="width: 56px; height: 56px; background-color: rgba(255, 255, 255, 0.15);">
+            <div class="d-flex align-items-center justify-content-center rounded-4 dc-590ecb">
               <i class="bi bi-shield-check fs-3 text-white"></i>
             </div>
             <div>
-              <span class="text-uppercase fw-semibold d-block" style="font-size: 0.75rem; letter-spacing: 1px; color: rgba(255, 255, 255, 0.7);">Active Policies</span>
+              <span class="text-uppercase fw-semibold d-block dc-57ebda">Active Policies</span>
               <div class="d-flex align-items-baseline gap-2">
-                <h2 class="mb-0 fw-bold text-white" style="font-size: 1.85rem; letter-spacing: -1px;">728</h2>
+                <h2 class="mb-0 fw-bold text-white dc-6791b0">728</h2>
               </div>
             </div>
           </div>
@@ -57,15 +57,15 @@
 
       <!-- Total Claims (YTD) -->
       <div class="col-12 col-sm-6 col-xl-3">
-        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover" style="border-radius: 20px; background: linear-gradient(112deg, #B45309 0%, #F59E0B 100%); box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.05);">
+        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover dc-434c1c">
           <div class="d-flex align-items-center gap-3">
-            <div class="d-flex align-items-center justify-content-center rounded-4" style="width: 56px; height: 56px; background-color: rgba(255, 255, 255, 0.15);">
+            <div class="d-flex align-items-center justify-content-center rounded-4 dc-590ecb">
               <i class="bi bi-file-earmark-medical fs-3 text-white"></i>
             </div>
             <div>
-              <span class="text-uppercase fw-semibold d-block" style="font-size: 0.75rem; letter-spacing: 1px; color: rgba(255, 255, 255, 0.7);">Total Claims (YTD)</span>
+              <span class="text-uppercase fw-semibold d-block dc-57ebda">Total Claims (YTD)</span>
               <div class="d-flex align-items-baseline gap-2">
-                <h2 class="mb-0 fw-bold text-white" style="font-size: 1.85rem; letter-spacing: -1px;">5,774</h2>
+                <h2 class="mb-0 fw-bold text-white dc-6791b0">5,774</h2>
               </div>
             </div>
           </div>
@@ -74,15 +74,15 @@
 
       <!-- Online Consultations -->
       <div class="col-12 col-sm-6 col-xl-3">
-        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover" style="border-radius: 20px; background: linear-gradient(112deg, #5B21B6 0%, #8B5CF6 100%); box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.05);">
+        <div class="card border-0 rounded-4 shadow-sm text-white p-3 h-100 transition-hover dc-7b0320">
           <div class="d-flex align-items-center gap-3">
-            <div class="d-flex align-items-center justify-content-center rounded-4" style="width: 56px; height: 56px; background-color: rgba(255, 255, 255, 0.15);">
+            <div class="d-flex align-items-center justify-content-center rounded-4 dc-590ecb">
               <i class="bi bi-chat-left-heart fs-3 text-white"></i>
             </div>
             <div>
-              <span class="text-uppercase fw-semibold d-block" style="font-size: 0.75rem; letter-spacing: 1px; color: rgba(255, 255, 255, 0.7);">Online Consultations</span>
+              <span class="text-uppercase fw-semibold d-block dc-57ebda">Online Consultations</span>
               <div class="d-flex align-items-baseline gap-2">
-                <h2 class="mb-0 fw-bold text-white" style="font-size: 1.85rem; letter-spacing: -1px;">242</h2>
+                <h2 class="mb-0 fw-bold text-white dc-6791b0">242</h2>
               </div>
             </div>
           </div>
@@ -94,39 +94,39 @@
     <div class="row g-4 mb-4">
       <!-- Claims Breakdown -->
       <div class="col-12 col-lg-6">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div>
                 <h5 class="fw-bold text-dark mb-1">Claims Breakdown</h5>
-                <p class="text-muted mb-0" style="font-size: 0.85rem;">Performance metrics by claim status</p>
+                <p class="text-muted mb-0 dc-e7992d">Performance metrics by claim status</p>
               </div>
-              <span class="p-2 bg-light rounded-circle text-muted" style="line-height: 1;"><i class="bi bi-sliders"></i></span>
+              <span class="p-2 bg-light rounded-circle text-muted dc-6b5d77"><i class="bi bi-sliders"></i></span>
             </div>
 
             <!-- Numerical grid summary -->
             <div class="row g-3 mb-4">
               <div class="col-6 col-sm-3">
-                <div class="p-3 text-center" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
-                  <span class="d-block text-secondary mb-1" style="font-size: 0.75rem; font-weight: 500;">Pended</span>
+                <div class="p-3 text-center dc-4fa346">
+                  <span class="d-block text-secondary mb-1 dc-7a6214">Pended</span>
                   <span class="h5 mb-0 fw-bold text-warning">1,204</span>
                 </div>
               </div>
               <div class="col-6 col-sm-3">
-                <div class="p-3 text-center" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
-                  <span class="d-block text-secondary mb-1" style="font-size: 0.75rem; font-weight: 500;">Approved</span>
+                <div class="p-3 text-center dc-4fa346">
+                  <span class="d-block text-secondary mb-1 dc-7a6214">Approved</span>
                   <span class="h5 mb-0 fw-bold text-success">4,530</span>
                 </div>
               </div>
               <div class="col-6 col-sm-3">
-                <div class="p-3 text-center" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
-                  <span class="d-block text-secondary mb-1" style="font-size: 0.75rem; font-weight: 500;">Rejected</span>
+                <div class="p-3 text-center dc-4fa346">
+                  <span class="d-block text-secondary mb-1 dc-7a6214">Rejected</span>
                   <span class="h5 mb-0 fw-bold text-danger">312</span>
                 </div>
               </div>
               <div class="col-6 col-sm-3">
-                <div class="p-3 text-center" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
-                  <span class="d-block text-secondary mb-1" style="font-size: 0.75rem; font-weight: 500;">Paid</span>
+                <div class="p-3 text-center dc-4fa346">
+                  <span class="d-block text-secondary mb-1 dc-7a6214">Paid</span>
                   <span class="h5 mb-0 fw-bold text-primary">4,015</span>
                 </div>
               </div>
@@ -136,47 +136,47 @@
             <div class="space-y-3">
               <!-- Pended -->
               <div class="mb-3 d-flex align-items-center gap-3">
-                <span class="text-dark fw-medium" style="font-size: 0.85rem; min-width: 90px;">Pended</span>
-                <div class="progress flex-grow-1" style="height: 12px; border-radius: 20px; background: #F1F3F7; overflow: hidden;">
-                  <div class="progress-bar" role="progressbar" style="width: 25%; background: #3B82F6; border-radius: 20px; height: 12px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="text-dark fw-medium dc-09ff35">Pended</span>
+                <div class="progress flex-grow-1 dc-240472">
+                  <div class="progress-bar dc-de8ee5" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <span class="fw-semibold text-white" style="background: #2563EB; border-radius: 12px; display: flex; width: 50px; height: 18px; padding: 2px 11.613px 2px 11.95px; justify-content: center; align-items: center; font-size: 0.72rem;">25%</span>
+                <span class="fw-semibold text-white dc-83a28d">25%</span>
               </div>
 
               <!-- Approved -->
               <div class="mb-3 d-flex align-items-center gap-3">
-                <span class="text-dark fw-medium" style="font-size: 0.85rem; min-width: 90px;">Approved</span>
-                <div class="progress flex-grow-1" style="height: 12px; border-radius: 20px; background: #F1F3F7; overflow: hidden;">
-                  <div class="progress-bar" role="progressbar" style="width: 75%; background: #00A878; border-radius: 20px; height: 12px;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="text-dark fw-medium dc-09ff35">Approved</span>
+                <div class="progress flex-grow-1 dc-240472">
+                  <div class="progress-bar dc-71cc45" role="progressbar"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <span class="fw-semibold text-white" style="background: #059669; border-radius: 12px; display: flex; width: 50px; height: 18px; padding: 2px 11.613px 2px 11.95px; justify-content: center; align-items: center; font-size: 0.72rem;">75%</span>
+                <span class="fw-semibold text-white dc-d4a07a">75%</span>
               </div>
 
               <!-- Rejected -->
               <div class="mb-3 d-flex align-items-center gap-3">
-                <span class="text-dark fw-medium" style="font-size: 0.85rem; min-width: 90px;">Rejected</span>
-                <div class="progress flex-grow-1" style="height: 12px; border-radius: 20px; background: #F1F3F7; overflow: hidden;">
-                  <div class="progress-bar" role="progressbar" style="width: 5%; background: #EF4444; border-radius: 20px; height: 12px;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="text-dark fw-medium dc-09ff35">Rejected</span>
+                <div class="progress flex-grow-1 dc-240472">
+                  <div class="progress-bar dc-41ad8a" role="progressbar"  aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <span class="fw-semibold text-white" style="background: #DC2626; border-radius: 12px; display: flex; width: 50px; height: 18px; padding: 2px 11.613px 2px 11.95px; justify-content: center; align-items: center; font-size: 0.72rem;">5%</span>
+                <span class="fw-semibold text-white dc-fbe3cc">5%</span>
               </div>
 
               <!-- Paid to Zero -->
               <div class="mb-3 d-flex align-items-center gap-3">
-                <span class="text-dark fw-medium" style="font-size: 0.85rem; min-width: 90px;">Paid to Zero</span>
-                <div class="progress flex-grow-1" style="height: 12px; border-radius: 20px; background: #F1F3F7; overflow: hidden;">
-                  <div class="progress-bar" role="progressbar" style="width: 12%; background: #F59E0B; border-radius: 20px; height: 12px;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="text-dark fw-medium dc-09ff35">Paid to Zero</span>
+                <div class="progress flex-grow-1 dc-240472">
+                  <div class="progress-bar dc-d11790" role="progressbar"  aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <span class="fw-semibold text-white" style="background: #D97706; border-radius: 12px; display: flex; width: 50px; height: 18px; padding: 2px 11.613px 2px 11.95px; justify-content: center; align-items: center; font-size: 0.72rem;">12%</span>
+                <span class="fw-semibold text-white dc-4c6cdf">12%</span>
               </div>
 
               <!-- Paid -->
               <div class="mb-2 d-flex align-items-center gap-3">
-                <span class="text-dark fw-medium" style="font-size: 0.85rem; min-width: 90px;">Paid</span>
-                <div class="progress flex-grow-1" style="height: 12px; border-radius: 20px; background: #F1F3F7; overflow: hidden;">
-                  <div class="progress-bar" role="progressbar" style="width: 68%; background: #1E3A8A; border-radius: 20px; height: 12px;" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="text-dark fw-medium dc-09ff35">Paid</span>
+                <div class="progress flex-grow-1 dc-240472">
+                  <div class="progress-bar dc-2058f3" role="progressbar"  aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <span class="fw-semibold text-white" style="background: #1E3A8A; border-radius: 12px; display: flex; width: 50px; height: 18px; padding: 2px 11.613px 2px 11.95px; justify-content: center; align-items: center; font-size: 0.72rem;">68%</span>
+                <span class="fw-semibold text-white dc-0baf63">68%</span>
               </div>
             </div>
           </div>
@@ -185,19 +185,19 @@
 
       <!-- Monthly Claims Trend Graph -->
       <div class="col-12 col-lg-6">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div>
                 <h5 class="fw-bold text-dark mb-1">Tendance Mensuelle des Sinistres</h5>
-                <p class="text-muted mb-0" style="font-size: 0.85rem;">Evolution mensuelle des sinistres approuvés et rejetés (Jan–Jun)</p>
+                <p class="text-muted mb-0 dc-e7992d">Evolution mensuelle des sinistres approuvés et rejetés (Jan–Jun)</p>
               </div>
             </div>
 
-            <div style="height: 290px; position: relative;">
+            <div class="dc-2928e8">
               <canvas id="claimsTrendChart"></canvas>
               <!-- Red gradient SVG overlay (Figma design) -->
-              <div style="position: absolute; bottom: 30px; left: 0; width: 100%; height: 220px; pointer-events: none; overflow: hidden;">
+              <div class="dc-9a3bf0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="220" viewBox="0 0 930 220" fill="none" preserveAspectRatio="none">
                   <path d="M155 176C77 176 77 202.4 0 202.4V220H930V0C855 0 855 35.2 777 35.2C699 35.2 699 70.4 621 70.4C544 70.4 544 105.6 466 105.6C388 105.6 388 140.8 310 140.8C233 140.8 233 176 155 176Z" fill="url(#paint0_linear_323_23)"/>
                   <defs>
@@ -218,22 +218,22 @@
     <div class="row g-4 mb-4">
       <!-- Medical Network Ring Chart -->
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4 d-flex flex-column">
 
             <!-- Header with border bottom -->
-            <div class="pb-3 mb-3" style="border-bottom: 1px solid #EEF0F4;">
+            <div class="pb-3 mb-3 dc-f6ada1">
               <h5 class="fw-bold text-dark mb-1">Medical Network</h5>
-              <p class="text-muted mb-0" style="font-size: 0.85rem;">Contracting ratio overview</p>
+              <p class="text-muted mb-0 dc-e7992d">Contracting ratio overview</p>
             </div>
 
             <!-- Donut chart centered -->
             <div class="d-flex justify-content-center my-3">
-              <div style="width: 150px; height: 150px; position: relative;">
+              <div class="dc-d84ecb">
                 <canvas id="networkContractingChart"></canvas>
                 <div class="position-absolute top-50 start-50 translate-middle text-center">
                   <span class="fs-4 fw-bold text-dark">85%</span>
-                  <span class="d-block text-secondary" style="font-size: 0.65rem; font-weight: 500;">Contracted</span>
+                  <span class="d-block text-secondary dc-b2c790">Contracted</span>
                 </div>
               </div>
             </div>
@@ -241,18 +241,18 @@
             <!-- Stats rows -->
             <div class="mt-auto d-flex flex-column gap-2">
               <!-- Contracted -->
-              <div class="d-flex align-items-center justify-content-between px-3 py-2" style="border-radius: 12px; background: #F1F3F7;">
+              <div class="d-flex align-items-center justify-content-between px-3 py-2 dc-0c08e9">
                 <div class="d-flex align-items-center gap-2">
-                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
-                  <span class="text-dark fw-medium" style="font-size: 0.85rem;">Contracted</span>
+                  <span class="dc-bc4d41"></span>
+                  <span class="text-dark fw-medium dc-e7992d">Contracted</span>
                 </div>
                 <span class="fw-bold text-dark">425</span>
               </div>
               <!-- Non-Contracted -->
-              <div class="d-flex align-items-center justify-content-between px-3 py-2" style="border-radius: 12px; background: #F1F3F7;">
+              <div class="d-flex align-items-center justify-content-between px-3 py-2 dc-0c08e9">
                 <div class="d-flex align-items-center gap-2">
-                  <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
-                  <span class="text-dark fw-medium" style="font-size: 0.85rem;">Non-Contracted</span>
+                  <span class="dc-f72905"></span>
+                  <span class="text-dark fw-medium dc-e7992d">Non-Contracted</span>
                 </div>
                 <span class="fw-bold text-dark">75</span>
               </div>
@@ -264,51 +264,51 @@
 
       <!-- Live Consultations Feed -->
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4">
             <h5 class="fw-bold text-dark mb-1">Flux de Consultations</h5>
-            <p class="text-muted mb-3" style="font-size: 0.85rem;">Activité téléconsultation en direct</p>
+            <p class="text-muted mb-3 dc-e7992d">Activité téléconsultation en direct</p>
 
             <div class="position-relative ps-4 ms-2">
               <!-- Vertical Line -->
-              <div style="position: absolute; left: 7px; top: 10px; bottom: 20px; width: 2px; background: #EEF0F4;"></div>
+              <div class="dc-d2847d"></div>
 
               <!-- Timeline Item 1 -->
               <div class="mb-4 position-relative">
-                <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; background: #2196F3; border: 3px solid #FFF; left: -23px; top: 3px; box-shadow: 0 0 0 1px #EEF0F4; z-index: 2;"></span>
+                <span class="position-absolute rounded-circle dc-cd7abc"></span>
                 <div class="d-flex justify-content-between align-items-center mb-1">
-                  <h6 class="mb-0 fw-semibold text-dark" style="font-size: 0.85rem;">Consultation Terminée</h6>
-                  <span class="text-secondary" style="font-size: 0.65rem; border-radius: 10px; background: #F8FAFB; font-weight: 500; display: inline-flex; width: 66.33px; height: 18px; padding: 2px 7.646px 2px 8px; justify-content: center; align-items: center;">Il y a 10m</span>
+                  <h6 class="mb-0 fw-semibold text-dark dc-e7992d">Consultation Terminée</h6>
+                  <span class="text-secondary dc-7b2cec">Il y a 10m</span>
                 </div>
-                <p class="text-secondary mb-1" style="font-size: 0.8rem; line-height: 1.4;">Le rapport médical a été généré et envoyé au patient.</p>
-                <div class="p-2 mt-2 d-flex align-items-center gap-2" style="border-radius: 10px; border: 1px solid #EEF0F4; background: #F8FAFB;">
-                  <i class="bi bi-person text-secondary" style="font-size: 0.85rem;"></i>
-                  <span class="text-secondary" style="font-size: 0.75rem;">Patient: ******** ******* — Dr. *******</span>
+                <p class="text-secondary mb-1 dc-206077">Le rapport médical a été généré et envoyé au patient.</p>
+                <div class="p-2 mt-2 d-flex align-items-center gap-2 dc-bb7586">
+                  <i class="bi bi-person text-secondary dc-e7992d"></i>
+                  <span class="text-secondary dc-af89d6">Patient: ******** ******* — Dr. *******</span>
                 </div>
               </div>
 
               <!-- Timeline Item 2 -->
               <div class="mb-4 position-relative">
-                <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; background: #10B981; border: 3px solid #FFF; left: -23px; top: 3px; box-shadow: 0 0 0 1px #EEF0F4; z-index: 2;"></span>
+                <span class="position-absolute rounded-circle dc-345514"></span>
                 <div class="d-flex justify-content-between align-items-center mb-1">
-                  <h6 class="mb-0 fw-semibold text-dark" style="font-size: 0.85rem;">Session Démarrée</h6>
-                  <span class="text-secondary" style="font-size: 0.65rem; border-radius: 10px; background: #F8FAFB; font-weight: 500; display: inline-flex; width: 66.33px; height: 18px; padding: 2px 7.646px 2px 8px; justify-content: center; align-items: center;">Il y a 25m</span>
+                  <h6 class="mb-0 fw-semibold text-dark dc-e7992d">Session Démarrée</h6>
+                  <span class="text-secondary dc-7b2cec">Il y a 25m</span>
                 </div>
-                <p class="text-secondary mb-1" style="font-size: 0.8rem; line-height: 1.4;">Connexion vidéo établie avec succès.</p>
-                <div class="p-2 mt-2 d-flex align-items-center gap-2" style="border-radius: 10px; border: 1px solid #EEF0F4; background: #F8FAFB;">
-                  <i class="bi bi-person text-secondary" style="font-size: 0.85rem;"></i>
-                  <span class="text-secondary" style="font-size: 0.75rem;">Patient: *********-*******</span>
+                <p class="text-secondary mb-1 dc-206077">Connexion vidéo établie avec succès.</p>
+                <div class="p-2 mt-2 d-flex align-items-center gap-2 dc-bb7586">
+                  <i class="bi bi-person text-secondary dc-e7992d"></i>
+                  <span class="text-secondary dc-af89d6">Patient: *********-*******</span>
                 </div>
               </div>
 
               <!-- Timeline Item 3 -->
               <div class="position-relative">
-                <span class="position-absolute rounded-circle" style="width: 14px; height: 14px; background: #F59E0B; border: 3px solid #FFF; left: -23px; top: 3px; box-shadow: 0 0 0 1px #EEF0F4; z-index: 2;"></span>
+                <span class="position-absolute rounded-circle dc-6283b9"></span>
                 <div class="d-flex justify-content-between align-items-center mb-1">
-                  <h6 class="mb-0 fw-semibold text-dark" style="font-size: 0.85rem;">Rendez-vous Confirmé</h6>
-                  <span class="text-secondary" style="font-size: 0.65rem; border-radius: 10px; background: #F8FAFB; font-weight: 500; display: inline-flex; width: 66.33px; height: 18px; padding: 2px 7.646px 2px 8px; justify-content: center; align-items: center;">Il y a 1h</span>
+                  <h6 class="mb-0 fw-semibold text-dark dc-e7992d">Rendez-vous Confirmé</h6>
+                  <span class="text-secondary dc-7b2cec">Il y a 1h</span>
                 </div>
-                <p class="text-secondary mb-0" style="font-size: 0.8rem; line-height: 1.4;">Planifié pour aujourd'hui à 14:00 (CET).</p>
+                <p class="text-secondary mb-0 dc-206077">Planifié pour aujourd'hui à 14:00 (CET).</p>
               </div>
             </div>
           </div>
@@ -317,48 +317,48 @@
 
       <!-- Notifications Section -->
       <div class="col-12 col-lg-4">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <h5 class="fw-bold text-dark mb-0 d-flex align-items-center" style="font-size: 1.1rem;"><i class="bi bi-bell text-primary me-2"></i>Notifications</h5>
-              <span class="badge rounded-pill fw-semibold" style="font-size: 0.75rem; padding: 4px 10px; background: #F1F3F7; color: #64748B;">3 new</span>
+              <h5 class="fw-bold text-dark mb-0 d-flex align-items-center dc-e7ec96"><i class="bi bi-bell text-primary me-2"></i>Notifications</h5>
+              <span class="badge rounded-pill fw-semibold dc-b1084b">3 new</span>
             </div>
 
             <div class="d-flex flex-column gap-3">
               <!-- Notif 1 -->
               <div class="d-flex align-items-start gap-3 pb-3 border-bottom">
-                <div class="d-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle" style="width: 36px; height: 36px; min-width: 36px;">
+                <div class="d-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle dc-d2c3aa">
                   <i class="bi bi-file-earmark-text"></i>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="mb-1 text-dark fw-semibold" style="font-size: 0.85rem; line-height: 1.4;">Member claim MC-YP336610-009260711 submitted</p>
-                  <div class="text-secondary" style="font-size: 0.75rem;"><i class="bi bi-clock me-1"></i>System &bull; 7/11/2026, 10:22:37 AM</div>
+                  <p class="mb-1 text-dark fw-semibold dc-fe94d0">Member claim MC-YP336610-009260711 submitted</p>
+                  <div class="text-secondary dc-af89d6"><i class="bi bi-clock me-1"></i>System &bull; 7/11/2026, 10:22:37 AM</div>
                 </div>
-                <span class="badge rounded-pill fw-bold" style="font-size: 0.65rem; background: #EFF6FF; color: #2563EB; padding: 4px 8px; border: none; text-transform: uppercase;">UPDATED</span>
+                <span class="badge rounded-pill fw-bold dc-f56417">UPDATED</span>
               </div>
 
               <!-- Notif 2 -->
               <div class="d-flex align-items-start gap-3 pb-3 border-bottom">
-                <div class="d-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle" style="width: 36px; height: 36px; min-width: 36px;">
+                <div class="d-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle dc-d2c3aa">
                   <i class="bi bi-file-earmark-text"></i>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="mb-1 text-dark fw-semibold" style="font-size: 0.85rem; line-height: 1.4;">Member claim MC-YP336610-009260711 submitted</p>
-                  <div class="text-secondary" style="font-size: 0.75rem;"><i class="bi bi-clock me-1"></i>System &bull; 7/11/2026, 10:21:40 AM</div>
+                  <p class="mb-1 text-dark fw-semibold dc-fe94d0">Member claim MC-YP336610-009260711 submitted</p>
+                  <div class="text-secondary dc-af89d6"><i class="bi bi-clock me-1"></i>System &bull; 7/11/2026, 10:21:40 AM</div>
                 </div>
-                <span class="badge rounded-pill fw-bold" style="font-size: 0.65rem; background: #EFF6FF; color: #2563EB; padding: 4px 8px; border: none; text-transform: uppercase;">UPDATED</span>
+                <span class="badge rounded-pill fw-bold dc-f56417">UPDATED</span>
               </div>
 
               <!-- Notif 3 -->
               <div class="d-flex align-items-start gap-3">
-                <div class="d-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle" style="width: 36px; height: 36px; min-width: 36px;">
+                <div class="d-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle dc-d2c3aa">
                   <i class="bi bi-file-earmark-text"></i>
                 </div>
                 <div class="flex-grow-1">
-                  <p class="mb-1 text-dark fw-semibold" style="font-size: 0.85rem; line-height: 1.4;">Member claim MC-YP336610-009260711 submitted</p>
-                  <div class="text-secondary" style="font-size: 0.75rem;"><i class="bi bi-clock me-1"></i>System &bull; 7/11/2026, 10:20:40 AM</div>
+                  <p class="mb-1 text-dark fw-semibold dc-fe94d0">Member claim MC-YP336610-009260711 submitted</p>
+                  <div class="text-secondary dc-af89d6"><i class="bi bi-clock me-1"></i>System &bull; 7/11/2026, 10:20:40 AM</div>
                 </div>
-                <span class="badge rounded-pill fw-bold" style="font-size: 0.65rem; background: #EFF6FF; color: #2563EB; padding: 4px 8px; border: none; text-transform: uppercase;">UPDATED</span>
+                <span class="badge rounded-pill fw-bold dc-f56417">UPDATED</span>
               </div>
             </div>
           </div>
@@ -370,49 +370,49 @@
     <div class="row g-4">
       <!-- Quick Actions & Management Links -->
       <div class="col-12 col-lg-6">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4 d-flex flex-column gap-3">
             
             <!-- Floating Gradient Header -->
-            <div style="border-radius: 14px; background: linear-gradient(90deg, #0EA5E9 0%, #14B8A6 100%); box-shadow: 0 4px 10px 0 rgba(19, 181, 177, 0.35); display: flex; padding: 16px 18px; flex-direction: column; align-items: flex-start; gap: 6px; align-self: stretch;">
+            <div class="dc-f3efcf">
               <div class="d-flex align-items-center gap-2">
-                <div class="d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: rgba(255, 255, 255, 0.2); border-radius: 8px;">
-                  <i class="bi bi-plus-circle text-white" style="font-size: 1.1rem;"></i>
+                <div class="d-flex align-items-center justify-content-center dc-6b1748">
+                  <i class="bi bi-plus-circle text-white dc-e7ec96"></i>
                 </div>
-                <h5 class="fw-bold text-white mb-0" style="font-size: 1.1rem; letter-spacing: 0.3px;">Quick Actions</h5>
+                <h5 class="fw-bold text-white mb-0 dc-b56a3b">Quick Actions</h5>
               </div>
-              <p class="mb-0 text-white-50" style="font-size: 0.8rem; font-weight: 400;">Create new items and policies</p>
+              <p class="mb-0 text-white-50 dc-d9f8ae">Create new items and policies</p>
             </div>
 
             <!-- Action buttons/cards -->
             <div class="row g-3">
               <!-- Create New Policy -->
               <div class="col-4">
-                <div class="d-flex flex-column align-items-start" style="border-radius: 16px; border: 1px solid #E5E7EB; background: #FFF; box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.07), 0 2px 8px 0 rgba(0, 0, 0, 0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; padding: 32px 16px 24px 16px; gap: 16px;">
-                  <div class="d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: #EFF6FF; border-radius: 12px;">
+                <div class="d-flex flex-column align-items-start dc-3cdc0b">
+                  <div class="d-flex align-items-center justify-content-center dc-232169">
                     <i class="bi bi-file-earmark-plus text-primary fs-5"></i>
                   </div>
-                  <span class="fw-bold text-dark" style="font-size: 0.85rem; color: #1E3A8A !important; line-height: 1.2;">Create New Policy</span>
+                  <span class="fw-bold text-dark dc-f907df">Create New Policy</span>
                 </div>
               </div>
 
               <!-- Create New TOB -->
               <div class="col-4">
-                <div class="d-flex flex-column align-items-start" style="border-radius: 16px; border: 1px solid #E5E7EB; background: #FFF; box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.07), 0 2px 8px 0 rgba(0, 0, 0, 0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; padding: 32px 16px 24px 16px; gap: 16px;">
-                  <div class="d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: #ECFDF5; border-radius: 12px;">
+                <div class="d-flex flex-column align-items-start dc-3cdc0b">
+                  <div class="d-flex align-items-center justify-content-center dc-3a87f7">
                     <i class="bi bi-clipboard-check text-success fs-5"></i>
                   </div>
-                  <span class="fw-bold text-success" style="font-size: 0.85rem; color: #059669 !important; line-height: 1.2;">Create New TOB</span>
+                  <span class="fw-bold text-success dc-8140f2">Create New TOB</span>
                 </div>
               </div>
 
               <!-- Add New Member -->
               <div class="col-4">
-                <div class="d-flex flex-column align-items-start" style="border-radius: 16px; border: 1px solid #E5E7EB; background: #FFF; box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.07), 0 2px 8px 0 rgba(0, 0, 0, 0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; padding: 32px 16px 24px 16px; gap: 16px;">
-                  <div class="d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: rgba(139, 92, 246, 0.08); border-radius: 12px;">
-                    <i class="bi bi-person-plus text-purple fs-5" style="color: #7C3AED;"></i>
+                <div class="d-flex flex-column align-items-start dc-3cdc0b">
+                  <div class="d-flex align-items-center justify-content-center dc-f3bcef">
+                    <i class="bi bi-person-plus text-purple fs-5 dc-2da10c"></i>
                   </div>
-                  <span class="fw-bold" style="font-size: 0.85rem; color: #7C3AED !important; line-height: 1.2;">Add New Member</span>
+                  <span class="fw-bold dc-5d091f">Add New Member</span>
                 </div>
               </div>
             </div>
@@ -423,42 +423,42 @@
 
       <!-- Policy Management Layout -->
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4 d-flex flex-column gap-3">
             
             <!-- Orange Header -->
-            <div style="border-radius: 14px; background: linear-gradient(90deg, #F59E0B 0%, #F97316 100%); display: flex; padding: 16px 18px; flex-direction: column; align-items: flex-start; gap: 6px; align-self: stretch;">
+            <div class="dc-5ba2f3">
               <div class="d-flex align-items-center gap-2">
-                <div class="d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: rgba(255, 255, 255, 0.2); border-radius: 8px;">
-                  <i class="bi bi-file-earmark-text text-white" style="font-size: 1.1rem;"></i>
+                <div class="d-flex align-items-center justify-content-center dc-6b1748">
+                  <i class="bi bi-file-earmark-text text-white dc-e7ec96"></i>
                 </div>
-                <h5 class="fw-bold text-white mb-0" style="font-size: 1.1rem; letter-spacing: 0.3px;">Policy Management</h5>
+                <h5 class="fw-bold text-white mb-0 dc-b56a3b">Policy Management</h5>
               </div>
-              <p class="mb-0 text-white-50" style="font-size: 0.8rem; font-weight: 400;">Quick access to common tasks</p>
+              <p class="mb-0 text-white-50 dc-d9f8ae">Quick access to common tasks</p>
             </div>
 
             <!-- Policy management links -->
-            <div class="d-flex flex-column gap-2" style="font-size: 0.9rem;">
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #FED7AA; background: #FFF7ED; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #F97316; border-radius: 8px;">
+            <div class="d-flex flex-column gap-2 dc-33dd45">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-25e18b">
+                <div class="d-flex align-items-center justify-content-center dc-f85667">
                   <i class="bi bi-files text-white fs-6"></i>
                 </div>
                 <span>All Policies</span>
               </a>
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #FED7AA; background: #FFF7ED; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #F97316; border-radius: 8px;">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-25e18b">
+                <div class="d-flex align-items-center justify-content-center dc-f85667">
                   <i class="bi bi-table text-white fs-6"></i>
                 </div>
                 <span>All Benefit Tables</span>
               </a>
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #FED7AA; background: #FFF7ED; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #F97316; border-radius: 8px;">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-25e18b">
+                <div class="d-flex align-items-center justify-content-center dc-f85667">
                   <i class="bi bi-arrow-repeat text-white fs-6"></i>
                 </div>
                 <span>View Renewals</span>
               </a>
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #FED7AA; background: #FFF7ED; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #F97316; border-radius: 8px;">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-25e18b">
+                <div class="d-flex align-items-center justify-content-center dc-f85667">
                   <i class="bi bi-people text-white fs-6"></i>
                 </div>
                 <span>Manage Members</span>
@@ -470,42 +470,42 @@
 
       <!-- Resources Layout -->
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="card h-100" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 dc-4fa346">
           <div class="card-body p-4 d-flex flex-column gap-3">
             
             <!-- Green Header -->
-            <div style="border-radius: 14px; background: linear-gradient(90deg, #10B981 0%, #059669 100%); display: flex; padding: 16px 18px; flex-direction: column; align-items: flex-start; gap: 6px; align-self: stretch;">
+            <div class="dc-0022f9">
               <div class="d-flex align-items-center gap-2">
-                <div class="d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: rgba(255, 255, 255, 0.2); border-radius: 8px;">
-                  <i class="bi bi-folder text-white" style="font-size: 1.1rem;"></i>
+                <div class="d-flex align-items-center justify-content-center dc-6b1748">
+                  <i class="bi bi-folder text-white dc-e7ec96"></i>
                 </div>
-                <h5 class="fw-bold text-white mb-0" style="font-size: 1.1rem; letter-spacing: 0.3px;">Resources</h5>
+                <h5 class="fw-bold text-white mb-0 dc-b56a3b">Resources</h5>
               </div>
-              <p class="mb-0 text-white-50" style="font-size: 0.8rem; font-weight: 400;">Access important documents and tools</p>
+              <p class="mb-0 text-white-50 dc-d9f8ae">Access important documents and tools</p>
             </div>
 
             <!-- Resources links -->
-            <div class="d-flex flex-column gap-2" style="font-size: 0.9rem;">
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #A7F3D0; background: #ECFDF5; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #10B981; border-radius: 8px;">
+            <div class="d-flex flex-column gap-2 dc-33dd45">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-b36469">
+                <div class="d-flex align-items-center justify-content-center dc-5dc740">
                   <i class="bi bi-file-earmark-text text-white fs-6"></i>
                 </div>
                 <span>Policy Documents</span>
               </a>
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #A7F3D0; background: #ECFDF5; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #10B981; border-radius: 8px;">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-b36469">
+                <div class="d-flex align-items-center justify-content-center dc-5dc740">
                   <i class="bi bi-layout-text-sidebar text-white fs-6"></i>
                 </div>
                 <span>TOB Templates</span>
               </a>
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #A7F3D0; background: #ECFDF5; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #10B981; border-radius: 8px;">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-b36469">
+                <div class="d-flex align-items-center justify-content-center dc-5dc740">
                   <i class="bi bi-shield-check text-white fs-6"></i>
                 </div>
                 <span>Network Management</span>
               </a>
-              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2" style="border-radius: 12px; border: 1px solid #A7F3D0; background: #ECFDF5; transition: background 0.2s;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background: #10B981; border-radius: 8px;">
+              <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-3 p-2 dc-b36469">
+                <div class="d-flex align-items-center justify-content-center dc-5dc740">
                   <i class="bi bi-bar-chart text-white fs-6"></i>
                 </div>
                 <span>Coverage Reports</span>
@@ -520,48 +520,48 @@
     <div class="row g-4 mt-1">
       <!-- Expiration Timeline -->
       <div class="col-12 col-lg-6">
-        <div class="card h-100 overflow-hidden position-relative" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 overflow-hidden position-relative dc-4fa346">
           <!-- Decorative blue background corner shape -->
-          <div style="position: absolute; right: -65px; top: -83px; width: 220px; height: 220px; pointer-events: none; z-index: 1;">
+          <div class="dc-dd6246">
             <svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" fill="none">
               <circle opacity="0.55" cx="110" cy="110" r="110" fill="#DBEAFE"/>
             </svg>
           </div>
           
-          <div class="card-body p-4 position-relative" style="z-index: 2;">
+          <div class="card-body p-4 position-relative dc-0babfe">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div>
                 <h5 class="fw-bold text-dark mb-1">Expiration Timeline</h5>
-                <p class="text-muted mb-0" style="font-size: 0.85rem;">Upcoming policy expirations</p>
+                <p class="text-muted mb-0 dc-e7992d">Upcoming policy expirations</p>
               </div>
-              <span class="badge fw-medium rounded-pill" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(139, 92, 246, 0.08); color: #7C3AED;">3 items</span>
+              <span class="badge fw-medium rounded-pill dc-e691f7">3 items</span>
             </div>
 
             <div class="d-flex flex-column gap-3">
               <!-- CORP-2023-01 -->
-              <div class="d-flex w-100 align-items-center" style="padding: 14px; gap: 14px; border-radius: 16px; border: 1px solid #E5E7EB; background: #F9FAFB;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: #EEF2FF; border-radius: 12px; min-width: 44px;">
+              <div class="d-flex w-100 align-items-center dc-40284b">
+                <div class="d-flex align-items-center justify-content-center dc-6d3717">
                   <i class="bi bi-briefcase text-primary fs-5"></i>
                 </div>
                 <div class="flex-grow-1 d-flex flex-column gap-1">
                   <div class="d-flex justify-content-between align-items-start">
                     <div>
-                      <h6 class="mb-0 fw-bold text-dark" style="font-size: 0.95rem;">CORP-2023-01</h6>
-                      <span class="text-secondary" style="font-size: 0.8rem;">Acme Corporation</span>
+                      <h6 class="mb-0 fw-bold text-dark dc-6e47c6">CORP-2023-01</h6>
+                      <span class="text-secondary dc-fb2a71">Acme Corporation</span>
                     </div>
-                    <span class="badge d-flex align-items-center gap-1" style="border-radius: 20px; background: #FEF3C7; color: #D97706; padding: 6px 12px; font-size: 0.75rem; font-weight: 600; border: 1px solid #FDE68A;">
+                    <span class="badge d-flex align-items-center gap-1 dc-cd43a1">
                       <i class="bi bi-exclamation-triangle-fill"></i> 7 days
                     </span>
                   </div>
                   
                   <div class="w-100 mt-2">
                     <div class="d-flex align-items-center gap-2">
-                      <div class="progress flex-grow-1" style="height: 6px; border-radius: 20px; background: #E2E8F0; overflow: hidden;">
-                        <div class="progress-bar" role="progressbar" style="width: 30%; background: #F59E0B; border-radius: 20px; height: 6px;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress flex-grow-1 dc-9fae65">
+                        <div class="progress-bar dc-6764fc" role="progressbar"  aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <span class="fw-bold" style="font-size: 0.75rem; color: #64748B;">7 days</span>
+                      <span class="fw-bold dc-edb2e8">7 days</span>
                     </div>
-                    <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 4px;">
+                    <div class="dc-e0b793">
                       Expires in 7 days
                     </div>
                   </div>
@@ -569,29 +569,29 @@
               </div>
 
               <!-- GRP-2023-15 -->
-              <div class="d-flex w-100 align-items-center" style="padding: 14px; gap: 14px; border-radius: 16px; border: 1px solid #E5E7EB; background: #F9FAFB;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: #ECFDF5; border-radius: 12px; min-width: 44px;">
+              <div class="d-flex w-100 align-items-center dc-40284b">
+                <div class="d-flex align-items-center justify-content-center dc-c1e980">
                   <i class="bi bi-people text-success fs-5"></i>
                 </div>
                 <div class="flex-grow-1 d-flex flex-column gap-1">
                   <div class="d-flex justify-content-between align-items-start">
                     <div>
-                      <h6 class="mb-0 fw-bold text-dark" style="font-size: 0.95rem;">GRP-2023-15</h6>
-                      <span class="text-secondary" style="font-size: 0.8rem;">Executive Benefits</span>
+                      <h6 class="mb-0 fw-bold text-dark dc-6e47c6">GRP-2023-15</h6>
+                      <span class="text-secondary dc-fb2a71">Executive Benefits</span>
                     </div>
-                    <span class="badge d-flex align-items-center gap-1" style="border-radius: 20px; background: #D1FAE5; color: #10B981; padding: 6px 12px; font-size: 0.75rem; font-weight: 600; border: 1px solid #A7F3D0;">
+                    <span class="badge d-flex align-items-center gap-1 dc-91581a">
                       <i class="bi bi-check-circle-fill"></i> 15 days
                     </span>
                   </div>
                   
                   <div class="w-100 mt-2">
                     <div class="d-flex align-items-center gap-2">
-                      <div class="progress flex-grow-1" style="height: 6px; border-radius: 20px; background: #E2E8F0; overflow: hidden;">
-                        <div class="progress-bar" role="progressbar" style="width: 50%; background: #10B981; border-radius: 20px; height: 6px;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress flex-grow-1 dc-9fae65">
+                        <div class="progress-bar dc-d9bd3a" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <span class="fw-bold" style="font-size: 0.75rem; color: #64748B;">15 days</span>
+                      <span class="fw-bold dc-edb2e8">15 days</span>
                     </div>
-                    <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 4px;">
+                    <div class="dc-e0b793">
                       Expires in 15 days
                     </div>
                   </div>
@@ -599,29 +599,29 @@
               </div>
 
               <!-- IND-2023-42 -->
-              <div class="d-flex w-100 align-items-center" style="padding: 14px; gap: 14px; border-radius: 16px; border: 1px solid #E5E7EB; background: #F9FAFB;">
-                <div class="d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: #F3F4F6; border-radius: 12px; min-width: 44px;">
+              <div class="d-flex w-100 align-items-center dc-40284b">
+                <div class="d-flex align-items-center justify-content-center dc-34d44b">
                   <i class="bi bi-person text-secondary fs-5"></i>
                 </div>
                 <div class="flex-grow-1 d-flex flex-column gap-1">
                   <div class="d-flex justify-content-between align-items-start">
                     <div>
-                      <h6 class="mb-0 fw-bold text-dark" style="font-size: 0.95rem;">IND-2023-42</h6>
-                      <span class="text-secondary" style="font-size: 0.8rem;">Premier Individual Plan</span>
+                      <h6 class="mb-0 fw-bold text-dark dc-6e47c6">IND-2023-42</h6>
+                      <span class="text-secondary dc-fb2a71">Premier Individual Plan</span>
                     </div>
-                    <span class="badge d-flex align-items-center gap-1" style="border-radius: 20px; background: #F3F4F6; color: #64748B; padding: 6px 12px; font-size: 0.75rem; font-weight: 600; border: 1px solid #E5E7EB;">
+                    <span class="badge d-flex align-items-center gap-1 dc-951dc1">
                       <i class="bi bi-calendar3"></i> 30 days
                     </span>
                   </div>
                   
                   <div class="w-100 mt-2">
                     <div class="d-flex align-items-center gap-2">
-                      <div class="progress flex-grow-1" style="height: 6px; border-radius: 20px; background: #E2E8F0; overflow: hidden;">
-                        <div class="progress-bar" role="progressbar" style="width: 60%; background: #10B981; border-radius: 20px; height: 6px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress flex-grow-1 dc-9fae65">
+                        <div class="progress-bar dc-4fc40b" role="progressbar"  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <span class="fw-bold" style="font-size: 0.75rem; color: #64748B;">30 days</span>
+                      <span class="fw-bold dc-edb2e8">30 days</span>
                     </div>
-                    <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 4px;">
+                    <div class="dc-e0b793">
                       Expires in 30 days
                     </div>
                   </div>
@@ -634,86 +634,86 @@
 
       <!-- Compliance Status -->
       <div class="col-12 col-lg-6">
-        <div class="card h-100 overflow-hidden position-relative" style="border-radius: 20px; border: 1px solid #EEF0F4; background: #FFF; box-shadow: 0 4px 24px 0 rgba(11, 79, 138, 0.08);">
+        <div class="card h-100 overflow-hidden position-relative dc-4fa346">
           <!-- Decorative green background corner shape -->
-          <div style="position: absolute; right: -110px; bottom: -90px; width: 240px; height: 240px; pointer-events: none; z-index: 1;">
+          <div class="dc-715548">
             <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
               <circle opacity="0.55" cx="120" cy="120" r="120" fill="#ECFDF5"/>
             </svg>
           </div>
 
-          <div class="card-body p-4 position-relative" style="z-index: 2;">
+          <div class="card-body p-4 position-relative dc-0babfe">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div>
                 <h5 class="fw-bold text-dark mb-1">Compliance Status</h5>
-                <p class="text-muted mb-0" style="font-size: 0.85rem;">Regulatory compliance overview</p>
+                <p class="text-muted mb-0 dc-e7992d">Regulatory compliance overview</p>
               </div>
-              <span class="badge fw-semibold d-flex align-items-center gap-1" style="font-size: 0.75rem; padding: 6px 12px; background: #ECFDF5; color: #059669; border-radius: 20px; border: 1px solid #A7F3D0;">
+              <span class="badge fw-semibold d-flex align-items-center gap-1 dc-a579ad">
                 <i class="bi bi-shield-check"></i> Overall
               </span>
             </div>
 
             <div class="d-flex flex-column gap-3">
               <!-- Documents -->
-              <div class="d-flex align-items-center w-100" style="padding: 14px; gap: 14px; border-radius: 16px; border: 1px solid #E5E7EB; background: #F9FAFB;">
-                <div class="d-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle" style="width: 40px; height: 40px; min-width: 40px;">
+              <div class="d-flex align-items-center w-100 dc-40284b">
+                <div class="d-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle dc-3f6893">
                   <i class="bi bi-file-earmark-check fs-5"></i>
                 </div>
                 <div class="flex-grow-1">
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-semibold text-dark" style="font-size: 0.85rem;">Document Compliance</span>
-                    <span class="badge fw-semibold" style="color: #059669; font-size: 0.65rem; padding: 4px 8px; border-radius: 999px; border: 1px solid #A7F3D0; background: #ECFDF5;">Complete</span>
+                    <span class="fw-semibold text-dark dc-e7992d">Document Compliance</span>
+                    <span class="badge fw-semibold dc-382cb8">Complete</span>
                   </div>
-                  <span class="text-secondary d-block" style="font-size: 0.75rem;">All required documents are up to date.</span>
+                  <span class="text-secondary d-block dc-af89d6">All required documents are up to date.</span>
                 </div>
-                <div class="position-relative d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; min-width: 44px;">
-                  <svg width="44" height="44" viewBox="0 0 44 44" style="transform: rotate(-90deg);">
+                <div class="position-relative d-flex align-items-center justify-content-center dc-1b2a63">
+                  <svg width="44" height="44" viewBox="0 0 44 44"  class="dc-4a8468">
                     <circle cx="22" cy="22" r="18" fill="none" stroke="#E5E7EB" stroke-width="4"></circle>
                     <circle cx="22" cy="22" r="18" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="113.1" stroke-dashoffset="0" stroke-linecap="round"></circle>
                   </svg>
-                  <span class="position-absolute fw-bold text-dark" style="font-size: 0.65rem;">100%</span>
+                  <span class="position-absolute fw-bold text-dark dc-12e5fe">100%</span>
                 </div>
               </div>
 
               <!-- Regulatory -->
-              <div class="d-flex align-items-center w-100" style="padding: 14px; gap: 14px; border-radius: 16px; border: 1px solid #E5E7EB; background: #F9FAFB;">
-                <div class="d-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle" style="width: 40px; height: 40px; min-width: 40px;">
+              <div class="d-flex align-items-center w-100 dc-40284b">
+                <div class="d-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle dc-3f6893">
                   <i class="bi bi-arrow-repeat fs-5"></i>
                 </div>
                 <div class="flex-grow-1">
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-semibold text-dark" style="font-size: 0.85rem;">Regulatory Updates</span>
-                    <span class="badge fw-semibold" style="color: #059669; font-size: 0.65rem; padding: 4px 8px; border-radius: 999px; border: 1px solid #A7F3D0; background: #ECFDF5;">Up to date</span>
+                    <span class="fw-semibold text-dark dc-e7992d">Regulatory Updates</span>
+                    <span class="badge fw-semibold dc-382cb8">Up to date</span>
                   </div>
-                  <span class="text-secondary d-block" style="font-size: 0.75rem;">Last synced 2 hours ago.</span>
+                  <span class="text-secondary d-block dc-af89d6">Last synced 2 hours ago.</span>
                 </div>
-                <div class="position-relative d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; min-width: 44px;">
-                  <svg width="44" height="44" viewBox="0 0 44 44" style="transform: rotate(-90deg);">
+                <div class="position-relative d-flex align-items-center justify-content-center dc-1b2a63">
+                  <svg width="44" height="44" viewBox="0 0 44 44"  class="dc-4a8468">
                     <circle cx="22" cy="22" r="18" fill="none" stroke="#E5E7EB" stroke-width="4"></circle>
                     <circle cx="22" cy="22" r="18" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="113.1" stroke-dashoffset="0" stroke-linecap="round"></circle>
                   </svg>
-                  <span class="position-absolute fw-bold text-dark" style="font-size: 0.65rem;">100%</span>
+                  <span class="position-absolute fw-bold text-dark dc-12e5fe">100%</span>
                 </div>
               </div>
 
               <!-- Audit -->
-              <div class="d-flex align-items-center w-100" style="padding: 14px; gap: 14px; border-radius: 16px; border: 1px solid #E5E7EB; background: #F9FAFB;">
-                <div class="d-flex align-items-center justify-content-center bg-warning-subtle text-warning rounded-circle" style="width: 40px; height: 40px; min-width: 40px;">
+              <div class="d-flex align-items-center w-100 dc-40284b">
+                <div class="d-flex align-items-center justify-content-center bg-warning-subtle text-warning rounded-circle dc-3f6893">
                   <i class="bi bi-clipboard-check fs-5"></i>
                 </div>
                 <div class="flex-grow-1">
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-semibold text-dark" style="font-size: 0.85rem;">Audit Requirements</span>
-                    <span class="badge fw-semibold" style="color: #D97706; font-size: 0.65rem; padding: 4px 8px; border-radius: 999px; border: 1px solid #FDE68A; background: #FEF3C7;">Pending</span>
+                    <span class="fw-semibold text-dark dc-e7992d">Audit Requirements</span>
+                    <span class="badge fw-semibold dc-76f59f">Pending</span>
                   </div>
-                  <span class="text-secondary d-block" style="font-size: 0.75rem;">2 items require review before submission.</span>
+                  <span class="text-secondary d-block dc-af89d6">2 items require review before submission.</span>
                 </div>
-                <div class="position-relative d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; min-width: 44px;">
-                  <svg width="44" height="44" viewBox="0 0 44 44" style="transform: rotate(-90deg);">
+                <div class="position-relative d-flex align-items-center justify-content-center dc-1b2a63">
+                  <svg width="44" height="44" viewBox="0 0 44 44"  class="dc-4a8468">
                     <circle cx="22" cy="22" r="18" fill="none" stroke="#E5E7EB" stroke-width="4"></circle>
                     <circle cx="22" cy="22" r="18" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="113.1" stroke-dashoffset="28.25" stroke-linecap="round"></circle>
                   </svg>
-                  <span class="position-absolute fw-bold text-dark" style="font-size: 0.65rem;">75%</span>
+                  <span class="position-absolute fw-bold text-dark dc-12e5fe">75%</span>
                 </div>
               </div>
             </div>
@@ -830,16 +830,5 @@
     });
   </script>
 
-  <style>
-    .transition-hover {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .transition-hover:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
-    }
-    .text-orange {
-      color: #ea580c !important;
-    }
-  </style>
+
 @endsection

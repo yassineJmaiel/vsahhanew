@@ -531,25 +531,7 @@
   flex-direction: column;
 }
 
-.vector {
-  width: 15px;
-  height: 12px;
-  left: 1.50px;
-  top: 3px;
-  position: absolute;
-  outline: 1.50px #9CA3AF solid;
-  outline-offset: -0.75px;
-}
 
-.vector_01 {
-  width: 15px;
-  height: 5.25px;
-  left: 1.50px;
-  top: 4.50px;
-  position: absolute;
-  outline: 1.50px #9CA3AF solid;
-  outline-offset: -0.75px;
-}
 
 .labelpassword_span {
   color: #2D3748;
@@ -590,46 +572,24 @@
   flex-direction: column;
 }
 
-.vector_02 {
-  width: 13.50px;
-  height: 8.25px;
-  left: 2.25px;
-  top: 8.25px;
-  position: absolute;
-  outline: 1.50px #9CA3AF solid;
-  outline-offset: -0.75px;
-}
 
-.vector_03 {
-  width: 7.50px;
-  height: 6.75px;
-  left: 5.25px;
-  top: 1.50px;
-  position: absolute;
-  outline: 1.50px #9CA3AF solid;
-  outline-offset: -0.75px;
-}
 
 .input_02 {
 
     width:16px;
     height:16px;
 
-    position:absolute;
-
-    left:63px;
-    top:337px;
-
     appearance:none;
     -webkit-appearance:none;
 
-    border-radius:3px;
+    border-radius:2.5px;
 
     border:1px solid #1461B6;
 
     background:white;
 
     cursor:pointer;
+    margin:0;
 
 }
 
@@ -668,15 +628,24 @@
   word-wrap: break-word;
 }
 
-.label-remember-me {
-  width: 94px;
-  height: 16px;
-  left: 72px;
-  top: 321px;
+.options-row {
   position: absolute;
-  justify-content: center;
+  left: 48px;
+  top: 321px;
+  width: 322px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remember-group {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.label-remember-me {
+  display: flex;
 }
 
 .linkforgotpassword_span {
@@ -688,14 +657,8 @@
 }
 
 .link-forgot-password {
-  width: 89.64px;
-  height: 16px;
-  left: 280.73px;
-  top: 321px;
-  position: absolute;
-  justify-content: center;
   display: flex;
-  flex-direction: column;
+  white-space: nowrap;
 }
 
 .buttonlabel_span {
@@ -768,23 +731,25 @@
 .svg {
   width: 18px;
   height: 18px;
-  left: 87px;
-  top: 197px;
+  left: 69px;
+  top: 179px;
   position: absolute;
-  transform: rotate(180deg);
-  transform-origin: top left;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .svg_01 {
   width: 18px;
   height: 18px;
-  left: 88px;
-  top: 286px;
+  left: 70px;
+  top: 268px;
   position: absolute;
-  transform: rotate(180deg);
-  transform-origin: top left;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .input {
@@ -949,8 +914,10 @@ min-height: 100vh;
 
         <!-- Email Icon -->
         <div class="svg">
-            <div class="vector"></div>
-            <div class="vector_01"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M15 3H3C2.175 3 1.5 3.675 1.5 4.5V13.5C1.5 14.325 2.175 15 3 15H15C15.825 15 16.5 14.325 16.5 13.5V4.5C16.5 3.675 15.825 3 15 3Z" stroke="#9CA3AF" stroke-width="1.5"/>
+              <path d="M1.5 4.5L9 9.75L16.5 4.5" stroke="#9CA3AF" stroke-width="1.5"/>
+            </svg>
         </div>
 
 
@@ -978,37 +945,40 @@ min-height: 100vh;
 
         <!-- Password Icon -->
         <div class="svg_01">
-            <div class="vector_02"></div>
-            <div class="vector_03"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 8.25H14.25C15.0784 8.25 15.75 8.92157 15.75 9.75V15C15.75 15.8284 15.0784 16.5 14.25 16.5H3.75C2.92157 16.5 2.25 15.8284 2.25 15V9.75C2.25 8.92157 2.92157 8.25 3.75 8.25Z" stroke="#9CA3AF" stroke-width="1.5"/>
+              <path d="M12.75 8.25V5.25C12.75 4.25544 12.3549 3.30161 11.6517 2.59835C10.9484 1.89509 9.99456 1.5 9 1.5C8.00544 1.5 7.05161 1.89509 6.34835 2.59835C5.64509 3.30161 5.25 4.25544 5.25 5.25V8.25" stroke="#9CA3AF" stroke-width="1.5"/>
+            </svg>
         </div>
 
 
 
-        <!-- Remember me -->
-        <input 
-    type="checkbox"
-    name="remember"
-    class="input_02"
-> 
+        <!-- Options Row -->
+        <div class="options-row">
+            
+            <!-- Remember me group -->
+            <div class="remember-group">
+                <input 
+                    type="checkbox"
+                    name="remember"
+                    class="input_02"
+                > 
+                <div class="label-remember-me">
+                    <span class="labelrememberme_span">
+                        Remember me
+                    </span>
+                </div>
+            </div>
 
+            <!-- Forgot password -->
+            <div class="link-forgot-password">
+                <a href="#">
+                    <span class="linkforgotpassword_span">
+                        Forgot password?
+                    </span>
+                </a>
+            </div>
 
-
-
-
-        <div class="label-remember-me">
-            <span class="labelrememberme_span">
-                Remember me
-            </span>
-        </div>
-
-
-        <!-- Forgot password -->
-        <div class="link-forgot-password">
-            <a href="#">
-                <span class="linkforgotpassword_span">
-                    Forgot password?
-                </span>
-            </a>
         </div>
 
 
