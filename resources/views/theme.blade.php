@@ -282,11 +282,42 @@
 
       <!-- Logout Button -->
       <div class="mt-4 p-3 border-top" style="border-color: rgba(255,255,255,0.08) !important;">
-        <a href="#" class="text-decoration-none" style="display: flex; width: 216px; height: 38px; padding: 10px 108px 10px 12px; align-items: flex-start; gap: 30px; flex-shrink: 0; border-radius: 10px; color: rgba(255, 255, 255, 0.6);">
-          <i class="bi bi-box-arrow-right fs-5" style="line-height: 1;"></i>
-          <span style="font-size: 0.85rem; white-space: nowrap; font-weight: 500;">Log out</span>
-        </a>
-      </div>
+
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+
+        <button type="submit"
+            class="text-decoration-none"
+            style="
+                display: flex;
+                width: 216px;
+                height: 38px;
+                padding: 10px 108px 10px 12px;
+                align-items: flex-start;
+                gap: 30px;
+                flex-shrink: 0;
+                border-radius: 10px;
+                color: rgba(255,255,255,0.6);
+                background: transparent;
+                border: none;
+                cursor: pointer;
+            ">
+
+            <i class="bi bi-box-arrow-right fs-5" style="line-height:1;"></i>
+
+            <span style="
+                font-size:0.85rem;
+                white-space:nowrap;
+                font-weight:500;
+            ">
+                Log out
+            </span>
+
+        </button>
+
+    </form>
+
+</div>
     </nav>
 
     <!-- Main Content Area -->

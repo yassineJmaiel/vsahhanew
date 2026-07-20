@@ -1,75 +1,47 @@
-<div class="sign-in">
-  <div class="frame">
-    <div class="background">
-      <div class="medical-cross-decorations-"><span class="medicalcrossdecorations_span">✚</span></div>
-      <div class="medical-cross"><span class="medicalcross_span">✚</span></div>
-      <div class="medical-cross_01"><span class="medicalcross_01_span">✚</span></div>
-      <div class="animated-particles">
-        <div class="overlay"></div>
-        <div class="overlay_01"></div>
-        <div class="overlay_02"></div>
-        <div class="overlay_03"></div>
-        <div class="overlay_04"></div>
-        <div class="overlay_05"></div>
-        <div class="overlay_06"></div>
-        <div class="overlay_07"></div>
-        <div class="overlay_08"></div>
-        <div class="overlay_09"></div>
-        <div class="overlay_10"></div>
-        <div class="overlay_11"></div>
-        <div class="overlay_12"></div>
-        <div class="overlay_13"></div>
-        <div class="overlay_14"></div>
-        <div class="overlay_15"></div>
-        <div class="overlay_16"></div>
-        <div class="overlay_17"></div>
-        <div class="overlay_18"></div>
-        <div class="overlay_19"></div>
-        <div class="overlay_20"></div>
-        <div class="overlay_21"></div>
-      </div>
-      <div class="brand-left">
-        <div class="product-name"><span class="productname_span_01">VSahha<br/></span><span class="productname_span_02">International Health Solutions</span></div>
-        <div class="heading-1-the-future-of-health-insurance-management"><span class="heading1thefutureofhealthinsurancemanagement_span_01">The Future of<br/></span><span class="heading1thefutureofhealthinsurancemanagement_span_02">Health Insurance<br/></span><span class="heading1thefutureofhealthinsurancemanagement_span_03">Management</span></div>
-        <div class="product-description"><span class="productdescription_span">A complete CRM platform for managing insurance<br/>policies, partners, members, and coverage —<br/>built for modern health operations.</span></div>
-      </div>
-      <div class="login-form-right">
-        <div class="heading-2-welcome-back-"><span class="heading2welcomeback_span">Welcome </span></div>
-        <div class="dashboard-description"><span class="dashboarddescription_span">Sign in to your VSahha dashboard</span></div>
-        <div class="label-email-address"><span class="labelemailaddress_span">Email address</span></div>
-        <div class="input">
-          <div class="container">
-            <div class="email-address"><span class="emailaddress_span">admin@vsahha.com</span></div>
-          </div>
-        </div>
-        <div class="svg">
-          <div class="vector"></div>
-          <div class="vector_01"></div>
-        </div>
-        <div class="label-password"><span class="labelpassword_span">Password</span></div>
-        <div class="input_01">
-          <div class="container_01">
-            <div class="username"><span class="username_span">vsahha2026</span></div>
-          </div>
-        </div>
-        <div class="svg_01">
-          <div class="vector_02"></div>
-          <div class="vector_03"></div>
-        </div>
-        <div class="input_02"></div>
-        <div class="label-remember-me"><span class="labelrememberme_span">Remember me</span></div>
-        <div class="link-forgot-password"><span class="linkforgotpassword_span">Forgot password?</span></div>
-        <div class="button">
-          <div class="button-label"><span class="buttonlabel_span">Sign in to Dashboard</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <style>
 
+.input input,
+.input_01 input {
 
+    width:100%;
+    height:100%;
+    border:none;
+    outline:none;
+
+    padding-left:45px;
+
+    font-size:15px;
+    font-family:'Inter', sans-serif;
+
+    border-radius:12px;
+
+    background:transparent;
+}
+
+
+.input input::placeholder,
+.input_01 input::placeholder {
+
+    color:rgba(45,55,72,0.40);
+
+}
+
+
+.button {
+
+    border:none;
+    cursor:pointer;
+    padding:0;
+
+}
+
+
+.link-forgot-password a {
+
+    text-decoration:none;
+
+}
 @keyframes floating {
     0% {
         transform: translateY(0) scale(1);
@@ -639,15 +611,53 @@
 }
 
 .input_02 {
-  width: 16px;
-  height: 16px;
-  left: 63px;
-  top: 337px;
-  position: absolute;
-  transform: rotate(180deg);
-  transform-origin: top left;
-  border-radius: 2.50px;
-  border: 1px #1461B6 solid;
+
+    width:16px;
+    height:16px;
+
+    position:absolute;
+
+    left:63px;
+    top:337px;
+
+    appearance:none;
+    -webkit-appearance:none;
+
+    border-radius:3px;
+
+    border:1px solid #1461B6;
+
+    background:white;
+
+    cursor:pointer;
+
+}
+
+
+.input_02:checked {
+
+    background:#1461B6;
+
+    border-color:#1461B6;
+
+}
+
+
+.input_02:checked::after {
+
+    content:"✓";
+
+    color:white;
+
+    font-size:12px;
+
+    position:absolute;
+
+    left:2px;
+    top:-1px;
+
+    font-weight:bold;
+
 }
 
 .labelrememberme_span {
@@ -817,7 +827,7 @@
 
 .background {
     width: 100%;
-    height: 100vh;
+min-height: 100vh;    
     position: relative;
     overflow: hidden;
 
@@ -846,7 +856,7 @@
 
 .frame {
   width: 1898px;
-  height: 1073px;
+  min-height: 100vh;   
   left: 0px;
   top: 0px;
   position: absolute;
@@ -855,8 +865,170 @@
 
 .sign-in {
   width: 1898px;
-  height: 1080px;
-  position: relative;
+  min-height: 100vh;  
+    position: relative;
   background: #444444;
 }
+
+
 </style>
+<div class="sign-in">
+  <div class="frame">
+    <div class="background">
+      <div class="medical-cross-decorations-"><span class="medicalcrossdecorations_span">✚</span></div>
+      <div class="medical-cross"><span class="medicalcross_span">✚</span></div>
+      <div class="medical-cross_01"><span class="medicalcross_01_span">✚</span></div>
+      <div class="animated-particles">
+        <div class="overlay"></div>
+        <div class="overlay_01"></div>
+        <div class="overlay_02"></div>
+        <div class="overlay_03"></div>
+        <div class="overlay_04"></div>
+        <div class="overlay_05"></div>
+        <div class="overlay_06"></div>
+        <div class="overlay_07"></div>
+        <div class="overlay_08"></div>
+        <div class="overlay_09"></div>
+        <div class="overlay_10"></div>
+        <div class="overlay_11"></div>
+        <div class="overlay_12"></div>
+        <div class="overlay_13"></div>
+        <div class="overlay_14"></div>
+        <div class="overlay_15"></div>
+        <div class="overlay_16"></div>
+        <div class="overlay_17"></div>
+        <div class="overlay_18"></div>
+        <div class="overlay_19"></div>
+        <div class="overlay_20"></div>
+        <div class="overlay_21"></div>
+      </div>
+      <div class="brand-left">
+        <div class="product-name"><span class="productname_span_01">VSahha<br/></span><span class="productname_span_02">International Health Solutions</span></div>
+        <div class="heading-1-the-future-of-health-insurance-management"><span class="heading1thefutureofhealthinsurancemanagement_span_01">The Future of<br/></span><span class="heading1thefutureofhealthinsurancemanagement_span_02">Health Insurance<br/></span><span class="heading1thefutureofhealthinsurancemanagement_span_03">Management</span></div>
+        <div class="product-description"><span class="productdescription_span">A complete CRM platform for managing insurance<br/>policies, partners, members, and coverage —<br/>built for modern health operations.</span></div>
+      </div>
+      <div class="login-form-right">
+
+    <form method="POST" action="{{ route('login.post') }}">
+        @csrf
+
+        <div class="heading-2-welcome-back-">
+            <span class="heading2welcomeback_span">
+                Welcome
+            </span>
+        </div>
+
+        <div class="dashboard-description">
+            <span class="dashboarddescription_span">
+                Sign in to your VSahha dashboard
+            </span>
+        </div>
+
+
+        <!-- Email Label -->
+        <div class="label-email-address">
+            <span class="labelemailaddress_span">
+                Email address
+            </span>
+        </div>
+
+
+        <!-- Email Input -->
+        <div class="input">
+
+            <input 
+                type="email"
+                name="email"
+                placeholder="admin@vsahha.com"
+                value="{{ old('email') }}"
+                required
+            >
+
+        </div>
+
+
+        <!-- Email Icon -->
+        <div class="svg">
+            <div class="vector"></div>
+            <div class="vector_01"></div>
+        </div>
+
+
+
+        <!-- Password Label -->
+        <div class="label-password">
+            <span class="labelpassword_span">
+                Password
+            </span>
+        </div>
+
+
+        <!-- Password Input -->
+        <div class="input_01">
+
+            <input 
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+        </div>
+
+
+        <!-- Password Icon -->
+        <div class="svg_01">
+            <div class="vector_02"></div>
+            <div class="vector_03"></div>
+        </div>
+
+
+
+        <!-- Remember me -->
+        <input 
+    type="checkbox"
+    name="remember"
+    class="input_02"
+> 
+
+
+
+
+
+        <div class="label-remember-me">
+            <span class="labelrememberme_span">
+                Remember me
+            </span>
+        </div>
+
+
+        <!-- Forgot password -->
+        <div class="link-forgot-password">
+            <a href="#">
+                <span class="linkforgotpassword_span">
+                    Forgot password?
+                </span>
+            </a>
+        </div>
+
+
+
+        <!-- Submit Button -->
+        <button type="submit" class="button">
+
+            <div class="button-label">
+                <span class="buttonlabel_span">
+                    Sign in to Dashboard
+                </span>
+            </div>
+
+        </button>
+
+
+    </form>
+
+</div>
+    </div>
+  </div>
+</div>
+
