@@ -20,11 +20,15 @@ use App\Http\Controllers\Web\AuthController;
 
 
 
-   Route::get('/dashboard',function(){
+Route::middleware('jwt.session')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('testdashboard');
+    })->name('dashboard');
 
-    return view('testdashboard');
-
-})->middleware('jwt.session');
+    Route::get('/partnermanagement', function () {
+        return view('partnermanagement');
+    })->name('partnermanagement');
+});
 
 Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 

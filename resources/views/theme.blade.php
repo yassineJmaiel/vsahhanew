@@ -48,7 +48,7 @@
       <!-- Navigation Links -->
       <div class="py-2">
         <span class="sidebar-heading">Main Menu</span>
-        <a href="#" class="sidebar-link active">
+        <a href="{{ route('dashboard') }}" class="sidebar-link active">
           <i class="bi bi-grid-fill"></i>
           <span>General Dashboard</span>
         </a>
@@ -66,7 +66,7 @@
         </a>
 
         <span class="sidebar-heading">Policy Admin</span>
-        <a href="#" class="sidebar-link justify-content-between">
+        <a href="{{ route('partnermanagement') }}" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
             <i class="bi bi-briefcase"></i>
             <span>Partners Mgmt</span>
@@ -122,12 +122,10 @@
       <!-- Logout Button -->
       <div class="mt-4 p-3 border-top" style="border-color: rgba(255,255,255,0.08) !important;">
 
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
 
-        <button type="submit"
-            class="text-decoration-none"
-            style="
+          <button type="submit" class="text-decoration-none" style="
                 display: flex;
                 width: 216px;
                 height: 38px;
@@ -149,14 +147,14 @@
                 white-space:nowrap;
                 font-weight:500;
             ">
-                Log out
+              Log out
             </span>
 
-        </button>
+          </button>
 
-    </form>
+        </form>
 
-</div>
+      </div>
     </nav>
 
     <!-- Main Content Area -->
