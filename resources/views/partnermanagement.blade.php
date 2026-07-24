@@ -22,7 +22,7 @@
                         </svg>
                         <input type="text" placeholder="Search metrics...">
                     </div>
-                    <button class="btn btn-custom-primary d-flex align-items-center gap-2">
+                    <button class="btn btn-custom-primary d-flex align-items-center gap-2" onclick="display()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
                             style="flex-shrink: 0;">
                             <path d="M3.33276 7.99996H12.6672M7.99996 3.33276V12.6672" stroke="white" stroke-width="2"
@@ -61,6 +61,8 @@
         </div>
         <!-- End Header Section -->
 
+        <!-- Start Main Content Area -->
+        <div id="main-content">
         <!-- Start Filters -->
         <div class="row mb-4 align-items-center">
             <div class="col-lg-8 col-12 mb-3 mb-lg-0">
@@ -449,6 +451,36 @@
             </div>
             <!-- End Right Sidebar Column -->
         </div>
+        </div>
+        <!-- End Main Content Area -->
+
+        <!-- Start Add Partner Form -->
+        <div id="add-partner-form" style="display: none;">
+            <div class="card shadow-sm border-0" style="border-radius: 12px;">
+                <div class="card-body p-4">
+                    <h5 class="card-title fw-bold mb-4">Add New Partner</h5>
+                    <!-- The form goes here -->
+                    <p class="text-muted">Formulaire d'ajout de partenaire (à compléter par vous-même)</p>
+                    <div class="mt-4">
+                        <button class="btn btn-outline-secondary" onclick="hideDisplay()">Cancel / Retour</button>
+                        <button class="btn btn-custom-primary ms-2">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Add Partner Form -->
 
     </div>
+
+    <script>
+        function display() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('add-partner-form').style.display = 'block';
+        }
+
+        function hideDisplay() {
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('add-partner-form').style.display = 'none';
+        }
+    </script>
 @endsection
