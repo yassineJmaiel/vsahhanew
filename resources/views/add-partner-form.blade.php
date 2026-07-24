@@ -1,19 +1,28 @@
 <!-- Start Page Header -->
-    <div class="page-header">
+    <div class="page-header" style="display: inline-flex; width: 100%; height: 187px; padding: 48px 0 48px 60px; justify-content: flex-end; align-items: center; background: #0B4E89;">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <a href="#" class="back-link" onclick="hideDisplay(event)">
-                        <i class="bi bi-chevron-left"></i> Back to Partners
-                    </a>
-                    <h1 class="page-title" id="main-page-title">Add New Partner</h1>
-                    <p class="page-subtitle">Create and configure a new external partner, agency, or firm.</p>
+                    <div style="display: inline-flex; flex-direction: column; align-items: flex-start; gap: 24px;">
+                        <a href="#" class="back-link text-decoration-none" style="display: flex; align-items: center; gap: 8px; color: #26C6A0; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 600; line-height: normal;" onclick="hideDisplay(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="width: 16px; height: 16px; flex-shrink: 0;">
+                              <path d="M8.00021 3.33276L3.33301 7.99996L8.00021 12.6672M3.33301 7.99996H12.6674" stroke="#26C6A0" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Back to Partners
+                        </a>
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                            <h1 class="page-title m-0" id="main-page-title" style="color: #FFF; font-family: Inter, sans-serif; font-size: 32px; font-style: normal; font-weight: 800; line-height: normal;">Add New Partner</h1>
+                            <p class="page-subtitle m-0" style="color: rgba(255, 255, 255, 0.70); font-family: Inter, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">Create and configure a new external partner, agency, or firm.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="header-actions justify-content-lg-end flex-wrap">
-                        <div class="search-input-wrapper mb-2 mb-sm-0">
-                            <i class="bi bi-search"></i>
-                            <input type="text" placeholder="Search metrics...">
+                        <div class="search-input-wrapper mb-2 mb-sm-0" style="display: flex; width: 233px; height: 34px; padding: 9px 15px; justify-content: center; align-items: flex-start; gap: 8px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, 0.00); background: #F1F3F7;">
+                            <div style="display: flex; width: 180px; height: 16px; padding-right: 75.92px; align-items: center; flex-shrink: 0; gap: 8px;">
+                                <i class="bi bi-search" style="color: #757575; font-size: 13px;"></i>
+                                <input type="text" placeholder="Search metrics..." style="border: none; background: transparent; outline: none; display: flex; width: 104.08px; height: 16px; flex-direction: column; justify-content: center; flex-shrink: 0; color: #757575; font-family: Inter, sans-serif; font-size: 13px; font-style: normal; font-weight: 400; line-height: normal;">
+                            </div>
                         </div>
                         <button class="btn btn-refresh mb-2 mb-sm-0">
                             <i class="bi bi-arrow-clockwise"></i> Refresh
@@ -28,7 +37,7 @@
     <!-- End Page Header -->
     <!-- Start Partner Information Form Card -->
     <div class="container-fluid position-relative" style="margin-top: -20px; z-index: 10;">
-        <div class="card shadow-sm border-0 mx-auto" style="border-radius: 16px; max-width: 1400px;">
+        <div class="card shadow-sm border-0 mx-auto" style="border-radius: 16px; width: 1800px; max-width: 100%; align-self: stretch;">
             <!-- Stepper Header -->
             <div id="stepper-header-container" class="card-header bg-white border-bottom-0 pt-4 pb-3 px-4 px-xl-5 d-flex justify-content-between align-items-center flex-wrap gap-3" style="border-radius: 16px 16px 0 0;">
                 <div class="stepper d-flex align-items-center flex-wrap gap-2 gap-md-0" style="flex: 1; max-width: 700px;">
