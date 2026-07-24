@@ -48,73 +48,77 @@
       <!-- Navigation Links -->
       <div class="py-2">
         <span class="sidebar-heading">Main Menu</span>
-        <a href="{{ route('dashboard') }}" class="sidebar-link active">
-          <i class="bi bi-grid-fill"></i>
+        <a href="{{ route('dashboard') }}" class="sidebar-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+          <i class="bi bi-grid"></i>
           <span>General Dashboard</span>
         </a>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-people"></i>
+          <i class="bi bi-person"></i>
           <span>Partners</span>
         </a>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-file-earmark-ruled"></i>
+          <i class="bi bi-file-earmark"></i>
           <span>Policies</span>
         </a>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-journal-check"></i>
+          <i class="bi bi-clipboard"></i>
           <span>Claims</span>
         </a>
 
         <span class="sidebar-heading">Policy Admin</span>
-        <a href="{{ route('partnermanagement') }}" class="sidebar-link justify-content-between">
+        <a href="#" class="sidebar-link">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="{{ route('partnermanagement') }}" class="sidebar-link justify-content-between {{ request()->routeIs('partnermanagement') ? 'active' : '' }}">
           <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-briefcase"></i>
-            <span>Partners Mgmt</span>
+            <i class="bi bi-people"></i>
+            <span>Partners Management</span>
           </div>
-          <span class="badge bg-primary rounded-pill">3</span>
+          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">3</span>
         </a>
         <a href="#" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-building"></i>
-            <span>Group Mgmt</span>
+            <i class="bi bi-briefcase"></i>
+            <span>Group Management</span>
           </div>
-          <span class="badge bg-secondary rounded-pill">26</span>
+          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">26</span>
         </a>
         <a href="#" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
             <i class="bi bi-file-earmark-text"></i>
-            <span>Policy Mgmt</span>
+            <span>Policy Management</span>
           </div>
-          <span class="badge bg-success rounded-pill">31</span>
+          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">31</span>
         </a>
         <a href="#" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-table"></i>
-            <span>Benefits Table</span>
+            <i class="bi bi-code-slash"></i>
+            <span>Table of Benefits</span>
           </div>
-          <span class="badge bg-info text-dark rounded-pill">11</span>
+          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">11</span>
         </a>
 
         <span class="sidebar-heading">Members</span>
         <a href="#" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-person-gear"></i>
-            <span>Member Mgmt</span>
+            <i class="bi bi-person"></i>
+            <span>Member Management</span>
           </div>
-          <span class="badge bg-warning text-dark rounded-pill">481</span>
+          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">481</span>
         </a>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-card-heading"></i>
-          <span>Card Mgmt</span>
+          <i class="bi bi-credit-card"></i>
+          <span>Card Management</span>
         </a>
 
         <span class="sidebar-heading">Network</span>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-hospital"></i>
+          <i class="bi bi-record-circle"></i>
           <span>Providers</span>
         </a>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-clipboard-pulse"></i>
+          <i class="bi bi-record-circle"></i>
           <span>Medical Review</span>
         </a>
       </div>
