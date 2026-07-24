@@ -27,21 +27,21 @@
     <nav class="sidebar id-sidebar" id="sidebar">
       <div class="sidebar-header d-flex align-items-center justify-content-between">
         <div>
-          <span class="fs-5 fw-bold text-white d-block">VSahha</span>
-          <span class="text-uppercase text-muted" style="font-size: 0.65rem; letter-spacing: 2px;">Health
-            Solutions</span>
+          <span class="sidebar-logo-text">VSahha</span>
+          <span class="sidebar-logo-subtitle">Health Solutions</span>
         </div>
         <button class="btn btn-sm btn-link text-white d-lg-none" id="sidebarCloseBtn">
           <i class="bi bi-x-lg"></i>
         </button>
       </div>
 
-      <!-- User Profile in Sidebar -->
-      <div class="user-profile-section d-flex align-items-center gap-3">
-        <div class="avatar-circle">OB</div>
-        <div>
-          <h6 class="mb-0 text-white fw-semibold" style="font-size: 0.9rem;">Oussama</h6>
-          <span class="text-muted" style="font-size: 0.75rem;">Admin</span>
+      <div class="user-profile-section">
+        <div class="avatar-circle">
+          <span class="avatar-text">OB</span>
+        </div>
+        <div class="user-profile-info">
+          <h6 class="user-profile-name">Oussama Benhassen</h6>
+          <span class="user-profile-role">Admin</span>
         </div>
       </div>
 
@@ -66,37 +66,39 @@
         </a>
 
         <span class="sidebar-heading">Policy Admin</span>
-        <a href="#" class="sidebar-link">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
         <a href="{{ route('partnermanagement') }}" class="sidebar-link justify-content-between {{ request()->routeIs('partnermanagement') ? 'active' : '' }}">
           <div class="d-flex align-items-center gap-2">
             <i class="bi bi-people"></i>
             <span>Partners Management</span>
           </div>
-          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">3</span>
+          <span class="sidebar-badge">3</span>
         </a>
         <a href="#" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
             <i class="bi bi-briefcase"></i>
             <span>Group Management</span>
           </div>
-          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">26</span>
+          <span class="sidebar-badge">26</span>
         </a>
         <a href="#" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
             <i class="bi bi-file-earmark-text"></i>
             <span>Policy Management</span>
           </div>
-          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">31</span>
+          <span class="sidebar-badge">31</span>
         </a>
         <a href="#" class="sidebar-link justify-content-between">
           <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-code-slash"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0;">
+              <g opacity="0.7">
+                <path d="M6.75 12.75H5.25C4.25544 12.75 3.30161 12.3549 2.59835 11.6517C1.89509 10.9484 1.5 9.99456 1.5 9C1.5 8.00544 1.89509 7.05161 2.59835 6.34835C3.30161 5.64509 4.25544 5.25 5.25 5.25H6.75" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/>
+                <path d="M11.25 5.25H12.75C13.7446 5.25 14.6984 5.64509 15.4017 6.34835C16.1049 7.05161 16.5 8.00544 16.5 9C16.5 9.99456 16.1049 10.9484 15.4017 11.6517C14.6984 12.3549 13.7446 12.75 12.75 12.75H11.25" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/>
+                <path d="M6 9H12" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/>
+              </g>
+            </svg>
             <span>Table of Benefits</span>
           </div>
-          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">11</span>
+          <span class="sidebar-badge">11</span>
         </a>
 
         <span class="sidebar-heading">Members</span>
@@ -105,7 +107,7 @@
             <i class="bi bi-person"></i>
             <span>Member Management</span>
           </div>
-          <span class="badge rounded-pill" style="background-color: #10B981; font-size: 0.65rem;">481</span>
+          <span class="sidebar-badge">481</span>
         </a>
         <a href="#" class="sidebar-link">
           <i class="bi bi-credit-card"></i>
@@ -114,43 +116,45 @@
 
         <span class="sidebar-heading">Network</span>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-record-circle"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0;">
+            <g opacity="0.7" clip-path="url(#clip0_62_4683)">
+              <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/>
+              <path d="M6.75 6.75H6.7575M11.25 6.75H11.2575M7.125 10.5C7.125 10.5 7.875 12 9 12C10.125 12 10.875 10.5 10.875 10.5" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_62_4683">
+                <rect width="18" height="18" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
           <span>Providers</span>
         </a>
         <a href="#" class="sidebar-link">
-          <i class="bi bi-record-circle"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0;">
+            <g opacity="0.7">
+              <path d="M9 11.25C10.2426 11.25 11.25 10.2426 11.25 9C11.25 7.75736 10.2426 6.75 9 6.75C7.75736 6.75 6.75 7.75736 6.75 9C6.75 10.2426 7.75736 11.25 9 11.25Z" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/>
+              <path d="M14.3024 3.69751C15.7084 5.10397 16.4983 7.01128 16.4983 9.00001C16.4983 10.9887 15.7084 12.8961 14.3024 14.3025M3.69736 3.69751C2.29133 5.10397 1.50146 7.01128 1.50146 9.00001C1.50146 10.9887 2.29133 12.8961 3.69736 14.3025" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/>
+            </g>
+          </svg>
           <span>Medical Review</span>
         </a>
       </div>
 
       <!-- Logout Button -->
-      <div class="mt-4 p-3 border-top" style="border-color: rgba(255,255,255,0.08) !important;">
+      <div class="logout-container">
 
         <form method="POST" action="{{ route('logout') }}">
           @csrf
 
-          <button type="submit" class="text-decoration-none" style="
-                display: flex;
-                width: 216px;
-                height: 38px;
-                padding: 10px 108px 10px 12px;
-                align-items: flex-start;
-                gap: 30px;
-                flex-shrink: 0;
-                border-radius: 10px;
-                color: rgba(255,255,255,0.6);
-                background: transparent;
-                border: none;
-                cursor: pointer;
-            ">
+          <button type="submit" class="logout-btn">
 
-            <i class="bi bi-box-arrow-right fs-5" style="line-height:1;"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0;">
+              <path d="M6.75 15.75H3.75C3.35218 15.75 2.97064 15.592 2.68934 15.3107C2.40804 15.0294 2.25 14.6478 2.25 14.25V3.75C2.25 3.35218 2.40804 2.97064 2.68934 2.68934C2.97064 2.40804 3.35218 2.25 3.75 2.25H6.75" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/>
+              <path d="M12 12.75L15.75 9L12 5.25" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/>
+              <path d="M14.5 9H6.75" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/>
+            </svg>
 
-            <span style="
-                font-size:0.85rem;
-                white-space:nowrap;
-                font-weight:500;
-            ">
+            <span class="logout-text">
               Log out
             </span>
 

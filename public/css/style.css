@@ -661,8 +661,35 @@ body {
     font-size: 14px;
 }
 
+@keyframes kf_62_2371_background-color_0 {
+  0% {
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    background-color: #0B4F8A;
+  }
+  20.363% {
+    animation-timing-function: ease-in-out;
+    background-color: #0D5250;
+  }
+  20.467% {
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    background-color: #2D75CD;
+  }
+  32.476% {
+    animation-timing-function: ease-in-out;
+    background-color: #0B447C;
+  }
+  40.934% {
+    background-color: #0B4F8A;
+  }
+  100% {
+    background-color: #0B4F8A;
+  }
+}
+
 .partner-table thead th {
-    background-color: #0B4F8A !important;
+    background-color: #0B4F8A;
+    animation: kf_62_2371_background-color_0 30.595238s linear infinite;
+    box-shadow: none !important;
     color: #FFF !important;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 13px;
@@ -698,4 +725,37 @@ body {
     font-weight: 600;
     min-width: 37px;
     min-height: 37px;
+}
+
+/* ==========================================================================
+   Add Partner Form Specific Styles
+   ========================================================================== */
+.page-header.bg-custom-blue {
+    background-color: #0B4E89;
+}
+.btn-custom-teal {
+    background-color: #26C6A0;
+}
+.btn-custom-teal:hover {
+    background-color: #1e9e80;
+}
+.back-link {
+    color: #26C6A0;
+    transition: color 0.2s;
+}
+.back-link:hover {
+    color: #1e9e80;
+}
+.placeholder-white-50::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.btn-refresh:hover {
+    background-color: #f8f9fa !important;
+}
+.btn-save-draft:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #0B4E89;
+    box-shadow: 0 0 0 0.25rem rgba(11, 78, 137, 0.1);
 }

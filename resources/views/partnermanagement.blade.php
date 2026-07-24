@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container-fluid py-4">
+        <!-- Start Main Content Area -->
+        <div id="main-content">
 
         <!-- Start Header Section -->
         <div class="row mb-4 align-items-center">
@@ -61,15 +63,13 @@
         </div>
         <!-- End Header Section -->
 
-        <!-- Start Main Content Area -->
-        <div id="main-content">
         <!-- Start Filters -->
         <div class="row mb-4 align-items-center">
             <div class="col-lg-8 col-12 mb-3 mb-lg-0">
                 <ul class="nav nav-pills filter-pills gap-2 flex-nowrap overflow-auto pb-2 pb-lg-0"
                     style="white-space: nowrap;">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">All Partners <span class="badge">3</span></a>
+                        <a class="nav-link active" href="#">All Partners <span class="badge">4</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Insurance <span class="badge">2</span></a>
@@ -110,7 +110,7 @@
             $stats = [
                 [
                     'title' => 'Total Partners',
-                    'value' => '3',
+                    'value' => '4',
                     'color' => 'blue',
                     'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9.16662 14.1675L10.8334 15.8342C10.9976 15.9984 11.1925 16.1286 11.407 16.2174C11.6215 16.3063 11.8514 16.352 12.0835 16.352C12.3157 16.352 12.5456 16.3063 12.7601 16.2174C12.9746 16.1286 13.1694 15.9984 13.3336 15.8342C13.4978 15.6701 13.628 15.4752 13.7168 15.2607C13.8057 15.0462 13.8514 14.8164 13.8514 14.5842C13.8514 14.3521 13.8057 14.1222 13.7168 13.9077C13.628 13.6932 13.4978 13.4984 13.3336 13.3342M11.667 11.6671L13.7505  13.7505C14.0821 14.082 14.5317 14.2683 15.0006 14.2683C15.4695 14.2683 15.9192 14.082 16.2507 13.7505C16.5823 13.419 16.7685 12.9693 16.7685 12.5005C16.7685 12.0316 16.5823 11.582 16.2507 11.2505L13.0171 8.01712C12.5483 7.54895 11.9129 7.28598 11.2503 7.28598C10.5877 7.28598 9.95228 7.54895 9.4835 8.01712L8.7501 8.75046C8.41856 9.08198 7.96888 9.26823 7.5 9.26823C7.03113 9.26823 6.58145 9.08198 6.2499 8.75046C5.91836 8.41893 5.7321 7.96929 5.7321 7.50045C5.7321 7.0316 5.91836 6.58196 6.2499 6.25044L8.59176 3.90876C9.35202 3.15054 10.3435 2.66755 11.4092 2.53623C12.4749 2.40491 13.554 2.63278 14.4756 3.18376L14.8673 3.41709C15.2221 3.63125 15.644 3.70552 16.0507 3.62543L17.5008 3.33376M17.5006 2.50081L18.334 11.6675H16.6672M2.49942 2.50081L1.66602 11.6675L7.08312 17.0842C7.41466 17.4158 7.86434 17.602 8.33322 17.602C8.80209 17.602 9.25177 17.4158 9.58332 17.0842C9.91486 16.7527 10.1011 16.3031 10.1011 15.8342C10.1011 15.3654 9.91486 14.9157 9.58332 14.5842M2.49942 3.33415H9.16662" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>',
                     'border' => '#0B4F8A'
@@ -162,7 +162,7 @@
                 <div class="partner-list-container">
                     <div class="partner-list-header">
                         <h5 class="mb-0 fw-bold">Partner List</h5>
-                        <span class="text-muted-custom fs-7">3 partners</span>
+                        <span class="text-muted-custom fs-7">4 partners</span>
                     </div>
                     <div class="table-responsive">
                         <table class="table partner-table mb-0 align-middle">
@@ -224,6 +224,22 @@
                                             'type_icon' => 'bi-shield-shaded',
                                             'location' => 'Dubai, UAE',
                                             'status' => 'Pending',
+                                            'contract' => 'Draft'
+                                        ],
+                                        [
+                                            'logo' => 'HA',
+                                            'name' => 'HAKA',
+                                            'desc' => 'Strategic partner for comprehensive insurance services.',
+                                            'contact_name' => 'HAKA Representative',
+                                            'contact_email' => 'info@haka.com',
+                                            'coverage' => 'Global',
+                                            'specialty' => 'Insurance Services',
+                                            'policies' => '2,500',
+                                            'members' => '8,000',
+                                            'type' => 'Insurance Provider',
+                                            'type_icon' => 'bi-shield',
+                                            'location' => 'Global',
+                                            'status' => 'Active',
                                             'contract' => 'Draft'
                                         ]
                                     ];
@@ -349,7 +365,7 @@
 
                     <div class="quick-stats-row">
                         <div class="text-muted-custom fs-7">Total partners</div>
-                        <div class="fs-2 fw-bold text-primary lh-1">3</div>
+                        <div class="fs-2 fw-bold text-primary lh-1">4</div>
                     </div>
 
                     @php
@@ -456,17 +472,7 @@
 
         <!-- Start Add Partner Form -->
         <div id="add-partner-form" style="display: none;">
-            <div class="card shadow-sm border-0" style="border-radius: 12px;">
-                <div class="card-body p-4">
-                    <h5 class="card-title fw-bold mb-4">Add New Partner</h5>
-                    <!-- The form goes here -->
-                    <p class="text-muted">Formulaire d'ajout de partenaire (à compléter par vous-même)</p>
-                    <div class="mt-4">
-                        <button class="btn btn-outline-secondary" onclick="hideDisplay()">Cancel / Retour</button>
-                        <button class="btn btn-custom-primary ms-2">Save</button>
-                    </div>
-                </div>
-            </div>
+            @include('add-partner-form')
         </div>
         <!-- End Add Partner Form -->
 
@@ -478,7 +484,8 @@
             document.getElementById('add-partner-form').style.display = 'block';
         }
 
-        function hideDisplay() {
+        function hideDisplay(e) {
+            if(e) e.preventDefault();
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('add-partner-form').style.display = 'none';
         }
