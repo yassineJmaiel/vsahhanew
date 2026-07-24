@@ -4,9 +4,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div style="display: inline-flex; flex-direction: column; align-items: flex-start; gap: 24px;">
-                        <a href="#" class="back-link text-decoration-none" style="display: flex; align-items: center; gap: 8px; color: #26C6A0; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 600; line-height: normal;" onclick="hideDisplay(event)">
+                        <a href="#" class="back-link text-decoration-none" style="display: inline-flex; padding: 10px 20px; justify-content: center; align-items: center; gap: 8px; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.08); color: #FFF; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 600; line-height: normal;" onclick="hideDisplay(event)">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="width: 16px; height: 16px; flex-shrink: 0;">
-                              <path d="M8.00021 3.33276L3.33301 7.99996L8.00021 12.6672M3.33301 7.99996H12.6674" stroke="#26C6A0" stroke-width="2" stroke-linecap="round"/>
+                              <path d="M8.00021 3.33276L3.33301 7.99996L8.00021 12.6672M3.33301 7.99996H12.6674" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                             Back to Partners
                         </a>
@@ -17,18 +17,25 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="header-actions justify-content-lg-end flex-wrap">
+                    <div class="header-actions d-flex align-items-center justify-content-lg-end flex-wrap gap-3">
                         <div class="search-input-wrapper mb-2 mb-sm-0" style="display: flex; width: 233px; height: 34px; padding: 9px 15px; justify-content: center; align-items: flex-start; gap: 8px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, 0.00); background: #F1F3F7;">
                             <div style="display: flex; width: 180px; height: 16px; padding-right: 75.92px; align-items: center; flex-shrink: 0; gap: 8px;">
                                 <i class="bi bi-search" style="color: #757575; font-size: 13px;"></i>
                                 <input type="text" placeholder="Search metrics..." style="border: none; background: transparent; outline: none; display: flex; width: 104.08px; height: 16px; flex-direction: column; justify-content: center; flex-shrink: 0; color: #757575; font-family: Inter, sans-serif; font-size: 13px; font-style: normal; font-weight: 400; line-height: normal;">
                             </div>
                         </div>
-                        <button class="btn btn-refresh mb-2 mb-sm-0">
-                            <i class="bi bi-arrow-clockwise"></i> Refresh
+                        <button class="btn btn-refresh mb-2 mb-sm-0" style="display: flex; width: 110px; height: 37px; padding: 0 14px; justify-content: center; align-items: center; gap: 8px; border-radius: 50px; border: 1px solid #EEF0F4; background: #FFF; color: #4A5568; font-family: Inter; font-size: 14px; font-style: normal; font-weight: 600; line-height: 20px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style="width: 20px; height: 20px; flex-shrink: 0;">
+                                <path d="M17.5 10C17.5 11.4834 17.0601 12.9334 16.236 14.1668C15.4119 15.4001 14.2406 16.3614 12.8701 16.9291C11.4997 17.4968 9.99168 17.6453 8.53683 17.3559C7.08197 17.0665 5.7456 16.3522 4.6967 15.3033C3.64781 14.2544 2.9335 12.918 2.64411 11.4632C2.35472 10.0083 2.50325 8.50032 3.07091 7.12987C3.63856 5.75943 4.59986 4.58809 5.83323 3.76398C7.0666 2.93987 8.51664 2.5 10 2.5C12.1 2.5 14.1083 3.33333 15.6167 4.78333L17.5 6.66667M13.3333 6.66667H17.5L17.5 2.5" stroke="#4A5568" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Refresh
                         </button>
-                        <button class="btn btn-save-draft mb-2 mb-sm-0" id="header-btn-save">Save Draft</button>
-                        <button class="btn btn-cancel mb-2 mb-sm-0" id="header-btn-cancel" onclick="hideDisplay(event)">Cancel</button>
+                        <button class="btn btn-save-draft mb-2 mb-sm-0" id="header-btn-save" style="display: flex; width: 110px; height: 37px; padding: 0 14px; justify-content: center; align-items: center; gap: 8px; border-radius: 50px; border: 1px solid #EEF0F4; background: #FFF; color: #4A5568; font-family: Inter; font-size: 14px; font-style: normal; font-weight: 600; line-height: 20px;">
+                            Save Draft
+                        </button>
+                        <button class="btn btn-cancel mb-2 mb-sm-0" id="header-btn-cancel" onclick="hideDisplay(event)" style="display: inline-flex; padding: 10px 20px; justify-content: center; align-items: center; gap: 8px; border-radius: 100px; background: #26C6A0; color: #062A55; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 700; line-height: normal; border: none;">
+                            Annuler
+                        </button>
                     </div>
                 </div>
             </div>
@@ -36,27 +43,27 @@
     </div>
     <!-- End Page Header -->
     <!-- Start Partner Information Form Card -->
-    <div class="container-fluid position-relative" style="margin-top: -20px; z-index: 10;">
+    <div class="position-relative" style="display: inline-flex; padding: 0 0 2px 241px; justify-content: flex-end; align-items: center; margin-top: -20px; z-index: 10; width: 100%; box-sizing: border-box;">
         <div class="card shadow-sm border-0 mx-auto" style="border-radius: 16px; width: 1800px; max-width: 100%; align-self: stretch;">
             <!-- Stepper Header -->
             <div id="stepper-header-container" class="card-header bg-white border-bottom-0 pt-4 pb-3 px-4 px-xl-5 d-flex justify-content-between align-items-center flex-wrap gap-3" style="border-radius: 16px 16px 0 0;">
                 <div class="stepper d-flex align-items-center flex-wrap gap-2 gap-md-0" style="flex: 1; max-width: 700px;">
                     <!-- Step 1 Header -->
                     <div id="step-header-1" class="step active d-flex align-items-center gap-2">
-                        <span class="step-circle d-flex justify-content-center align-items-center rounded-circle" style="width: 28px; height: 28px; background-color: #0B4E89; color: white; font-size: 13px; font-weight: 600;">1</span>
-                        <span class="step-text fw-bold" style="color: #0B4E89; font-size: 14px;">Partner Information</span>
+                        <span class="step-circle" style="display: flex; width: 32px; height: 32px; padding: 7.5px 0; justify-content: center; align-items: center; flex-shrink: 0; border-radius: 16px; background: #0B4F8A; color: #FFF; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 700; line-height: normal;">1</span>
+                        <span class="step-text" style="flex: 1 0 0; color: #1E293B; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 600; line-height: normal;">Partner Information</span>
                     </div>
                     <div class="step-line d-none d-md-block mx-3 flex-grow-1" style="height: 2px; background: #E2E8F0; min-width: 40px;"></div>
                     <!-- Step 2 Header -->
                     <div id="step-header-2" class="step d-flex align-items-center gap-2">
-                        <span class="step-circle d-flex justify-content-center align-items-center rounded-circle border" style="width: 28px; height: 28px; color: #94A3B8; font-size: 13px; font-weight: 600;">2</span>
-                        <span class="step-text" style="color: #94A3B8; font-size: 14px;">Address & GPS</span>
+                        <span class="step-circle border" style="display: flex; width: 32px; height: 32px; padding: 7.5px 0; justify-content: center; align-items: center; flex-shrink: 0; border-radius: 16px; background: transparent; color: #94A3B8; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 700; line-height: normal;">2</span>
+                        <span class="step-text" style="flex: 1 0 0; color: #94A3B8; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: normal;">Address & GPS</span>
                     </div>
                     <div class="step-line d-none d-md-block mx-3 flex-grow-1" style="height: 2px; background: #E2E8F0; min-width: 40px;"></div>
                     <!-- Step 3 Header -->
                     <div id="step-header-3" class="step d-flex align-items-center gap-2">
-                        <span class="step-circle d-flex justify-content-center align-items-center rounded-circle border" style="width: 28px; height: 28px; color: #94A3B8; font-size: 13px; font-weight: 600;">3</span>
-                        <span class="step-text" style="color: #94A3B8; font-size: 14px;">Contact & Contract</span>
+                        <span class="step-circle border" style="display: flex; width: 32px; height: 32px; padding: 7.5px 0; justify-content: center; align-items: center; flex-shrink: 0; border-radius: 16px; background: transparent; color: #94A3B8; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 700; line-height: normal;">3</span>
+                        <span class="step-text" style="flex: 1 0 0; color: #94A3B8; font-family: Inter, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: normal;">Contact & Contract</span>
                     </div>
                 </div>
                 <div class="status-indicator">
@@ -498,7 +505,7 @@
                     circle.style.borderColor = '#dee2e6';
                     circle.innerHTML = i;
                     text.style.color = '#94A3B8';
-                    text.classList.remove('fw-bold');
+                    text.style.fontWeight = '400';
                 }
 
                 // Apply completed styles to previous steps
@@ -506,9 +513,9 @@
                     let h = document.getElementById('step-header-' + i);
                     let circle = h.querySelector('.step-circle');
                     
-                    circle.style.backgroundColor = '#0B4E89';
+                    circle.style.backgroundColor = '#0B4F8A';
                     circle.style.color = 'white';
-                    circle.style.borderColor = '#0B4E89';
+                    circle.style.borderColor = '#0B4F8A';
                     circle.innerHTML = '<i class="bi bi-check-lg"></i>';
                 }
 
@@ -517,11 +524,11 @@
                 let currentCircle = currentHeader.querySelector('.step-circle');
                 let currentText = currentHeader.querySelector('.step-text');
                 
-                currentCircle.style.backgroundColor = '#0B4E89';
+                currentCircle.style.backgroundColor = '#0B4F8A';
                 currentCircle.style.color = 'white';
-                currentCircle.style.borderColor = '#0B4E89';
-                currentText.style.color = '#0B4E89';
-                currentText.classList.add('fw-bold');
+                currentCircle.style.borderColor = '#0B4F8A';
+                currentText.style.color = '#1E293B';
+                currentText.style.fontWeight = '600';
             }
         }
     </script>
