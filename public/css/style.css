@@ -1015,3 +1015,98 @@ body {
         background-color: #0B4F8A;
     }
 }
+.btn-form-back {
+    display: flex;
+    height: 41px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    color: #64748B;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-form-back:hover {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.btn-form-continue {
+    display: flex;
+    width: 189px;
+    height: 41px;
+    padding: 12px 61px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #26C6A0 0%, #0B4F8A 100%);
+    color: #FFF;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-form-continue:hover {
+    opacity: 0.9;
+    color: #FFF;
+}
+
+
+.form-actions-custom {
+    display: flex;
+    padding: 39px 0 0 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #E2E8F0;
+    margin-top: 40px;
+}
+
+
+.add-partner-header {
+    display: inline-flex;
+    height: 187px;
+    padding: 48px 0 48px 60px;
+    justify-content: flex-end;
+    align-items: center;
+    background: #0B4E89;
+    width: 100%;
+}
+
+
+.wizard-step-title {
+    color: #1E293B;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.wizard-step-subtitle {
+    color: #64748B;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+}
+
+.form-label {
+    margin-bottom: 4px;
+    display: inline-block;
+    color: #1E293B;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

@@ -75,7 +75,7 @@
         <hr id="stepper-hr" class="m-0 text-muted stepper-divider">
 
         <div class="card-body form-card-body">
-            <div class="form-wrapper border rounded-4 form-wrapper-custom">
+            <div class="form-wrapper rounded-4 form-wrapper-custom">
                 
                 <form action="#" method="POST" id="partner-wizard-form">
                     @csrf
@@ -153,8 +153,9 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                      <path d="M10.0001 3.33276H5.9998C3.42227 3.33276 1.33276 5.42234 1.33276 7.99996C1.33276 10.5776 3.42227 12.6672 5.9998 12.6672H10.0001C12.5777 12.6672 14.6672 10.5776 14.6672 7.99996C14.6672 5.42234 12.5777 3.33276 10.0001 3.33276Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+                                      <path d="M9.66736 1H5.66704C3.0895 1 1 3.08958 1 5.6672C1 8.24482 3.0895 10.3344 5.66704 10.3344H9.66736C12.2449 10.3344 14.3344 8.24482 14.3344 5.6672C14.3344 3.08958 12.2449 1 9.66736 1Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                      <circle cx="5.667" cy="5.667" r="2" stroke="#0B4F8A" stroke-width="2"/>
                                     </svg> Logo URL
                                 </label>
                                 <input type="url" class="form-control" placeholder="Enter URL to partner logo">
@@ -197,6 +198,7 @@
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none">
                                       <path d="M6.73343 14.2006C7.9733 13.1298 11.6656 9.6628 11.6656 6.33383C11.6656 4.91921 11.1038 3.56253 10.1037 2.56224C9.10357 1.56196 7.74715 1 6.3328 1C4.91845 1 3.56204 1.56196 2.56194 2.56224C1.56185 3.56253 1 4.91921 1 6.33383C1 9.6628 4.6923 13.1298 5.93217 14.2006C6.04768 14.2874 6.18828 14.3344 6.3328 14.3344C6.47732 14.3344 6.61792 14.2874 6.73343 14.2006Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                      <circle cx="6.333" cy="6.333" r="2" stroke="#0B4F8A" stroke-width="2"/>
                                     </svg> Description
                                 </label>
                                 <textarea class="form-control" rows="3" placeholder="Enter optional partner description or notes..."></textarea>
@@ -204,9 +206,9 @@
                         </div>
 
                         <!-- Start Form Actions -->
-                        <div class="form-actions d-flex justify-content-end align-items-center gap-3 mt-5 pt-4 border-top">
-                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold" onclick="hideDisplay(event)">Back</button>
-                            <button type="button" class="btn btn-gradient-primary rounded-pill px-5 py-2 fw-bold border-0" onclick="goToStep(2)">Continue</button>
+                        <div class="form-actions form-actions-custom justify-content-end">
+                            <button type="button" class="btn btn-form-back" onclick="hideDisplay(event)">Back</button>
+                            <button type="button" class="btn btn-form-continue" onclick="goToStep(2)">Continue</button>
                         </div>
                         <!-- End Form Actions -->
                     </div>
@@ -222,8 +224,8 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none">
-                                      <path d="M6.73343 14.2006C7.9733 13.1298 11.6656 9.6628 11.6656 6.33383C11.6656 4.91921 11.1038 3.56253 10.1037 2.56224C9.10357 1.56196 7.74715 1 6.3328 1C4.91845 1 3.56204 1.56196 2.56194 2.56224C1.56185 3.56253 1 4.91921 1 6.33383C1 9.6628 4.6923 13.1298 5.93217 14.2006C6.04768 14.2874 6.18828 14.3344 6.3328 14.3344C6.47732 14.3344 6.61792 14.2874 6.73343 14.2006Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                      <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Address Line 1 <span class="required-mark">*</span>
                                 </label>
                                 <input type="text" class="form-control" placeholder="Street address, P.O. box, company name, c/o" required>
@@ -231,8 +233,8 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none">
-                                      <path d="M6.73343 14.2006C7.9733 13.1298 11.6656 9.6628 11.6656 6.33383C11.6656 4.91921 11.1038 3.56253 10.1037 2.56224C9.10357 1.56196 7.74715 1 6.3328 1C4.91845 1 3.56204 1.56196 2.56194 2.56224C1.56185 3.56253 1 4.91921 1 6.33383C1 9.6628 4.6923 13.1298 5.93217 14.2006C6.04768 14.2874 6.18828 14.3344 6.3328 14.3344C6.47732 14.3344 6.61792 14.2874 6.73343 14.2006Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                      <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Address Line 2 (Optional)
                                 </label>
                                 <input type="text" class="form-control" placeholder="Apartment, suite, unit, building, floor, etc.">
@@ -243,7 +245,14 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 14s5-3.5 5-7a5 5 0 10-10 0c0 3.5 5 7 5 7z" stroke="#0B4F8A" stroke-width="1.5"/><circle cx="8" cy="7" r="2" fill="#0B4F8A"/>
+                                      <g clip-path="url(#clip0_454_1620)">
+                                        <path d="M7.99979 6.66652H8.00646M7.99979 9.3334H8.00646M7.99979 3.99964H8.00646M10.6662 6.66652H10.6729M10.6662 9.3334H10.6729M10.6662 3.99964H10.6729M5.33339 6.66652H5.34006M5.33339 9.3334H5.34006M5.33339 3.99964H5.34006M5.99999 14.6672V12.667C5.99999 12.4902 6.07022 12.3206 6.19523 12.1956C6.32025 12.0705 6.4898 12.0003 6.66659 12.0003H9.33299C9.50979 12.0003 9.67934 12.0705 9.80435 12.1956C9.92936 12.3206 9.99959 12.4902 9.99959 12.667V14.6672M4.00019 1.33276H11.9994C12.7357 1.33276 13.3326 1.92977 13.3326 2.6662V13.3337C13.3326 14.0702 12.7357 14.6672 11.9994 14.6672H4.00019C3.26389 14.6672 2.66699 14.0702 2.66699 13.3337V2.6662C2.66699 1.92977 3.26389 1.33276 4.00019 1.33276Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="clip0_454_1620">
+                                          <rect width="16" height="16" fill="white"/>
+                                        </clipPath>
+                                      </defs>
                                     </svg> City <span class="required-mark">*</span>
                                 </label>
                                 <select class="form-select" required>
@@ -257,7 +266,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M2 4l4-2 4 2 4-2v10l-4 2-4-2-4 2V4zM6 2v10M10 4v10" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round"/>
+                                      <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> State / Province
                                 </label>
                                 <input type="text" class="form-control" placeholder="e.g. California">
@@ -267,9 +276,7 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <circle cx="8" cy="8" r="6" stroke="#0B4F8A" stroke-width="1.5"/><path d="M2 8h12M8 2a9 9 0 013 6 9 9 0 01-3 6 9 9 0 01-3-6 9 9 0 013-6z" stroke="#0B4F8A" stroke-width="1.5"/>
-                                    </svg> Country <span class="required-mark">*</span>
+                                    Country <span class="required-mark">*</span>
                                 </label>
                                 <select class="form-select" required>
                                     <option value="US" selected>United States</option>
@@ -281,7 +288,14 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M3 4h10a1 1 0 011 1v6a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1zm0 2l5 3 5-3" stroke="#0B4F8A" stroke-width="1.5"/>
+                                      <g clip-path="url(#clip0_454_1647)">
+                                        <path d="M5.33333 1.33276V3.99964M10.6667 1.33276V3.99964M2 6.66652H14M3.33333 2.6662H12.6667C13.403 2.6662 14 3.26321 14 3.99964V13.3337C14 14.0702 13.403 14.6672 12.6667 14.6672H3.33333C2.59695 14.6672 2 14.0702 2 13.3337V3.99964C2 3.26321 2.59695 2.6662 3.33333 2.6662Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="clip0_454_1647">
+                                          <rect width="16" height="16" fill="white"/>
+                                        </clipPath>
+                                      </defs>
                                     </svg> Postal Code
                                 </label>
                                 <input type="text" class="form-control" placeholder="e.g. 94103">
@@ -290,14 +304,14 @@
                         </div>
 
                         <!-- Start Form Actions -->
-                        <div class="form-actions d-flex justify-content-between align-items-center mt-5 pt-4 border-top">
+                        <div class="form-actions form-actions-custom">
                             <div class="d-flex align-items-center gap-3 text-muted form-notice-box">
                                 <i class="bi bi-exclamation-circle text-warning fs-5"></i>
                                 <small class="form-notice-text">By creating this partner, you'll be able to assign policies and manage relationships in the next step.</small>
                             </div>
                             <div class="d-flex gap-3">
-                                <button type="button" class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold" onclick="goToStep(1)">Back</button>
-                                <button type="button" class="btn btn-primary-blue rounded-pill px-5 py-2 fw-bold border-0" onclick="goToStep(3)">Continue</button>
+                                <button type="button" class="btn btn-form-back" onclick="goToStep(1)">Back</button>
+                                <button type="button" class="btn btn-form-continue" onclick="goToStep(3)">Continue</button>
                             </div>
                         </div>
                         <!-- End Form Actions -->
@@ -305,7 +319,7 @@
                     <!-- ================= END STEP 2 ================= -->
                     
                     <!-- ================= START STEP 3 ================= -->
-                    <div id="wizard-step-3" style="display: none;">
+                    <div id="wizard-step-3" class="wizard-step-container" style="display: none;">
                         <!-- Contact Information Section -->
                         <div class="mb-4">
                             <h2 class="wizard-step-title">Contact Information</h2>
@@ -316,7 +330,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 8a3 3 0 100-6 3 3 0 000 6zm-5 6a5 5 0 0110 0H3z" stroke="#0B4F8A" stroke-width="1.5"/>
+                                      <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contact Person
                                 </label>
                                 <input type="text" class="form-control" placeholder="Primary contact name">
@@ -325,7 +339,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M3 4h10a1 1 0 011 1v6a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1zm0 2l5 3 5-3" stroke="#0B4F8A" stroke-width="1.5"/>
+                                      <path d="M2 3.33276V12.6672M5.33333 3.33276V12.6672M8 3.33276V12.6672M11.3333 3.33276V12.6672M14 3.33276V12.6672" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Email
                                 </label>
                                 <input type="email" class="form-control" placeholder="Contact email address">
@@ -336,7 +350,14 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M3 3h3l2 4-2.5 1.5a11 11 0 005 5L12 11l4 2v3a2 2 0 01-2 2A15 15 0 011 3a2 2 0 012-2z" stroke="#0B4F8A" stroke-width="1.5"/>
+                                      <g clip-path="url(#clip0_472_2814)">
+                                        <path d="M7.99979 6.66652H8.00646M7.99979 9.3334H8.00646M7.99979 3.99964H8.00646M10.6662 6.66652H10.6729M10.6662 9.3334H10.6729M10.6662 3.99964H10.6729M5.33339 6.66652H5.34006M5.33339 9.3334H5.34006M5.33339 3.99964H5.34006M5.99999 14.6672V12.667C5.99999 12.4902 6.07022 12.3206 6.19523 12.1956C6.32025 12.0705 6.4898 12.0003 6.66659 12.0003H9.33299C9.50979 12.0003 9.67934 12.0705 9.80435 12.1956C9.92936 12.3206 9.99959 12.4902 9.99959 12.667V14.6672M4.00019 1.33276H11.9994C12.7357 1.33276 13.3326 1.92977 13.3326 2.6662V13.3337C13.3326 14.0702 12.7357 14.6672 11.9994 14.6672H4.00019C3.26389 14.6672 2.66699 14.0702 2.66699 13.3337V2.6662C2.66699 1.92977 3.26389 1.33276 4.00019 1.33276Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="clip0_472_2814">
+                                          <rect width="16" height="16" fill="white"/>
+                                        </clipPath>
+                                      </defs>
                                     </svg> Phone
                                 </label>
                                 <input type="tel" class="form-control" placeholder="Enter contact phone number">
@@ -345,7 +366,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <circle cx="8" cy="8" r="6" stroke="#0B4F8A" stroke-width="1.5"/><path d="M2 8h12M8 2a9 9 0 013 6 9 9 0 01-3 6 9 9 0 01-3-6 9 9 0 013-6z" stroke="#0B4F8A" stroke-width="1.5"/>
+                                      <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Country Code
                                 </label>
                                 <input type="text" class="form-control" placeholder="MA +212">
@@ -363,7 +384,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <rect x="2" y="3" width="12" height="11" rx="2" stroke="#0B4F8A" stroke-width="1.5"/><path d="M5 1v3M11 1v3M2 7h12" stroke="#0B4F8A" stroke-width="1.5"/>
+                                      <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contract Start Date <span class="required-mark">*</span>
                                 </label>
                                 <input type="text" class="form-control" placeholder="07/07/2026" required>
@@ -372,7 +393,7 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <rect x="2" y="3" width="12" height="11" rx="2" stroke="#0B4F8A" stroke-width="1.5"/><path d="M5 1v3M11 1v3M2 7h12" stroke="#0B4F8A" stroke-width="1.5"/>
+                                      <path d="M2 3.33276V12.6672M5.33333 3.33276V12.6672M8 3.33276V12.6672M11.3333 3.33276V12.6672M14 3.33276V12.6672" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contract End Date
                                 </label>
                                 <input type="text" class="form-control" placeholder="DD/MM/YYYY">
@@ -381,9 +402,15 @@
                         </div>
                         <div class="row g-4 mb-4">
                             <div class="col-md-6">
-                                <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 10V3m0 0L5 6m3-3l3 3M3 13h10" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round"/>
+                                      <g clip-path="url(#clip0_472_2853)">
+                                        <path d="M7.99979 6.66652H8.00646M7.99979 9.3334H8.00646M7.99979 3.99964H8.00646M10.6662 6.66652H10.6729M10.6662 9.3334H10.6729M10.6662 3.99964H10.6729M5.33339 6.66652H5.34006M5.33339 9.3334H5.34006M5.33339 3.99964H5.34006M5.99999 14.6672V12.667C5.99999 12.4902 6.07022 12.3206 6.19523 12.1956C6.32025 12.0705 6.4898 12.0003 6.66659 12.0003H9.33299C9.50979 12.0003 9.67934 12.0705 9.80435 12.1956C9.92936 12.3206 9.99959 12.4902 9.99959 12.667V14.6672M4.00019 1.33276H11.9994C12.7357 1.33276 13.3326 1.92977 13.3326 2.6662V13.3337C13.3326 14.0702 12.7357 14.6672 11.9994 14.6672H4.00019C3.26389 14.6672 2.66699 14.0702 2.66699 13.3337V2.6662C2.66699 1.92977 3.26389 1.33276 4.00019 1.33276Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="clip0_472_2853">
+                                          <rect width="16" height="16" fill="white"/>
+                                        </clipPath>
+                                      </defs>
                                     </svg> Contract File
                                 </label>
                                 <input type="text" class="form-control" placeholder="Upload contract document (PDF/DOC)">
@@ -392,22 +419,34 @@
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M3 4h10M3 8h10M3 12h6" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round"/>
+                                      <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contract Notes
                                 </label>
                                 <textarea class="form-control" rows="3" placeholder="Add any contract notes or remarks..."></textarea>
                             </div>
                         </div>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                      <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                    </svg> Add Logo
+                                </label>
+                                <input type="text" class="form-control" placeholder="Upload or link logo">
+                            </div>
+                        </div>
 
                         <!-- Start Form Actions -->
-                        <div class="form-actions d-flex justify-content-between align-items-center mt-5 pt-4 border-top">
+                        <div class="form-actions form-actions-custom">
                             <div class="d-flex align-items-center gap-3 text-muted form-notice-box">
                                 <i class="bi bi-exclamation-circle text-warning fs-5"></i>
                                 <small class="form-notice-text">By creating this partner, you'll be able to assign policies and manage relationships in the next step.</small>
                             </div>
                             <div class="d-flex gap-3">
-                                <button type="button" class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold" onclick="goToStep(2)">Back</button>
-                                <button type="button" class="btn btn-primary-blue rounded-pill px-5 py-2 fw-bold border-0" onclick="goToStep(4)">Continue</button>
+                                <button type="button" class="btn btn-form-back" onclick="goToStep(2)">Back</button>
+                                <button type="button" class="btn btn-form-continue" onclick="goToStep(4)">Create</button>
                             </div>
                         </div>
                         <!-- End Form Actions -->
@@ -543,8 +582,7 @@
             document.getElementById('main-page-title').innerText = 'Partner Added';
             document.getElementById('header-btn-save').style.display = 'none';
             document.getElementById('header-btn-cancel').style.display = 'none';
-            document.querySelector('.form-wrapper').style.borderColor = 'transparent';
-            document.querySelector('.form-wrapper').classList.remove('border');
+            // Removed form-wrapper border manipulation
         } else {
             // Reset header if we go back
             document.getElementById('stepper-header-container').style.display = 'flex';
@@ -552,8 +590,7 @@
             document.getElementById('main-page-title').innerText = 'Add New Partner';
             document.getElementById('header-btn-save').style.display = 'inline-block';
             document.getElementById('header-btn-cancel').style.display = 'inline-block';
-            document.querySelector('.form-wrapper').style.borderColor = '#3b82f6';
-            document.querySelector('.form-wrapper').classList.add('border');
+            // Removed form-wrapper border manipulation
 
             // Reset headers to default gray state
             for(let i=1; i<=3; i++) {
