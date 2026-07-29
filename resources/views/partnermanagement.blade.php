@@ -72,7 +72,7 @@
                         <a class="nav-link active" href="#">All Partners <span class="badge">4</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Insurance <span class="badge">2</span></a>
+                        <a class="nav-link" href="#">Insurance <span class="badge">3</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Brokers <span class="badge">0</span></a>
@@ -117,7 +117,7 @@
                 ],
                 [
                     'title' => 'Active Partners',
-                    'value' => '2',
+                    'value' => '3',
                     'color' => 'green',
                     'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M17.4989 7.66951C17.8795 9.53725 17.6082 11.479 16.7304 13.171C15.8526 14.863 14.4213 16.2029 12.6751 16.9673C10.929 17.7317 8.97357 17.8743 7.13496 17.3715C5.29636 16.8686 3.68571 15.7507 2.57161 14.204C1.45752 12.6574 0.907317 10.7755 1.01277 8.87233C1.11822 6.96912 1.87295 5.15958 3.15109 3.74548C4.42923 2.33138 6.15353 1.3982 8.03644 1.10155C9.91934 0.804903 11.847 1.16272 13.498 2.11534M6.83171 8.50244L9.33171 11.0024L17.665 2.66911" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>',
                     'border' => '#00A878'
@@ -374,9 +374,9 @@
                                 'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9.25499 16.4627C12.3747 15.3752 14.9994 13.5001 14.9994 9.74999V4.49982C14.9994 4.30091 14.9204 4.11013 14.7798 3.96948C14.6391 3.82882 14.4484 3.7498 14.2495 3.7498C12.7496 3.7498 10.8823 2.85727 9.56995 1.70973C9.41108 1.57398 9.20897 1.49939 9.00001 1.49939C8.79105 1.49939 8.58894 1.57398 8.43007 1.70973C7.1252 2.84977 5.25039 3.7498 3.75054 3.7498C3.55164 3.7498 3.3609 3.82882 3.22026 3.96948C3.07962 4.11013 3.00061 4.30091 3.00061 4.49982V9.74999C3.00061 13.5001 5.62535 15.3752 8.75254 16.4552C8.91417 16.5154 9.09162 16.5181 9.25499 16.4627Z" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/></svg>',
                                 'color' => 'blue',
                                 'name' => 'Insurance Providers',
-                                'count' => '2 partners',
-                                'pct' => '66%',
-                                'frac' => '2 / 3',
+                                'count' => '3 partners',
+                                'pct' => '75%',
+                                'frac' => '3 / 4',
                                 'bg' => '#DBEAFE',
                                 'text' => '#2563EB'
                             ],
@@ -386,7 +386,7 @@
                                 'name' => 'Brokers',
                                 'count' => '0 partners',
                                 'pct' => '0%',
-                                'frac' => '0 / 3',
+                                'frac' => '0 / 4',
                                 'bg' => '#D1FAE5',
                                 'text' => '#10B981'
                             ],
@@ -395,8 +395,8 @@
                                 'color' => 'yellow',
                                 'name' => 'TPAs',
                                 'count' => '1 partner',
-                                'pct' => '33%',
-                                'frac' => '1 / 3',
+                                'pct' => '25%',
+                                'frac' => '1 / 4',
                                 'bg' => '#FFFBEB',
                                 'text' => '#F59E0B'
                             ],
