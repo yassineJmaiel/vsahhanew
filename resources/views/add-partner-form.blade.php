@@ -319,7 +319,11 @@
                     <!-- ================= END STEP 2 ================= -->
                     
                     <!-- ================= START STEP 3 ================= -->
+<<<<<<< HEAD
                     <div id="wizard-step-3" class="wizard-step-container" style="display: none;">
+=======
+                    {{-- <div id="wizard-step-3" style="display: none;">
+>>>>>>> aa41b2dbd6f9f88b13bf588e6ecda0166404a4d1
                         <!-- Contact Information Section -->
                         <div class="mb-4">
                             <h2 class="wizard-step-title">Contact Information</h2>
@@ -445,9 +449,152 @@
                                 <small class="form-notice-text">By creating this partner, you'll be able to assign policies and manage relationships in the next step.</small>
                             </div>
                             <div class="d-flex gap-3">
+<<<<<<< HEAD
                                 <button type="button" class="btn btn-form-back" onclick="goToStep(2)">Back</button>
                                 <button type="button" class="btn btn-form-continue" onclick="goToStep(4)">Create</button>
                             </div>
+=======
+                                <button type="button" class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold" onclick="goToStep(2)">Back</button>
+                                <button type="button" class="btn btn-primary-blue rounded-pill px-5 py-2 fw-bold border-0" onclick="goToStep(4)">Continue</button>
+                            </div> --}}
+                            <!-- Contact Information Header -->
+
+<div id="wizard-step-3" style="display: none;">
+ <div class="mb-4">
+    <h2 class="fs-5 fw-bold text-dark mb-1">Contact Information</h2>
+    <p class="text-secondary fs-6">Enter contact details for this partner.</p>
+</div>
+
+
+<!-- Contact Fields Row 1 -->
+<div class="row g-4 mb-4">
+    <div class="col-md-6">
+        <label class="form-label d-flex align-items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 8a3 3 0 100-6 3 3 0 000 6zm-5 6a5 5 0 0110 0H3z" stroke="#0B4F8A" stroke-width="1.5"/>
+            </svg> 
+            <span>Contact Person</span>
+        </label>
+        <input type="text" class="form-control" placeholder="Primary contact name">
+        <div class="form-text">Primary contact name</div>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label d-flex align-items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 4h10a1 1 0 011 1v6a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1zm0 2l5 3 5-3" stroke="#0B4F8A" stroke-width="1.5"/>
+            </svg> 
+            <span>Email</span>
+        </label>
+        <input type="email" class="form-control" placeholder="Contact email address">
+        <div class="form-text">Contact email address</div>
+    </div>
+</div>
+
+<!-- Contact Fields Row 2 -->
+<div class="row g-4 mb-5">
+    <div class="col-md-6">
+        <label class="form-label d-flex align-items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 3h3l2 4-2.5 1.5a11 11 0 005 5L12 11l4 2v3a2 2 0 01-2 2A15 15 0 011 3a2 2 0 012-2z" stroke="#0B4F8A" stroke-width="1.5"/>
+            </svg> 
+            <span>Phone</span>
+        </label>
+        <input type="tel" class="form-control" placeholder="Enter contact phone number">
+        <div class="form-text">Enter contact phone number</div>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label d-flex align-items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="6" stroke="#0B4F8A" stroke-width="1.5"/><path d="M2 8h12M8 2a9 9 0 013 6 9 9 0 01-3 6 9 9 0 01-3-6 9 9 0 013-6z" stroke="#0B4F8A" stroke-width="1.5"/>
+            </svg> 
+            <span>Country Code</span>
+        </label>
+        <input type="text" class="form-control" placeholder="MA +212">
+        <div class="form-text">Country code</div>
+    </div>
+</div>
+
+<!-- Contract Information Section -->
+<div class="row g-4 mb-4">
+    <!-- Left Column: Section Title + Start Date + Contract File -->
+    <div class="col-md-6">
+        <div class="mb-4">
+            <h2 class="fs-5 fw-bold text-dark mb-1">Contract Information</h2>
+            <p class="text-secondary fs-6">Set the contract period for this partnership.</p>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="2" y="3" width="12" height="11" rx="2" stroke="#0B4F8A" stroke-width="1.5"/><path d="M5 1v3M11 1v3M2 7h12" stroke="#0B4F8A" stroke-width="1.5"/>
+                </svg> 
+                <span>Contract Start Date <span class="text-danger">*</span></span>
+            </label>
+            <input type="text" class="form-control" placeholder="07/07/2026" required>
+            <div class="form-text">When the partnership begins</div>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 10V3m0 0L5 6m3-3l3 3M3 13h10" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round"/>
+                </svg> 
+                <span>Contract File</span>
+            </label>
+            <input type="text" class="form-control" placeholder="Upload contract document (PDF/DOC)">
+            <div class="form-text">Enter a path to the uploaded contract file (file upload will be implemented in a future phase)</div>
+        </div>
+    </div>
+
+    <!-- Right Column: End Date + Contract Notes + Add Logo -->
+    <div class="col-md-6 d-flex flex-column justify-content-between">
+        <div>
+            <div class="mb-4">
+                <label class="form-label d-flex align-items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect x="2" y="3" width="12" height="11" rx="2" stroke="#0B4F8A" stroke-width="1.5"/><path d="M5 1v3M11 1v3M2 7h12" stroke="#0B4F8A" stroke-width="1.5"/>
+                    </svg> 
+                    <span>Contract End Date</span>
+                </label>
+                <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                <div class="form-text">Optional; leave blank for indefinite</div>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label d-flex align-items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 4h10M3 8h10M3 12h6" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg> 
+                    <span>Contract Notes</span>
+                </label>
+                <textarea class="form-control" rows="3" placeholder="Add any contract notes or remarks..."></textarea>
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label d-flex align-items-center gap-2 fw-semibold text-dark cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 8a3 3 0 100-6 3 3 0 000 6zm-5 6a5 5 0 0110 0H3z" stroke="#0B4F8A" stroke-width="1.5"/>
+                </svg>
+                <span>Add Logo</span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<!-- Form Actions Footer -->
+<div class="form-actions d-flex justify-content-between align-items-center mt-5 pt-4">
+    <div class="d-flex align-items-center gap-2 text-muted">
+        <i class="bi bi-info-circle text-warning fs-5"></i>
+        <small class="form-notice-text">By creating this partner, you'll be able to assign policies and manage relationships in the next step.</small>
+    </div>
+    <div class="d-flex gap-3">
+        <button type="button" class="btn btn-outline-secondary rounded-pill px-4 py-2" onclick="goToStep(2)">Back</button>
+        <button type="button" class="btn btn-primary rounded-pill px-5 py-2 fw-semibold" onclick="goToStep(4)">Create</button>
+    </div>
+</div>
+</div>
+>>>>>>> aa41b2dbd6f9f88b13bf588e6ecda0166404a4d1
                         </div>
                         <!-- End Form Actions -->
                     </div>
@@ -564,7 +711,7 @@
     </div>
 </div>
 
-<script>
+{{-- <script>
     function goToStep(step) {
         // Hide all steps
         document.getElementById('wizard-step-1').style.display = 'none';
@@ -591,6 +738,76 @@
             document.getElementById('header-btn-save').style.display = 'inline-block';
             document.getElementById('header-btn-cancel').style.display = 'inline-block';
             // Removed form-wrapper border manipulation
+
+            // Reset headers to default gray state
+            for(let i=1; i<=3; i++) {
+                let h = document.getElementById('step-header-' + i);
+                let circle = h.querySelector('.step-circle');
+                let text = h.querySelector('.step-text');
+                
+                circle.style.backgroundColor = 'transparent';
+                circle.style.color = '#94A3B8';
+                circle.style.borderColor = '#dee2e6';
+                circle.innerHTML = i;
+                text.style.color = '#94A3B8';
+                text.style.fontWeight = '400';
+            }
+
+            // Apply completed styles to previous steps
+            for(let i=1; i<step; i++) {
+                let h = document.getElementById('step-header-' + i);
+                let circle = h.querySelector('.step-circle');
+                
+                circle.style.backgroundColor = '#0B4F8A';
+                circle.style.color = 'white';
+                circle.style.borderColor = '#0B4F8A';
+                circle.innerHTML = '<i class="bi bi-check-lg"></i>';
+            }
+
+            // Apply active styles to current step
+            let currentHeader = document.getElementById('step-header-' + step);
+            let currentCircle = currentHeader.querySelector('.step-circle');
+            let currentText = currentHeader.querySelector('.step-text');
+            
+            currentCircle.style.backgroundColor = '#0B4F8A';
+            currentCircle.style.color = 'white';
+            currentCircle.style.borderColor = '#0B4F8A';
+            currentText.style.color = '#1E293B';
+            currentText.style.fontWeight = '600';
+        }
+    }
+</script> --}}
+
+
+<script>
+    function goToStep(step) {
+        // Hide all steps
+        document.getElementById('wizard-step-1').style.display = 'none';
+        document.getElementById('wizard-step-2').style.display = 'none';
+        document.getElementById('wizard-step-3').style.display = 'none';
+        document.getElementById('wizard-step-4').style.display = 'none';
+        
+        // Show target step using 'block' so standard page layout & Bootstrap grid rows work properly
+        document.getElementById('wizard-step-' + step).style.display = 'block';
+
+        if (step === 4) {
+            // Success state UI changes
+            document.getElementById('stepper-header-container').style.display = 'none';
+            document.getElementById('stepper-hr').style.display = 'none';
+            document.getElementById('main-page-title').innerText = 'Partner Added';
+            document.getElementById('header-btn-save').style.display = 'none';
+            document.getElementById('header-btn-cancel').style.display = 'none';
+            document.querySelector('.form-wrapper').style.borderColor = 'transparent';
+            document.querySelector('.form-wrapper').classList.remove('border');
+        } else {
+            // Reset header if we go back
+            document.getElementById('stepper-header-container').style.display = 'flex';
+            document.getElementById('stepper-hr').style.display = 'block';
+            document.getElementById('main-page-title').innerText = 'Add New Partner';
+            document.getElementById('header-btn-save').style.display = 'inline-block';
+            document.getElementById('header-btn-cancel').style.display = 'inline-block';
+            document.querySelector('.form-wrapper').style.borderColor = '#3b82f6';
+            document.querySelector('.form-wrapper').classList.add('border');
 
             // Reset headers to default gray state
             for(let i=1; i<=3; i++) {
