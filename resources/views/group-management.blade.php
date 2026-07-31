@@ -253,13 +253,13 @@
         </div>
         <!-- End Main Content Area -->
 
+    </div>
+
         <!-- Start Add Group Form -->
         <div id="add-group-form" style="display: none;">
             @include('add-group-form')
         </div>
         <!-- End Add Group Form -->
-
-    </div>
 
     <script>
         function display() {

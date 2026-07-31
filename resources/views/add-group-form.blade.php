@@ -1,5 +1,5 @@
 <!-- Start Page Header -->
-<div class="page-header add-partner-header">
+<div class="page-header add-group-header">
     <div class="container-fluid p-0">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
@@ -71,7 +71,7 @@
         <div class="card-body form-card-body">
             <div class="form-wrapper rounded-4 form-wrapper-custom">
                 
-                <form action="#" method="POST" id="partner-wizard-form">
+                <form action="#" method="POST" id="group-wizard-form">
                     @csrf
                     
                     <!-- ================= START STEP 1 ================= -->
@@ -442,81 +442,61 @@
 <script>
     // JS for Step Navigation in Group Form
     function goToStep(step) {
-        // Hide all steps
-        document.querySelectorAll('.wizard-step-container').forEach(el => el.style.display = 'none');
-        document.getElementById('wizard-step-3').style.display = 'none'; // The success step
-        
-        // Update header state
-        if (step === 3) { // Success state
+        // Hide all wizard steps
+        document.getElementById('wizard-step-1').style.display = 'none';
+        document.getElementById('wizard-step-2').style.display = 'none';
+        document.getElementById('wizard-step-3').style.display = 'none';
+
+        if (step === 3) {
+            // Success state
             document.getElementById('stepper-header-container').style.display = 'none';
             document.getElementById('stepper-hr').style.display = 'none';
-            
-            // Show step 3 content
-            document.getElementById('wizard-step-3').style.display = 'block';
-            
-            // Change page header title
-            document.getElementById('main-page-title').innerText = "Successful Creation";
-            document.querySelector('.header-page-subtitle').innerText = "Register a new client group to the insurance network";
-            // Hide header actions
+            document.getElementById('main-page-title').innerText = 'Successful Creation';
+            document.querySelector('.header-page-subtitle').innerText = 'Register a new client group to the insurance network';
             document.querySelector('.header-actions').style.display = 'none';
-            
+            document.getElementById('wizard-step-3').style.display = 'block';
         } else {
-            // Show stepper
+            // Normal wizard step
             document.getElementById('stepper-header-container').style.display = 'flex';
             document.getElementById('stepper-hr').style.display = 'block';
-            document.getElementById('main-page-title').innerText = "Create Group";
-            document.querySelector('.header-page-subtitle').innerText = "Register a new client group to the insurance network";
+            document.getElementById('main-page-title').innerText = 'Create Group';
+            document.querySelector('.header-page-subtitle').innerText = 'Register a new client group to the insurance network';
             document.querySelector('.header-actions').style.display = 'flex';
-            
-            // Show targeted step content
             document.getElementById('wizard-step-' + step).style.display = 'block';
-            
-            // Update active state in stepper header
-            if (step === 1) {
-                // Set step 1 to active
-                document.getElementById('step-header-1').classList.add('active');
-                document.getElementById('step-header-1').querySelector('.step-circle').classList.remove('inactive', 'done');
-                document.getElementById('step-header-1').querySelector('.step-circle').classList.add('active');
-                document.getElementById('step-header-1').querySelector('.step-circle').innerHTML = '1';
-                document.getElementById('step-header-1').querySelector('.step-text').classList.remove('inactive');
-                
-                // Set step 2 to inactive
-                document.getElementById('step-header-2').classList.remove('active');
-                document.getElementById('step-header-2').querySelector('.step-circle').classList.add('inactive');
-                document.getElementById('step-header-2').querySelector('.step-circle').classList.remove('active', 'done');
-                document.getElementById('step-header-2').querySelector('.step-text').classList.add('inactive');
-                
-                // Styling
-                document.getElementById('step-header-1').querySelector('.step-circle').style.backgroundColor = '#0b6375';
-                document.getElementById('step-header-1').querySelector('.step-circle').style.color = 'white';
-                document.getElementById('step-header-1').querySelector('.step-circle').style.borderColor = '#0b6375';
-                
-                document.getElementById('step-header-2').querySelector('.step-circle').style.backgroundColor = 'transparent';
-                document.getElementById('step-header-2').querySelector('.step-circle').style.color = '#a0aec0';
-                document.getElementById('step-header-2').querySelector('.step-circle').style.borderColor = '#dee2e6';
-            } else if (step === 2) {
-                // Set step 1 to done
-                document.getElementById('step-header-1').classList.remove('active');
-                document.getElementById('step-header-1').querySelector('.step-circle').classList.remove('active', 'inactive');
-                document.getElementById('step-header-1').querySelector('.step-circle').classList.add('done');
-                document.getElementById('step-header-1').querySelector('.step-circle').innerHTML = '<i class="bi bi-check2"></i>';
-                document.getElementById('step-header-1').querySelector('.step-text').classList.add('inactive');
-                
-                // Set step 2 to active
-                document.getElementById('step-header-2').classList.add('active');
-                document.getElementById('step-header-2').querySelector('.step-circle').classList.remove('inactive', 'done');
-                document.getElementById('step-header-2').querySelector('.step-circle').classList.add('active');
-                document.getElementById('step-header-2').querySelector('.step-text').classList.remove('inactive');
-                
-                // Styling
-                document.getElementById('step-header-1').querySelector('.step-circle').style.backgroundColor = '#0b6375';
-                document.getElementById('step-header-1').querySelector('.step-circle').style.color = 'white';
-                document.getElementById('step-header-1').querySelector('.step-circle').style.borderColor = '#0b6375';
-                
-                document.getElementById('step-header-2').querySelector('.step-circle').style.backgroundColor = '#0b6375';
-                document.getElementById('step-header-2').querySelector('.step-circle').style.color = 'white';
-                document.getElementById('step-header-2').querySelector('.step-circle').style.borderColor = '#0b6375';
+
+            // Reset all step headers to default gray
+            for (let i = 1; i <= 2; i++) {
+                let h = document.getElementById('step-header-' + i);
+                let circle = h.querySelector('.step-circle');
+                let text = h.querySelector('.step-text');
+                circle.style.backgroundColor = 'transparent';
+                circle.style.color = '#94A3B8';
+                circle.style.borderColor = '#dee2e6';
+                circle.innerHTML = i;
+                text.style.color = '#94A3B8';
+                text.style.fontWeight = '400';
             }
+
+            // Mark completed steps (before current)
+            for (let i = 1; i < step; i++) {
+                let h = document.getElementById('step-header-' + i);
+                let circle = h.querySelector('.step-circle');
+                circle.style.backgroundColor = '#0B4F8A';
+                circle.style.color = 'white';
+                circle.style.borderColor = '#0B4F8A';
+                circle.innerHTML = '<i class="bi bi-check-lg"></i>';
+            }
+
+            // Mark active step
+            let currentHeader = document.getElementById('step-header-' + step);
+            let currentCircle = currentHeader.querySelector('.step-circle');
+            let currentText = currentHeader.querySelector('.step-text');
+            currentCircle.style.backgroundColor = '#0B4F8A';
+            currentCircle.style.color = 'white';
+            currentCircle.style.borderColor = '#0B4F8A';
+            currentCircle.innerHTML = step;
+            currentText.style.color = '#1E293B';
+            currentText.style.fontWeight = '600';
         }
     }
 </script>
