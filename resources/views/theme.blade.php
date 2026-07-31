@@ -52,7 +52,7 @@
           <i class="bi bi-grid"></i>
           <span>General Dashboard</span>
         </a>
-        <a href="#" class="sidebar-link">
+        <a href="{{ route('partners.index') }}" class="sidebar-link {{ request()->routeIs('partners.index') ? 'active' : '' }}">
           <i class="bi bi-person"></i>
           <span>Partners</span>
         </a>
@@ -73,7 +73,7 @@
           </div>
           <span class="sidebar-badge">3</span>
         </a>
-        <a href="#" class="sidebar-link justify-content-between">
+        <a href="{{ route('groupmanagement') }}" class="sidebar-link justify-content-between {{ request()->routeIs('groupmanagement') ? 'active' : '' }}">
           <div class="d-flex align-items-center gap-2">
             <i class="bi bi-briefcase"></i>
             <span>Group Management</span>
@@ -168,6 +168,7 @@
     <!-- Main Content Area -->
     <div class="content-area">
       <!-- Header / Top Navbar -->
+      @unless(View::hasSection('hide_top_navbar'))
       <header class="top-navbar d-flex align-items-center justify-content-between shadow-sm">
         <div class="d-flex align-items-center gap-3">
           <button class="btn btn-light d-lg-none" id="sidebarToggleBtn">
@@ -198,6 +199,7 @@
           </div>
         </div>
       </header>
+      @endunless
 
       <!-- Main Dashboard Page Content -->
       <main class="p-4 flex-grow-1">
