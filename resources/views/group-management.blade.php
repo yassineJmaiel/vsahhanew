@@ -3,6 +3,8 @@
 
 @section('content')
     <div class="container-fluid p-0">
+        <!-- Start Main Content Area -->
+        <div id="main-content">
         <!-- Page Title & Actions Row -->
         <div class="group-page-header d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
             <div class="header-title-section">
@@ -56,7 +58,7 @@
                 </button>
 
                 <!-- Add Group Button -->
-                <button class="btn btn-add-group">
+                <button class="btn btn-add-group d-flex align-items-center gap-2" onclick="display()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                       <path d="M3.74902 8.99999H14.2502M8.99962 3.74939V14.2506" stroke="white" stroke-width="2" stroke-linecap="round"/>
                     </svg>
@@ -248,5 +250,27 @@
             </div>
             <!-- End Group Overview -->
         </div>
+        </div>
+        <!-- End Main Content Area -->
+
+        <!-- Start Add Group Form -->
+        <div id="add-group-form" style="display: none;">
+            @include('add-group-form')
+        </div>
+        <!-- End Add Group Form -->
+
     </div>
+
+    <script>
+        function display() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('add-group-form').style.display = 'block';
+        }
+
+        function hideDisplay(e) {
+            if(e) e.preventDefault();
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('add-group-form').style.display = 'none';
+        }
+    </script>
 @endsection

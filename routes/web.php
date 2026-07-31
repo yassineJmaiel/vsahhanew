@@ -33,6 +33,10 @@ Route::middleware('jwt.session')->group(function () {
     Route::get('/add-partner', function () {
         return view('add-partner-form');
     })->name('add-partner');
+
+    Route::get('/add-group', function () {
+        return view('add-group-form');
+    })->name('add-group');
 });
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
