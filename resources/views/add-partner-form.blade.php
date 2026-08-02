@@ -77,9 +77,8 @@
         <div class="card-body form-card-body">
             <div class="form-wrapper rounded-4 form-wrapper-custom">
                 
-                <form action="#" method="POST" id="partner-wizard-form">
-                    @csrf
-                    
+             <form id="partnerForm" enctype="multipart/form-data">
+                         @csrf         
                     <!-- ================= START STEP 1 ================= -->
                     <div id="wizard-step-1" class="wizard-step-container">
                         <div>
@@ -94,8 +93,13 @@
                                       <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Partner Name <span class="required-mark">*</span>
                                 </label>
-                                <input type="text" class="form-control" placeholder="e.g. Acme Marketing Agency" required>
-                                <div class="form-text">The formal legal name of the partner organization.</div>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="e.g. Acme Marketing Agency" 
+                                        required 
+                                        name="name"
+                                        id="partner_name">                                <div class="form-text">The formal legal name of the partner organization.</div>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">
@@ -103,7 +107,7 @@
                                       <path d="M2 3.33276V12.6672M5.33333 3.33276V12.6672M8 3.33276V12.6672M11.3333 3.33276V12.6672M14 3.33276V12.6672" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Partner Type <span class="required-mark">*</span>
                                 </label>
-                                <select class="form-select" required>
+                                <select class="form-select" required name="partner_type">
                                     <option value="" selected disabled>Select partner category</option>
                                     <option value="standard">Standard</option>
                                     <option value="premium">Premium</option>
@@ -111,7 +115,8 @@
                                 </select>
                                 <div class="form-text">Standard, Premium, or Corporate partner.</div>
                                 <div class="mt-2">
-                                    <a href="#" class="auto-generate-link">
+                                    <a href="#" id="generateCode" class="auto-generate-link">
+
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                                           <path d="M1.5 6C1.5 4.80653 1.97411 3.66193 2.81802 2.81802C3.66193 1.97411 4.80653 1.5 6 1.5C7.25802 1.50473 8.46552 1.99561 9.37 2.87L10.5 4M8 4H10.5V1.5M10.5 6C10.5 7.19347 10.0259 8.33807 9.18198 9.18198C8.33807 10.0259 7.19347 10.5 6 10.5C4.74198 10.4953 3.53448 10.0044 2.63 9.13L1.5 8M1.5 10.5V8H4" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                         </svg> Auto-generate code
@@ -133,7 +138,12 @@
                                       </defs>
                                     </svg> Internal ID / Short Code
                                 </label>
-                                <input type="text" class="form-control" placeholder="ID will be auto-generated at the time of save">
+                                <input 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="ID will be auto-generated at the time of save" 
+                                name="internal_code"
+                                id="internal_code">                               
                                 <div class="form-text">Partner will use its own internal short code for identification</div>
                             </div>
                             <div class="col-md-6">
@@ -142,7 +152,7 @@
                                       <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Partner Status <span class="required-mark">*</span>
                                 </label>
-                                <select class="form-select" required>
+                                <select class="form-select" required name="status">
                                     <option value="active" selected>ACTIVE</option>
                                     <option value="inactive">INACTIVE</option>
                                     <option value="pending">PENDING</option>
@@ -158,7 +168,7 @@
                                       <circle cx="5.667" cy="5.667" r="2" stroke="#0B4F8A" stroke-width="2"/>
                                     </svg> Logo URL
                                 </label>
-                                <input type="url" class="form-control" placeholder="Enter URL to partner logo">
+                                <input type="url" class="form-control" placeholder="Enter URL to partner logo" name="logo_link">
                                 <div class="form-text">Enter a URL to the partner's logo image</div>
                             </div>
                             <div class="col-md-6">
@@ -174,7 +184,7 @@
                                       </defs>
                                     </svg> Website
                                 </label>
-                                <input type="url" class="form-control" placeholder="https://example.com">
+                                <input type="url" class="form-control" placeholder="https://example.com" name="website">
                                 <div class="form-text">Partner website URL</div>
                             </div>
                         </div>
@@ -192,7 +202,7 @@
                                       </defs>
                                     </svg> LinkedIn Profile
                                 </label>
-                                <input type="url" class="form-control" placeholder="https://linkedin.com/company/example">
+                                <input type="url" class="form-control" placeholder="https://linkedin.com/company/example" name="linkedin">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">
@@ -201,7 +211,7 @@
                                       <circle cx="6.333" cy="6.333" r="2" stroke="#0B4F8A" stroke-width="2"/>
                                     </svg> Description
                                 </label>
-                                <textarea class="form-control" rows="3" placeholder="Enter optional partner description or notes..."></textarea>
+                                <textarea class="form-control" rows="3" placeholder="Enter optional partner description or notes..." name="description"></textarea>
                             </div>
                         </div>
 
@@ -228,7 +238,7 @@
                                       <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Address Line 1 <span class="required-mark">*</span>
                                 </label>
-                                <input type="text" class="form-control" placeholder="Street address, P.O. box, company name, c/o" required>
+                                <input type="text" class="form-control" placeholder="Street address, P.O. box, company name, c/o" required name="address_line1">
                                 <div class="form-text">Street address, P.O. box, company name, c/o</div>
                             </div>
                             <div class="col-md-6">
@@ -237,7 +247,7 @@
                                       <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Address Line 2 (Optional)
                                 </label>
-                                <input type="text" class="form-control" placeholder="Apartment, suite, unit, building, floor, etc.">
+                                <input type="text" class="form-control" placeholder="Apartment, suite, unit, building, floor, etc." name="address_line2">
                                 <div class="form-text">Apartment, suite, unit, building, floor, etc.</div>
                             </div>
                         </div>
@@ -255,13 +265,13 @@
                                       </defs>
                                     </svg> City <span class="required-mark">*</span>
                                 </label>
-                                <select class="form-select" required>
+                                <select class="form-select" required  name="city">
                                     <option value="" selected disabled>e.g. San Francisco</option>
                                     <option value="SF">San Francisco</option>
                                     <option value="NY">New York</option>
                                     <option value="LA">Los Angeles</option>
                                 </select>
-                                <div class="form-text">City name</div>
+                                <div class="form-text" >City name</div>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">
@@ -269,7 +279,7 @@
                                       <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> State / Province
                                 </label>
-                                <input type="text" class="form-control" placeholder="e.g. California">
+                                <input type="text" class="form-control" placeholder="e.g. California" name="state">
                                 <div class="form-text">State or province name</div>
                             </div>
                         </div>
@@ -278,7 +288,7 @@
                                 <label class="form-label">
                                     Country <span class="required-mark">*</span>
                                 </label>
-                                <select class="form-select" required>
+                                <select class="form-select" required name="country">
                                     <option value="US" selected>United States</option>
                                     <option value="UK">United Kingdom</option>
                                     <option value="CA">Canada</option>
@@ -298,7 +308,7 @@
                                       </defs>
                                     </svg> Postal Code
                                 </label>
-                                <input type="text" class="form-control" placeholder="e.g. 94103">
+                                <input type="text" class="form-control" placeholder="e.g. 94103" name="postal_code">
                                 <div class="form-text">Postal / zip code</div>
                             </div>
                         </div>
@@ -333,7 +343,7 @@
                                       <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contact Person
                                 </label>
-                                <input type="text" class="form-control" placeholder="Primary contact name">
+                                <input type="text" class="form-control" placeholder="Primary contact name" name="contact_name">
                                 <div class="form-text">Primary contact name</div>
                             </div>
                             <div class="col-md-6">
@@ -342,7 +352,7 @@
                                       <path d="M2 3.33276V12.6672M5.33333 3.33276V12.6672M8 3.33276V12.6672M11.3333 3.33276V12.6672M14 3.33276V12.6672" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Email
                                 </label>
-                                <input type="email" class="form-control" placeholder="Contact email address">
+                                <input type="email" class="form-control" placeholder="Contact email address" name="contact_email">
                                 <div class="form-text">Contact email address</div>
                             </div>
                         </div>
@@ -360,7 +370,7 @@
                                       </defs>
                                     </svg> Phone
                                 </label>
-                                <input type="tel" class="form-control" placeholder="Enter contact phone number">
+                                <input type="tel" class="form-control" placeholder="Enter contact phone number" name="contact_phone">
                                 <div class="form-text">Enter contact phone number</div>
                             </div>
                             <div class="col-md-6">
@@ -369,7 +379,7 @@
                                       <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Country Code
                                 </label>
-                                <input type="text" class="form-control" placeholder="MA +212">
+                                <input type="text" class="form-control" placeholder="MA +212" name="country_code">
                                 <div class="form-text">Country code</div>
                             </div>
                         </div>
@@ -387,7 +397,7 @@
                                       <path d="M12.0004 14C12.0004 12.5855 11.4384 11.229 10.4382 10.2288C9.43787 9.22857 8.08119 8.66667 6.66658 8.66667M6.66658 8.66667C5.25196 8.66667 3.89528 9.22857 2.895 10.2288C1.89472 11.229 1.33276 12.5855 1.33276 14M6.66658 8.66667C8.50769 8.66667 10.0002 7.17428 10.0002 5.33333C10.0002 3.49238 8.50769 2 6.66658 2C4.82546 2 3.33294 3.49238 3.33294 5.33333C3.33294 7.17428 4.82546 8.66667 6.66658 8.66667ZM14.6672 13.3335C14.6672 11.0868 13.3337 9.00013 12.0003 8.00013C12.4386 7.67131 12.7891 7.23952 13.0207 6.74298C13.2524 6.24643 13.3581 5.70044 13.3284 5.15333C13.2987 4.60622 13.1346 4.07485 12.8507 3.60626C12.5667 3.13767 12.1715 2.7463 11.7002 2.4668" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contract Start Date <span class="required-mark">*</span>
                                 </label>
-                                <input type="text" class="form-control" placeholder="07/07/2026" required>
+                                <input type="text" class="form-control" placeholder="07/07/2026" required name="contract_start">
                                 <div class="form-text">When the partnership begins</div>
                             </div>
                             <div class="col-md-6">
@@ -396,7 +406,7 @@
                                       <path d="M2 3.33276V12.6672M5.33333 3.33276V12.6672M8 3.33276V12.6672M11.3333 3.33276V12.6672M14 3.33276V12.6672" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contract End Date
                                 </label>
-                                <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                <input type="text" class="form-control" placeholder="DD/MM/YYYY " name="contract_end">
                                 <div class="form-text">Optional; leave blank for indefinite</div>
                             </div>
                         </div>
@@ -413,16 +423,20 @@
                                       </defs>
                                     </svg> Contract File
                                 </label>
-                                <input type="text" class="form-control" placeholder="Upload contract document (PDF/DOC)">
-                                <div class="form-text">Enter a path to the uploaded contract file (file upload will be implemented in a future phase)</div>
-                            </div>
+                        <input 
+                            type="file" 
+                            class="form-control" 
+                            name="contract_file"
+                            accept=".pdf,.doc,.docx"
+                        >                                <div class="form-text">Enter a path to the uploaded contract file (file upload will be implemented in a future phase)</div>
+                                                    </div>
                             <div class="col-md-6">
                                 <label class="form-label">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                       <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Contract Notes
                                 </label>
-                                <textarea class="form-control" rows="3" placeholder="Add any contract notes or remarks..."></textarea>
+                                <textarea class="form-control" rows="3" placeholder="Add any contract notes or remarks..." name="contract_notes"></textarea>
                             </div>
                         </div>
                         <div class="row g-4 mb-4">
@@ -434,8 +448,12 @@
                                       <path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.08109 13.0425 8.08109 12.6674C8.08109 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                     </svg> Add Logo
                                 </label>
-                                <input type="text" class="form-control" placeholder="Upload or link logo">
-                            </div>
+                            <input 
+                                type="file" 
+                                class="form-control" 
+                                name="logo"
+                                accept="image/*"
+                            >                            </div>
                         </div>
 
                         <!-- Start Form Actions -->
@@ -446,8 +464,10 @@
                             </div>
                             <div class="d-flex gap-3">
                                 <button type="button" class="btn btn-form-back" onclick="goToStep(2)">Back</button>
-                                <button type="button" class="btn btn-form-continue" onclick="goToStep(4)">Create</button>
-                            </div>
+      <button type="button" class="btn btn-form-continue" id="createPartner">
+    Create
+</button>     
+                   </div>
                         </div>
                         <!-- End Form Actions -->
                     </div>
@@ -455,107 +475,155 @@
 
                     <!-- ================= START STEP 4 (SUCCESS STATE) ================= -->
                     <div id="wizard-step-4" style="display: none;">
-                        <div class="text-center mb-5">
-                            <div class="d-inline-flex justify-content-center align-items-center rounded-circle mb-3 success-icon-circle">
-                                <i class="bi bi-check-lg success-icon"></i>
-                            </div>
-                            <h2 class="fs-2 fw-bold text-dark mb-1">Partner Successfully Created</h2>
-                            <p class="fs-6 fw-semibold text-teal">
-                                <i class="bi bi-check2"></i> Added to Partner Management
-                            </p>
-                        </div>
 
-                        <div class="bg-light rounded-4 p-4 mb-5 border">
-                            <h3 class="fs-7 fw-bold text-secondary mb-3 letter-spacing-1">CONTACT DETAILS</h3>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                                        <div class="me-3">
-                                            <i class="bi bi-person text-custom-blue fs-5"></i>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted detail-label-sm">FULL NAME</div>
-                                            <div class="fw-semibold text-dark fs-6">Sarah Mitchell</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                                        <div class="me-3">
-                                            <i class="bi bi-envelope text-custom-blue fs-5"></i>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted detail-label-sm">EMAIL ADDRESS</div>
-                                            <div class="fw-semibold text-dark fs-6">sarah.mitchell@company.com</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                                        <div class="me-3">
-                                            <i class="bi bi-telephone text-custom-blue fs-5"></i>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted detail-label-sm">PHONE NUMBER</div>
-                                            <div class="fw-semibold text-dark fs-6">+1 (555) 234-8901</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                                        <div class="me-3">
-                                            <i class="bi bi-building text-custom-blue fs-5"></i>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted detail-label-sm">COMPANY</div>
-                                            <div class="fw-semibold text-dark fs-6">Acme Corporation</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                                        <div class="me-3">
-                                            <i class="bi bi-briefcase text-custom-blue fs-5"></i>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted detail-label-sm">ROLE</div>
-                                            <div class="fw-semibold text-dark fs-6">Product Manager</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                                        <div class="me-3">
-                                            <i class="bi bi-geo-alt text-custom-blue fs-5"></i>
-                                        </div>
-                                        <div>
-                                            <div class="text-muted detail-label-sm">LOCATION</div>
-                                            <div class="fw-semibold text-dark fs-6">San Francisco, CA</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="text-center mb-5">
+        <div class="d-inline-flex justify-content-center align-items-center rounded-circle mb-3 success-icon-circle">
+            <i class="bi bi-check-lg success-icon"></i>
+        </div>
 
-                        <hr class="mb-4">
+        <h2 class="fs-2 fw-bold text-dark mb-1">
+            Partner Successfully Created
+        </h2>
 
-                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-                            <div class="text-muted mb-3 mb-md-0 fs-7">
-                                Created on July 21, 2026 at 3:45 PM
-                            </div>
-                            <div class="d-flex flex-wrap gap-2">
-                                <button type="button" class="btn btn-outline-secondary rounded-pill px-4 fw-semibold border bg-white text-dark">
-                                    <i class="bi bi-eye"></i> View Partner
-                                </button>
-                                <button type="button" class="btn btn-primary-blue rounded-pill px-4 fw-bold" onclick="hideDisplay(event)">
-                                    Partners
-                                </button>
-                                <button type="button" class="btn btn-primary-teal rounded-pill px-4 fw-bold" onclick="goToStep(1)">
-                                    <i class="bi bi-plus"></i> Add Another Partner
-                                </button>
-                            </div>
-                        </div>
+        <p class="fs-6 fw-semibold text-teal">
+            <i class="bi bi-check2"></i> Added to Partner Management
+        </p>
+    </div>
+
+
+    <div class="bg-light rounded-4 p-4 mb-5 border">
+
+        <h3 class="fs-7 fw-bold text-secondary mb-3 letter-spacing-1">
+            CONTACT DETAILS
+        </h3>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
+                    <div class="me-3">
+                        <i class="bi bi-person text-custom-blue fs-5"></i>
                     </div>
+                    <div>
+                        <div class="text-muted detail-label-sm">FULL NAME</div>
+                        <div id="name" class="fw-semibold text-dark fs-6"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
+                    <div class="me-3">
+                        <i class="bi bi-envelope text-custom-blue fs-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-muted detail-label-sm">EMAIL ADDRESS</div>
+                        <div id="partner_email" class="fw-semibold text-dark fs-6"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
+                    <div class="me-3">
+                        <i class="bi bi-telephone text-custom-blue fs-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-muted detail-label-sm">PHONE NUMBER</div>
+                        <div id="partner_phone" class="fw-semibold text-dark fs-6"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
+                    <div class="me-3">
+                        <i class="bi bi-building text-custom-blue fs-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-muted detail-label-sm">COMPANY</div>
+                        <div id="partner_company" class="fw-semibold text-dark fs-6"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
+                    <div class="me-3">
+                        <i class="bi bi-briefcase text-custom-blue fs-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-muted detail-label-sm">ROLE</div>
+                        <div id="partner_role" class="fw-semibold text-dark fs-6"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
+                    <div class="me-3">
+                        <i class="bi bi-geo-alt text-custom-blue fs-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-muted detail-label-sm">LOCATION</div>
+                        <div id="partner_location" class="fw-semibold text-dark fs-6"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <hr class="mb-4">
+
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+
+        <div class="text-muted mb-3 mb-md-0 fs-7">
+            Created on 
+            <span id="partner_created_at"></span>
+        </div>
+
+
+        <div class="d-flex flex-wrap gap-2">
+
+            <button type="button" 
+                class="btn btn-outline-secondary rounded-pill px-4 fw-semibold border bg-white text-dark">
+
+                <i class="bi bi-eye"></i> View Partner
+
+            </button>
+
+
+            <button type="button" 
+                class="btn btn-primary-blue rounded-pill px-4 fw-bold"
+                onclick="hideDisplay(event)">
+
+                Partners
+
+            </button>
+
+
+            <button type="button" 
+                class="btn btn-primary-teal rounded-pill px-4 fw-bold"
+                onclick="goToStep(1)">
+
+                <i class="bi bi-plus"></i> Add Another Partner
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
                     <!-- ================= END STEP 4 ================= -->
 
                 </form>
@@ -699,5 +767,121 @@
             currentText.style.fontWeight = '600';
         }
     }
+
+    
 </script>
+
+
+<script>
+document.getElementById('generateCode').addEventListener('click', function(e){
+    e.preventDefault();
+
+    let name = document.querySelector('input[name="name"]').value;
+
+    if(name.trim() === ''){
+        alert('Please enter partner name first');
+        return;
+    }
+
+    // Prendre les 3 premières lettres du nom
+    let prefix = name
+        .replace(/[^a-zA-Z]/g, '') // supprimer espaces et caractères spéciaux
+        .substring(0, 3)
+        .toUpperCase();
+
+    // Générer nombre aléatoire
+    let random = Math.floor(10000 + Math.random() * 90000);
+
+    let code = prefix + '-' + random;
+
+    document.getElementById('internal_code').value = code;
+});
+
+
+document.getElementById('createPartner').addEventListener('click', function(e){
+
+    e.preventDefault();
+
+    let form = document.getElementById('partnerForm');
+
+    let formData = new FormData(form);
+
+
+    fetch("{{ route('partners.store') }}", {
+
+        method: "POST",
+
+        headers: {
+            "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
+            "Accept": "application/json"
+        },
+
+        body: formData
+
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+    console.log(data);
+
+    if(data.success){
+
+        let partner = data.partner;
+
+
+        document.getElementById('name').innerHTML =
+            partner.contact_name ?? '-';
+
+
+        document.getElementById('partner_email').innerHTML =
+            partner.contact_email ?? '-';
+
+
+        document.getElementById('partner_phone').innerHTML =
+            partner.contact_phone ?? '-';
+
+
+        document.getElementById('partner_company').innerHTML =
+            partner.name ?? '-';
+
+
+        document.getElementById('partner_role').innerHTML =
+            partner.contact_position ?? '-';
+
+
+        document.getElementById('partner_location').innerHTML =
+            (partner.city ?? '-') + ', ' + (partner.country ?? '-');
+
+
+        document.getElementById('partner_created_at').innerHTML =
+            data.date;
+
+
+        // Show Step 4
+        goToStep(4);
+
+    }
+
+})
+
+
+    .catch(error => {
+
+        console.log(error);
+
+    });
+
+
+});
+
+
+</script>
+
+
+
+
+
+
 <!-- End Partner Information Form Card -->

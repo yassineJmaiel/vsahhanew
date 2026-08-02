@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
-
+use App\Http\Controllers\PartnerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +38,10 @@ Route::middleware('jwt.session')->group(function () {
         return view('add-group-form');
     })->name('add-group');
 });
+
+
+
+Route::resource('partners', PartnerController::class);
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
