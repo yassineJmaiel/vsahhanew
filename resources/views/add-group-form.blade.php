@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="header-title-box">
-                    <a href="#" class="back-link btn-back-header text-decoration-none" onclick="hideDisplay(event)">
+                    <a href="{{ route('groupmanagement') }}" class="back-link btn-back-header text-decoration-none">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M8.00021 3.33276L3.33301 7.99996L8.00021 12.6672M3.33301 7.99996H12.6674" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -31,7 +31,7 @@
                     <button class="btn btn-save-draft btn-header-action mb-2 mb-sm-0" id="header-btn-save">
                         Save Draft
                     </button>
-                    <button class="btn btn-cancel btn-header-cancel mb-2 mb-sm-0" id="header-btn-cancel" onclick="hideDisplay(event)">
+                    <button class="btn btn-cancel btn-header-cancel mb-2 mb-sm-0" id="header-btn-cancel" onclick="window.location.href='{{ route('groupmanagement') }}'">
                         Cancel
                     </button>
                 </div>
@@ -76,23 +76,23 @@
                     
                     <!-- ================= START STEP 1 ================= -->
                     <div id="wizard-step-1" class="wizard-step-container">
-                        <div>
+                        <div class="wizard-step-header">
                             <h2 class="wizard-step-title">Group Information</h2>
                             <p class="wizard-step-subtitle">Enter primary details to identify and classify the group.</p>
                         </div>
 
                         <div class="row g-4">
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88562 10.781C9.3855 10.281 8.70724 10 7.99999 10H4.00001C3.29277 10 2.61449 10.281 2.1144 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14M11.3333 1.41333C12.1678 1.76562 12.8344 2.43216 13.1867 3.26667C13.539 4.10118 13.539 5.03215 13.1867 5.86667C12.8344 6.70118 12.1678 7.36772 11.3333 7.72001M14.6667 14.0001V12.6667C14.6657 12.0722 14.464 11.4947 14.0927 11.0201C13.7214 10.5455 13.2008 10.1997 12.6067 10.0334M6.00001 7.33333C4.52725 7.33333 3.33334 6.13943 3.33334 4.66667C3.33334 3.19391 4.52725 2 6.00001 2C7.47277 2 8.66668 3.19391 8.66668 4.66667C8.66668 6.13943 7.47277 7.33333 6.00001 7.33333Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88562 10.781C9.3855 10.281 8.70724 10 7.99999 10H4.00001C3.29277 10 2.61449 10.281 2.1144 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14M11.3333 1.41333C12.1678 1.76562 12.8344 2.43216 13.1867 3.26667C13.539 4.10118 13.539 5.03215 13.1867 5.86667C12.8344 6.70118 12.1678 7.36772 11.3333 7.72001M14.6667 14.0001V12.6667C14.6657 12.0722 14.464 11.4947 14.0927 11.0201C13.7214 10.5455 13.2008 10.1997 12.6067 10.0334M6.00001 7.33333C4.52725 7.33333 3.33334 6.13943 3.33334 4.66667C3.33334 3.19391 4.52725 2 6.00001 2C7.47277 2 8.66668 3.19391 8.66668 4.66667C8.66668 6.13943 7.47277 7.33333 6.00001 7.33333Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                     Group Name <span class="required-mark">*</span>
                                 </label>
                                 <input type="text" class="form-control" placeholder="Enter group name" required>
                                 <div class="form-text">The formal legal name of the client organization.</div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col" style="height: auto; min-height: 92px;">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.66667 2.66666H2.66667V6.66666H6.66667V2.66666ZM13.3333 2.66666H9.33333V6.66666H13.3333V2.66666ZM13.3333 9.33332H9.33333V13.3333H13.3333V9.33332ZM2.66667 9.33332V13.3333H6.66667V9.33332H2.66667Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.33276V12.6672M5.33333 3.33276V12.6672M8 3.33276V12.6672M11.3333 3.33276V12.6672M14 3.33276V12.6672" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></svg>
                                     Group Code <span class="required-mark">*</span>
                                 </label>
                                 <input type="text" class="form-control" placeholder="VS-GROUP-001" required>
@@ -108,9 +108,9 @@
                         </div>
 
                         <div class="row g-4 mt-1">
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14.6667 14V12.6667C14.6667 11.9594 14.3857 11.2811 13.8856 10.781C13.3855 10.281 12.7072 10 12 10H4C3.29276 10 2.61448 10.281 2.11439 10.781C1.61428 11.2811 1.33333 11.9594 1.33333 12.6667V14M8 7.33333C9.47276 7.33333 10.6667 6.13943 10.6667 4.66667C10.6667 3.19391 9.47276 2 8 2C6.52724 2 5.33333 3.19391 5.33333 4.66667C5.33333 6.13943 6.52724 7.33333 8 7.33333Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Client Type <span class="required-mark">*</span>
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#clip0_446_203)"><path d="M7.99979 6.66652H8.00646M7.99979 9.3334H8.00646M7.99979 3.99964H8.00646M10.6662 6.66652H10.6729M10.6662 9.3334H10.6729M10.6662 3.99964H10.6729M5.33339 6.66652H5.34006M5.33339 9.3334H5.34006M5.33339 3.99964H5.34006M5.99999 14.6672V12.667C5.99999 12.4902 6.07022 12.3206 6.19523 12.1956C6.32025 12.0705 6.4898 12.0003 6.66659 12.0003H9.33299C9.50979 12.0003 9.67934 12.0705 9.80435 12.1956C9.92936 12.3206 9.99959 12.4902 9.99959 12.667V14.6672M4.00019 1.33276H11.9994C12.7357 1.33276 13.3326 1.92977 13.3326 2.6662V13.3337C13.3326 14.0702 12.7357 14.6672 11.9994 14.6672H4.00019C3.26389 14.6672 2.66699 14.0702 2.66699 13.3337V2.6662C2.66699 1.92977 3.26389 1.33276 4.00019 1.33276Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></g><defs><clipPath id="clip0_446_203"><rect width="16" height="16" fill="white"/></clipPath></defs></svg> Client Type <span class="required-mark">*</span>
                                 </label>
                                 <select class="form-select" required>
                                     <option value="" selected disabled>Select client type</option>
@@ -120,9 +120,9 @@
                                 </select>
                                 <div class="form-text">Standard, Premium, or Corporate partner.</div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12.6667 4.66666H3.33333C2.59695 4.66666 2 5.26361 2 5.99999V12.6667C2 13.403 2.59695 14 3.33333 14H12.6667C13.403 14 14 13.403 14 12.6667V5.99999C14 5.26361 13.403 4.66666 12.6667 4.66666Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6667 14V3.33333C10.6667 2.97971 10.5262 2.64057 10.2761 2.39052C10.0261 2.14048 9.68695 2 9.33333 2H6.66667C6.31304 2 5.9739 2.14048 5.72386 2.39052C5.47381 2.64057 5.33333 2.97971 5.33333 3.33333V14" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Business Partner <span class="required-mark">*</span>
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.33349 11.334L8.66693 12.6674C8.79826 12.7987 8.95417 12.9029 9.12577 12.9739C9.29736 13.045 9.48128 13.0816 9.66701 13.0816C9.85274 13.0816 10.0367 13.045 10.2082 12.9739C10.3798 12.9029 10.5358 12.7987 10.6671 12.6674C10.7984 12.5361 10.9026 12.3802 10.9737 12.2086C11.0448 12.037 11.0813 11.8531 11.0813 11.6674C11.0813 11.4817 11.0448 11.2978 10.9737 11.1262C10.9026 10.9546 10.7984 10.7987 10.6671 10.6674M9.3338 9.33371L11.0006 11.0004C11.2658 11.2656 11.6256 11.4146 12.0007 11.4146C12.3758 11.4146 12.7355 11.2656 13.0008 11.0004C13.266 10.7352 13.415 10.3755 13.415 10.0004C13.415 9.62531 13.266 9.26559 13.0008 9.00038L10.4139 6.41369C10.0389 6.03916 9.53048 5.82878 9.00044 5.82878C8.4704 5.82878 7.96202 6.03916 7.58699 6.41369L7.00028 7.00036C6.73504 7.26558 6.3753 7.41458 6.0002 7.41458C5.6251 7.41458 5.26536 7.26558 5.00012 7.00036C4.73488 6.73515 4.58587 6.37543 4.58587 6.00036C4.58587 5.62528 4.73488 5.26557 5.00012 5.00035L6.8736 3.12701C7.48181 2.52043 8.27498 2.13404 9.12754 2.02898C9.98011 1.92393 10.8434 2.10622 11.5806 2.54701L11.894 2.73367C12.1779 2.905 12.5154 2.96442 12.8407 2.90034L14.0008 2.66701M14.0007 2.00065L14.6674 9.33403H13.334M1.99973 2.00065L1.33301 9.33403L5.66669 13.6674C5.93193 13.9326 6.29167 14.0816 6.66677 14.0816C7.04187 14.0816 7.40161 13.9326 7.66685 13.6674C7.93209 13.4022 8.0811 13.0425 8.0811 12.6674C8.0811 12.2923 7.93209 11.9326 7.66685 11.6674M1.99973 2.66732H7.33349" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></svg> Business Partner <span class="required-mark">*</span>
                                 </label>
                                 <select class="form-select" required>
                                     <option value="" selected disabled>Search associated partner</option>
@@ -134,9 +134,9 @@
                         </div>
 
                         <div class="row g-4 mt-1">
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 8C10.2091 8 12 6.20914 12 4C12 1.79086 10.2091 0 8 0C5.79086 0 4 1.79086 4 4C4 6.20914 5.79086 8 8 8Z" fill="#0B4F8A"/><path d="M2.20312 13.902C2.55625 11.23 4.8875 9.14282 7.71406 9.14282H8.28594C11.1125 9.14282 13.4437 11.23 13.7969 13.902C13.8828 14.5451 13.3859 15.1111 12.7359 15.1111H3.26406C2.61406 15.1111 2.11719 14.5451 2.20312 13.902Z" fill="#0B4F8A"/></svg> Status <span class="required-mark">*</span>
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="width: 16px; height: 16px; flex-shrink: 0;"><path d="M10.0004 3.33276H6.00005C3.42251 3.33276 1.33301 5.42234 1.33301 7.99996C1.33301 10.5776 3.42251 12.6672 6.00005 12.6672H10.0004C12.5779 12.6672 14.6674 10.5776 14.6674 7.99996C14.6674 5.42234 12.5779 3.33276 10.0004 3.33276Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></svg> Status <span class="required-mark">*</span>
                                 </label>
                                 <select class="form-select" required>
                                     <option value="open_active" selected>Open / Active</option>
@@ -145,18 +145,18 @@
                                 </select>
                                 <div class="form-text">Initial operational state of the group.</div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8C14.6667 4.3181 11.6819 1.33333 8 1.33333C4.3181 1.33333 1.33333 4.3181 1.33333 8C1.33333 11.6819 4.3181 14.6667 8 14.6667Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.33333 8H14.6667" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14.6667C9.84095 14.6667 11.3333 11.6819 11.3333 8C11.3333 4.3181 9.84095 1.33333 8 1.33333C6.15905 1.33333 4.66667 4.3181 4.66667 8C4.66667 11.6819 6.15905 14.6667 8 14.6667Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Regions of Coverage
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none" style="width: 10.666px; height: 13.334px; flex-shrink: 0;"><path d="M6.73343 14.2006C7.9733 13.1298 11.6656 9.6628 11.6656 6.33383C11.6656 4.91921 11.1038 3.56253 10.1037 2.56224C9.10357 1.56196 7.74715 1 6.3328 1C4.91845 1 3.56203 1.56196 2.56194 2.56224C1.56185 3.56253 1 4.91921 1 6.33383C1 9.6628 4.6923 13.1298 5.93217 14.2006C6.04768 14.2874 6.18828 14.3344 6.3328 14.3344C6.47732 14.3344 6.61792 14.2874 6.73343 14.2006Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></svg> Regions of Coverage
                                 </label>
                                 <input type="text" class="form-control" placeholder="geographic regions (e.g. MENA, EU)">
                             </div>
                         </div>
                         
                         <div class="row g-4 mt-1">
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8C14.6667 4.3181 11.6819 1.33333 8 1.33333C4.3181 1.33333 1.33333 4.3181 1.33333 8C1.33333 11.6819 4.3181 14.6667 8 14.6667Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.33333 8H14.6667" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14.6667C9.84095 14.6667 11.3333 11.6819 11.3333 8C11.3333 4.3181 9.84095 1.33333 8 1.33333C6.15905 1.33333 4.66667 4.3181 4.66667 8C4.66667 11.6819 6.15905 14.6667 8 14.6667Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Main Country of Coverage <span class="required-mark">*</span>
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8C14.6667 4.3181 11.6819 1.33333 8 1.33333C4.3181 1.33333 1.33333 4.3181 1.33333 8C1.33333 11.6819 4.3181 14.6667 8 14.6667Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.33333 8H14.6667" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14.6667C9.84095 14.6667 11.3333 11.6819 11.3333 8C11.3333 4.3181 9.84095 1.33333 8 1.33333C6.15905 1.33333 4.66667 4.3181 4.66667 8C4.66667 11.6819 6.15905 14.6667 8 14.6667Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Main Country of Coverage <span class="required-mark">*</span>
                                 </label>
                                 <select class="form-select" required>
                                     <option value="" selected disabled>Select primary country</option>
@@ -168,9 +168,9 @@
                         </div>
 
                         <div class="row g-4 mt-1">
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col" style="height: auto;">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.33333 1.33333H2.66667C2.31304 1.33333 1.97391 1.47381 1.72386 1.72386C1.47381 1.97391 1.33333 2.31304 1.33333 2.66666V13.3333C1.33333 13.687 1.47381 14.0261 1.72386 14.2761C1.97391 14.5262 2.31304 14.6667 2.66667 14.6667H13.3333C13.687 14.6667 14.0261 14.5262 14.2761 14.2761C14.5262 14.0261 14.6667 13.687 14.6667 13.3333V6.66666L9.33333 1.33333Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.33333 1.33333V6.66666H14.6667" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Description
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#clip0_446_257)"><path d="M9.33299 1.33277H4.00019C3.64661 1.33277 3.3075 1.47325 3.05748 1.72332C2.80745 1.97339 2.66699 2.31256 2.66699 2.66621V13.3337C2.66699 13.6874 2.80745 14.0265 3.05748 14.2766C3.3075 14.5267 3.64661 14.6672 4.00019 14.6672H11.9994C12.353 14.6672 12.6921 14.5267 12.9421 14.2766C13.1921 14.0265 13.3326 13.6874 13.3326 13.3337V5.33309M9.33299 1.33277C9.54401 1.33242 9.753 1.37384 9.94795 1.45462C10.1429 1.53541 10.3199 1.65396 10.4689 1.80347L12.8606 4.19566C13.0105 4.34468 13.1294 4.52192 13.2104 4.71714C13.2914 4.91237 13.3329 5.12171 13.3326 5.33309M9.33299 1.33277V4.66636C9.33299 4.84319 9.40322 5.01277 9.52823 5.1378C9.65324 5.26284 9.8228 5.33308 9.99959 5.33308L13.3326 5.33309M6.66659 5.9998H5.33339M10.6662 8.66668H5.33339M10.6662 11.3336H5.33339" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></g><defs><clipPath id="clip0_446_257"><rect width="16" height="16" fill="white"/></clipPath></defs></svg> Description
                                 </label>
                                 <textarea class="form-control" rows="3" placeholder="Enter optional group description or notes..."></textarea>
                             </div>
@@ -181,9 +181,9 @@
                         </div>
 
                         <div class="row g-4">
-                            <div class="col-md-6">
+                            <div class="col-md-6 field-col">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12.6667 2.66666H3.33333C2.59695 2.66666 2 3.26361 2 3.99999V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V3.99999C14 3.26361 13.403 2.66666 12.6667 2.66666Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6667 1.33333V4" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.33333 1.33333V4" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 6.66667H14" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Start Date <span class="required-mark">*</span>
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="width: 16px; height: 16px; flex-shrink: 0;"><g clip-path="url(#clip0_446_221)"><path d="M5.33333 1.33276V3.99964M10.6667 1.33276V3.99964M2 6.66652H14M3.33333 2.6662H12.6667C13.403 2.6662 14 3.26321 14 3.99964V13.3337C14 14.0702 13.403 14.6672 12.6667 14.6672H3.33333C2.59695 14.6672 2 14.0702 2 13.3337V3.99964C2 3.26321 2.59695 2.6662 3.33333 2.6662Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></g><defs><clipPath id="clip0_446_221"><rect width="16" height="16" fill="white"/></clipPath></defs></svg> Start Date <span class="required-mark">*</span>
                                 </label>
                                 <div class="position-relative">
                                     <input type="text" class="form-control" placeholder="11/07/2026" required>
@@ -196,7 +196,7 @@
                         <div class="row g-4 mt-1">
                             <div class="col-md-6">
                                 <label class="form-label">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12.6667 2.66666H3.33333C2.59695 2.66666 2 3.26361 2 3.99999V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V3.99999C14 3.26361 13.403 2.66666 12.6667 2.66666Z" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6667 1.33333V4" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.33333 1.33333V4" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 6.66667H14" stroke="#0B4F8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> End Date
+                                    <svg class="form-label-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="width: 16px; height: 16px; flex-shrink: 0;"><g clip-path="url(#clip0_446_248)"><path d="M5.33333 1.33276V3.99964M10.6667 1.33276V3.99964M2 6.66652H14M9.33333 9.3334L6.66667 12.0003M6.66667 9.3334L9.33333 12.0003M3.33333 2.6662H12.6667C13.403 2.6662 14 3.26321 14 3.99964V13.3337C14 14.0702 13.403 14.6672 12.6667 14.6672H3.33333C2.59695 14.6672 2 14.0702 2 13.3337V3.99964C2 3.26321 2.59695 2.6662 3.33333 2.6662Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/></g><defs><clipPath id="clip0_446_248"><rect width="16" height="16" fill="white"/></clipPath></defs></svg> End Date
                                 </label>
                                 <div class="position-relative">
                                     <input type="text" class="form-control" placeholder="DD/MM/YYYY">
@@ -212,7 +212,7 @@
                                 <small class="form-notice-text">By creating this group, you'll be able to add members and assign policies in the next step.</small>
                             </div>
                             <div class="d-flex gap-3">
-                                <button type="button" class="btn btn-form-back bg-white border" onclick="hideDisplay(event)">Back</button>
+                                <button type="button" class="btn btn-form-back bg-white border" onclick="window.location.href='{{ route('groupmanagement') }}'">Back</button>
                                 <button type="button" class="btn btn-form-continue" style="background-color: #0b6375; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 0.375rem;" onclick="goToStep(2)">Create & Continue</button>
                             </div>
                         </div>
@@ -421,7 +421,7 @@
                                 <button type="button" class="btn btn-outline-secondary d-flex align-items-center gap-2 bg-white">
                                     <i class="bi bi-eye"></i> View Group
                                 </button>
-                                <button type="button" class="btn" style="background-color: #0b6375; color: white;" onclick="hideDisplay(event)">Groups</button>
+                                <button type="button" class="btn" style="background-color: #0b6375; color: white;" onclick="window.location.href='{{ route('groupmanagement') }}'">Groups</button>
                                 <button type="button" class="btn btn-success" style="background-color: #10b981; border-color: #10b981;" onclick="goToStep(1)">
                                     + Add Another Group
                                 </button>

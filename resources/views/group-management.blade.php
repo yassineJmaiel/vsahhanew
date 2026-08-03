@@ -58,12 +58,12 @@
                 </button>
 
                 <!-- Add Group Button -->
-                <button class="btn btn-add-group d-flex align-items-center gap-2" onclick="display()">
+                <a href="{{ route('add-group') }}" class="btn btn-add-group d-flex align-items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                       <path d="M3.74902 8.99999H14.2502M8.99962 3.74939V14.2506" stroke="white" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                     <span>Add Group</span>
-                </button>
+                </a>
 
                 <!-- Refresh Button -->
                 <button class="btn btn-header-refresh">
@@ -254,23 +254,4 @@
         <!-- End Main Content Area -->
 
     </div>
-
-        <!-- Start Add Group Form -->
-        <div id="add-group-form" style="display: none;">
-            @include('add-group-form')
-        </div>
-        <!-- End Add Group Form -->
-
-    <script>
-        function display() {
-            document.getElementById('main-content').style.display = 'none';
-            document.getElementById('add-group-form').style.display = 'block';
-        }
-
-        function hideDisplay(e) {
-            if(e) e.preventDefault();
-            document.getElementById('main-content').style.display = 'block';
-            document.getElementById('add-group-form').style.display = 'none';
-        }
-    </script>
 @endsection

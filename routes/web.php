@@ -35,7 +35,7 @@ Route::middleware('jwt.session')->group(function () {
     })->name('add-partner');
 
     Route::get('/add-group', function () {
-        return view('add-group-form');
+        return view('add-group-page');
     })->name('add-group');
 });
 
