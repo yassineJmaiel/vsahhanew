@@ -159,7 +159,7 @@
         <div class="row g-4">
             <!-- Start Partner List Column -->
             <div class="col-lg-8 col-12">
-                <div class="partner-list-container">
+                <div id="partner-list-card" class="partner-list-container">
                     <div class="partner-list-header">
                         <h5 class="mb-0 fw-bold">Partner List</h5>
                         <span class="text-muted-custom fs-7">4 partners</span>
@@ -246,7 +246,7 @@
                                 @endphp
 
                                 @foreach($partners as $partner)
-                                    <tr>
+                                    <tr style="cursor: pointer;" onclick="openPartnerDetails({{ json_encode($partner) }})">
                                         <td style="min-width: 350px;">
                                             <div class="d-flex gap-3">
                                                 <div class="partner-logo">{{ $partner['logo'] }}</div>
@@ -350,6 +350,404 @@
                         </table>
                     </div>
                 </div>
+
+                <!-- Start Partner Details View -->
+                <div id="partner-details-view" style="display: none;">
+                    <!-- Back to Partners Link Header -->
+                    <div class="mb-3">
+                        <a href="#" onclick="showPartnerList(event)" class="text-decoration-none fw-semibold d-inline-flex align-items-center gap-2" style="color: #0B4F8A; font-size: 14px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8.00021 3.33276L3.33301 7.99996L8.00021 12.6672M3.33301 7.99996H12.6674" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Back to Partners
+                        </a>
+                    </div>
+
+                    <!-- Main Card Container -->
+                    <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                        <!-- Top Dark Blue Card Header -->
+                        <div style="display: flex; height: 56px; padding: 0 20px; justify-content: space-between; align-items: center; background: #0B4F8A;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="display: flex; height: 28px; padding: 5px 3px 5px 7px; justify-content: flex-end; align-items: center; border-radius: 8px; background: rgba(255, 255, 255, 0.12);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" style="width: 18px; height: 18px;">
+                                        <path d="M12.75 15.75V14.25C12.75 13.4544 12.4339 12.6913 11.8713 12.1287C11.3087 11.5661 10.5456 11.25 9.75 11.25H3.75C2.95435 11.25 2.19129 11.5661 1.62868 12.1287C1.06607 12.6913 0.75 13.4544 0.75 14.25V15.75" stroke="white" stroke-width="1.5"/>
+                                        <path d="M6.75 8.25C8.40685 8.25 9.75 6.90685 9.75 5.25C9.75 3.59315 8.40685 2.25 6.75 2.25C5.09315 2.25 3.75 3.59315 3.75 5.25C3.75 6.90685 5.09315 8.25 6.75 8.25Z" stroke="white" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <h5 class="mb-0" style="color: #FFF; font-family: Inter, sans-serif; font-size: 16px; font-weight: 700; line-height: normal;">
+                                    Partner Details
+                                </h5>
+                            </div>
+                            <button type="button" class="btn text-white p-0 border-0 d-flex align-items-center" onclick="showPartnerList(event)" style="opacity: 0.85; background: transparent;">
+                                <i class="bi bi-x-circle-fill fs-5"></i>
+                            </button>
+                        </div>
+
+                        <div class="card-body p-4 bg-white">
+
+                            <!-- Top Partner Banner Box -->
+                            <div class="mb-4" style="display: flex; padding: 16px; justify-content: space-between; align-items: flex-start; gap: 16px; align-self: stretch; border-radius: 12px; border: 1px solid #E2E8F0; background: #FFF; box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.04); flex-wrap: wrap;">
+                                <!-- Left: Logo & Info -->
+                                <div class="d-flex align-items-start gap-3 flex-wrap flex-grow-1" style="max-width: 100%;">
+                                    <!-- Logo Box -->
+                                    <div id="detail_logo_box" style="display: flex; width: 56px; height: 56px; flex-direction: column; justify-content: center; align-items: center; flex-shrink: 0; border-radius: 14px; background: linear-gradient(90deg, #015AA7 0%, #1C4E7A 100%); color: #FFF; font-family: Inter, sans-serif; font-size: 24px; font-weight: 700;">
+                                        AP
+                                    </div>
+
+                                    <div class="flex-grow-1" style="min-width: 250px;">
+                                        <h4 id="detail_partner_name" class="mb-2" style="color: #1A202C; font-family: Inter, sans-serif; font-size: 14px; font-weight: 600; line-height: normal;">
+                                            Allianz Partners Middle East & Africa
+                                        </h4>
+                                        <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
+                                            <!-- Partner Type Badge -->
+                                            <div style="display: flex; padding: 6px 10px; align-items: center; gap: 6px; border-radius: 999px; border: 1px solid #E2E8F0; background: #FFF;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                    <g clip-path="url(#clip0_1009_403)">
+                                                        <path d="M6.99994 5.8333H7.00577M6.99994 8.16682H7.00577M6.99994 3.49978H7.00577M9.33304 5.8333H9.33887M9.33304 8.16682H9.33887M9.33304 3.49978H9.33887M4.66684 5.8333H4.67267M4.66684 8.16682H4.67267M4.66684 3.49978H4.67267M5.25012 12.8339V11.0837C5.25012 10.929 5.31157 10.7806 5.42095 10.6712C5.53034 10.5618 5.6787 10.5003 5.83339 10.5003H8.16649C8.32118 10.5003 8.46954 10.5618 8.57893 10.6712C8.68831 10.7806 8.74976 10.929 8.74976 11.0837V12.8339M3.50029 1.16626H10.4996C11.1439 1.16626 11.6661 1.68864 11.6661 2.33302V11.6671C11.6661 12.3115 11.1439 12.8339 10.4996 12.8339H3.50029C2.85602 12.8339 2.33374 12.3115 2.33374 11.6671V2.33302C2.33374 1.68864 2.85602 1.16626 3.50029 1.16626Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1009_403">
+                                                            <rect width="14" height="14" fill="white"/>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <span id="detail_partner_type_text" style="color: #0B4F8A; font-family: Inter, sans-serif; font-size: 12px; font-weight: 700;">Insurance Provider</span>
+                                            </div>
+
+                                            <!-- Partner ID Badge -->
+                                            <div style="display: flex; padding: 6px 10px; align-items: center; gap: 6px; border-radius: 999px; background: #FFF;">
+                                                <span id="detail_partner_code" style="color: #64748B; font-family: Inter, sans-serif; font-size: 12px; font-weight: 400;">Partner ID: STA-INS-002</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Edit Partner Link -->
+                                        <div>
+                                            <a href="#" onclick="display()" class="text-decoration-none d-inline-flex align-items-center gap-1.5" style="color: #0B4F8A; font-family: Inter, sans-serif; font-size: 12px; font-weight: 700;">
+                                                Edit Partner
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" style="width: 14px; height: 14px; flex-shrink: 0;">
+                                                    <g clip-path="url(#clip0_1148_684)">
+                                                        <path d="M8.75027 2.91623L11.0838 5.24952M12.3521 3.97343C12.6605 3.6651 12.8338 3.24689 12.8339 2.81079C12.8339 2.37468 12.6607 1.95642 12.3523 1.64802C12.044 1.33961 11.6257 1.16631 11.1896 1.16626C10.7534 1.16621 10.3351 1.33939 10.0267 1.64772L2.24082 9.43451C2.10537 9.56955 2.0052 9.73581 1.94912 9.91866L1.17847 12.4573C1.1634 12.5077 1.16226 12.5613 1.17518 12.6124C1.1881 12.6634 1.2146 12.71 1.25186 12.7472C1.28912 12.7844 1.33577 12.8108 1.38683 12.8237C1.4379 12.8365 1.49149 12.8353 1.54192 12.8201L4.0814 12.0501C4.2641 11.9946 4.43036 11.895 4.56561 11.7602L12.3521 3.97343Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1148_684">
+                                                            <rect width="14" height="14" fill="white"/>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right: Status Badge & Population Metrics -->
+                                <div style="display: flex; width: 260px; flex-direction: column; align-items: flex-start; gap: 10px;">
+                                    <!-- Status Badge -->
+                                    <div style="display: flex; padding: 6px 10px; align-items: center; gap: 8px; border-radius: 999px; border: 1px solid #A7F3D0; background: #D1FAE5;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <g clip-path="url(#clip0_1009_406)">
+                                                <path d="M12.7168 5.83345C12.9832 7.14087 12.7934 8.50011 12.1789 9.6845C11.5644 10.8689 10.5625 11.8068 9.3402 12.3419C8.1179 12.877 6.7491 12.9768 5.46208 12.6248C4.17505 12.2728 3.0476 11.4903 2.26773 10.4076C1.48786 9.32496 1.10272 8.00767 1.17654 6.67542C1.25036 5.34318 1.77867 4.0765 2.67337 3.08663C3.56807 2.09676 4.77508 1.44353 6.09311 1.23588C7.41114 1.02823 8.76053 1.2787 9.91624 1.94553M5.2498 6.4165L6.9998 8.1665L12.8331 2.33317" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_1009_406">
+                                                    <rect width="14" height="14" fill="white"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span id="detail_status_badge_text" style="color: #065F46; font-family: Inter, sans-serif; font-size: 12px; font-weight: 700;">Active</span>
+                                    </div>
+
+                                    <!-- Row for Metrics -->
+                                    <div style="display: flex; gap: 10px; align-self: stretch;">
+                                        <!-- Total Population Box -->
+                                        <div style="display: flex; padding: 10px; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1 0 0; border-radius: 10px; border: 1px solid #E2E8F0; background: #F8FAFC;">
+                                            <div style="color: #64748B; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600;">Total Population</div>
+                                            <div id="detail_total_population" style="color: #0F172A; font-family: Inter, sans-serif; font-size: 16px; font-weight: 800;">1</div>
+                                        </div>
+
+                                        <!-- Active Population Box -->
+                                        <div style="display: flex; padding: 10px; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1 0 0; border-radius: 10px; border: 1px solid #E2E8F0; background: #F8FAFC;">
+                                            <div style="color: #64748B; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600;">Active Population</div>
+                                            <div id="detail_active_population" style="color: #0F172A; font-family: Inter, sans-serif; font-size: 16px; font-weight: 800;">1</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4 Grid Sections (2x2) -->
+                            <div class="row g-4">
+
+                                <!-- 1. Contract Info Card -->
+                                <div class="col-lg-6">
+                                    <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                        <div class="d-flex align-items-center gap-3 mb-3">
+                                            <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #DBEAFE; color: #2563EB;">
+                                                <i class="bi bi-file-earmark-text fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Contract Info</h5>
+                                                <div class="text-muted" style="font-size: 12px;">Key contract details and billing settings</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- Contract Start -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-calendar-event text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT START</div>
+                                                    <div id="detail_contract_start" class="fw-bold text-dark" style="font-size: 13px;">2025-10-01</div>
+                                                </div>
+                                            </div>
+                                            <!-- Contract End -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-calendar-event text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT END</div>
+                                                    <div id="detail_contract_end" class="fw-bold text-dark" style="font-size: 13px;">2029-12-02</div>
+                                                </div>
+                                            </div>
+                                            <!-- Contract No -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-file-earmark text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT NO.</div>
+                                                    <div id="detail_contract_no" class="fw-bold text-dark" style="font-size: 13px;">CONTRACT2025</div>
+                                                </div>
+                                            </div>
+                                            <!-- Contract File -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-file-earmark-arrow-down text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT FILE</div>
+                                                    <div id="detail_contract_file" class="fw-bold text-dark" style="font-size: 13px;">-</div>
+                                                </div>
+                                            </div>
+                                            <!-- Billing Type -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-arrow-repeat text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">BILLING TYPE</div>
+                                                    <div id="detail_billing_type" class="fw-bold text-dark" style="font-size: 13px;">Per Member</div>
+                                                </div>
+                                            </div>
+                                            <!-- Default Currency -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-cash-stack text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">DEFAULT CURRENCY</div>
+                                                    <div id="detail_currency" class="fw-bold text-dark" style="font-size: 13px;">tnd</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 2. Contact Info Card -->
+                                <div class="col-lg-6">
+                                    <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                        <div class="d-flex align-items-center gap-3 mb-3">
+                                            <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #FFEDD5; color: #EA580C;">
+                                                <i class="bi bi-telephone fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Contact Info</h5>
+                                                <div class="text-muted" style="font-size: 12px;">Primary contact details for communication</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- Contact Person -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-person text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTACT PERSON</div>
+                                                    <div id="detail_contact_person" class="fw-bold text-dark" style="font-size: 13px;">Mr X</div>
+                                                </div>
+                                            </div>
+                                            <!-- Designation -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-briefcase text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">DESIGNATION</div>
+                                                    <div id="detail_contact_designation" class="fw-bold text-dark" style="font-size: 13px;">CEO</div>
+                                                </div>
+                                            </div>
+                                            <!-- Email -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-envelope text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">EMAIL</div>
+                                                    <div id="detail_contact_email" class="fw-bold text-dark" style="font-size: 13px;">MrX@star.com</div>
+                                                </div>
+                                            </div>
+                                            <!-- Invoice Email -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-envelope-check text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">INVOICE EMAIL</div>
+                                                    <div id="detail_invoice_email" class="fw-bold text-dark" style="font-size: 13px;">Invoice@star.com</div>
+                                                </div>
+                                            </div>
+                                            <!-- Phone -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-telephone text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">PHONE</div>
+                                                    <div id="detail_contact_phone" class="fw-bold text-dark" style="font-size: 13px;">0021671225566</div>
+                                                </div>
+                                            </div>
+                                            <!-- Alt Phone -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-telephone-plus text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">ALT PHONE</div>
+                                                    <div id="detail_alt_phone" class="fw-bold text-dark" style="font-size: 13px;">-</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Location Info Card -->
+                                <div class="col-lg-6">
+                                    <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                        <div class="d-flex align-items-center gap-3 mb-3">
+                                            <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #F3E8FF; color: #9333EA;">
+                                                <i class="bi bi-geo-alt fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Location Info</h5>
+                                                <div class="text-muted" style="font-size: 12px;">Primary contact details for Location</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- Address 1 -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-geo-alt text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">ADDRESS 1</div>
+                                                    <div id="detail_address1" class="fw-bold text-dark" style="font-size: 13px;">Eiffel 2</div>
+                                                </div>
+                                            </div>
+                                            <!-- Address 2 -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-geo-alt text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">ADDRESS 2</div>
+                                                    <div id="detail_address2" class="fw-bold text-dark" style="font-size: 13px;">Le kram</div>
+                                                </div>
+                                            </div>
+                                            <!-- City -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-building text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CITY</div>
+                                                    <div id="detail_city" class="fw-bold text-dark" style="font-size: 13px;">cheikh zayed</div>
+                                                </div>
+                                            </div>
+                                            <!-- Postal Code -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-hash text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">POSTAL CODE</div>
+                                                    <div id="detail_postal_code" class="fw-bold text-dark" style="font-size: 13px;">2021</div>
+                                                </div>
+                                            </div>
+                                            <!-- Country -->
+                                            <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                                <i class="bi bi-globe text-secondary fs-6"></i>
+                                                <div>
+                                                    <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">COUNTRY</div>
+                                                    <div id="detail_country" class="fw-bold text-dark" style="font-size: 13px;">UAE</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Statistics Card -->
+                                <div class="col-lg-6">
+                                    <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                        <div class="d-flex align-items-center gap-3 mb-3">
+                                            <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #DCFCE7; color: #16A34A;">
+                                                <i class="bi bi-bar-chart-line fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Statistics</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-2 pt-2">
+                                            <!-- Total -->
+                                            <div class="col-6 col-sm-3">
+                                                <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #F0FDF4; border-color: #DCFCE7 !important; height: 135px;">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <i class="bi bi-people text-success fs-5"></i>
+                                                        <span class="badge rounded-pill bg-success-subtle text-success" style="font-size: 10px;">100%</span>
+                                                    </div>
+                                                    <div>
+                                                        <div id="stat_total" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                        <div class="text-muted" style="font-size: 11px;">Total</div>
+                                                    </div>
+                                                    <div class="w-100 rounded-pill" style="height: 4px; background-color: #10B981;"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Active -->
+                                            <div class="col-6 col-sm-3">
+                                                <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #FFF7ED; border-color: #FFEDD5 !important; height: 135px;">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <i class="bi bi-activity text-warning fs-5" style="color: #F97316 !important;"></i>
+                                                        <span class="badge rounded-pill" style="font-size: 10px; color: #EA580C !important; background-color: #FFEDD5 !important;">100%</span>
+                                                    </div>
+                                                    <div>
+                                                        <div id="stat_active" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                        <div class="text-muted" style="font-size: 11px;">Active</div>
+                                                    </div>
+                                                    <div class="w-100 rounded-pill" style="height: 4px; background-color: #F97316;"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Group Policy -->
+                                            <div class="col-6 col-sm-3">
+                                                <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #F5F3FF; border-color: #DDD6FE !important; height: 135px;">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <i class="bi bi-hash fs-5" style="color: #8B5CF6;"></i>
+                                                        <span class="badge rounded-pill" style="font-size: 10px; color: #7C3AED; background-color: #DDD6FE;">100%</span>
+                                                    </div>
+                                                    <div>
+                                                        <div id="stat_group_policy" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                        <div class="text-muted" style="font-size: 11px;">Group Policy</div>
+                                                    </div>
+                                                    <div class="w-100 rounded-pill" style="height: 4px; background-color: #8B5CF6;"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Total Accounts -->
+                                            <div class="col-6 col-sm-3">
+                                                <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #EFF6FF; border-color: #DBEAFE !important; height: 135px;">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <i class="bi bi-layers text-primary fs-5"></i>
+                                                        <span class="badge rounded-pill bg-primary-subtle text-primary" style="font-size: 10px;">100%</span>
+                                                    </div>
+                                                    <div>
+                                                        <div id="stat_total_accounts" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                        <div class="text-muted" style="font-size: 11px;">Total Accounts</div>
+                                                    </div>
+                                                    <div class="w-100 rounded-pill" style="height: 4px; background-color: #3B82F6;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End Partner Details View -->
             </div>
             <!-- End Partner List Column -->
 
@@ -476,6 +874,358 @@
         </div>
         <!-- End Add Partner Form -->
 
+        <!-- Start Partner Details View -->
+        <div id="partner-details-view" style="display: none;">
+            <!-- Back to Partners Link Header -->
+            <div class="mb-3">
+                <a href="#" onclick="showPartnerList(event)" class="text-decoration-none fw-semibold d-inline-flex align-items-center gap-2" style="color: #0B4F8A; font-size: 14px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8.00021 3.33276L3.33301 7.99996L8.00021 12.6672M3.33301 7.99996H12.6674" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Back to Partners
+                </a>
+            </div>
+
+            <!-- Main Card Container -->
+            <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                <!-- Top Dark Blue Card Header -->
+                <div class="px-4 py-3 d-flex justify-content-between align-items-center" style="background-color: #0B4F8A;">
+                    <div class="d-flex align-items-center gap-2 text-white">
+                        <div class="d-flex align-items-center justify-content-center rounded-circle" style="width: 28px; height: 28px; background-color: rgba(255, 255, 255, 0.2);">
+                            <i class="bi bi-person fs-6"></i>
+                        </div>
+                        <h5 class="mb-0 fw-bold fs-6">Partner Details</h5>
+                    </div>
+                    <button type="button" class="btn text-white p-0 border-0 d-flex align-items-center" onclick="showPartnerList(event)" style="opacity: 0.85;">
+                        <i class="bi bi-x-circle-fill fs-5"></i>
+                    </button>
+                </div>
+
+                <div class="card-body p-4 bg-white">
+
+                    <!-- Top Partner Banner Box -->
+                    <div class="bg-white border rounded-4 p-4 mb-4">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                            <!-- Left: Logo & Info -->
+                            <div class="d-flex align-items-center gap-3">
+                                <div id="detail_logo_box" class="rounded-3 d-flex align-items-center justify-content-center text-white fw-bold fs-4 flex-shrink-0" style="width: 56px; height: 56px; background-color: #0B4F8A;">
+                                    AP
+                                </div>
+                                <div>
+                                    <h4 id="detail_partner_name" class="fw-bold text-dark mb-1" style="font-size: 18px; color: #1E293B;">
+                                        Allianz Partners Middle East & Africa
+                                    </h4>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
+                                        <span id="detail_partner_type_badge" class="badge rounded-pill bg-light border px-2.5 py-1 fw-medium" style="color: #0B4F8A !important; border-color: #CBD5E1 !important;">
+                                            <i class="bi bi-shield me-1"></i> <span id="detail_partner_type_text">Insurance Provider</span>
+                                        </span>
+                                        <span id="detail_partner_code" class="text-muted" style="font-size: 13px;">
+                                            Partner ID: STA-INS-002
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <a href="#" onclick="display()" class="text-decoration-none fw-semibold d-inline-flex align-items-center gap-1" style="font-size: 13px; color: #0B4F8A;">
+                                            Edit Partner <i class="bi bi-pencil ms-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Status & Population Metrics -->
+                            <div class="d-flex align-items-center gap-3 flex-wrap">
+                                <span id="detail_status_badge" class="badge rounded-pill px-3 py-1.5 fw-semibold d-inline-flex align-items-center gap-1" style="background-color: #D1FAE5; color: #10B981; font-size: 13px;">
+                                    <i class="bi bi-check-circle-fill"></i> Active
+                                </span>
+
+                                <div class="bg-light border rounded-3 p-2 px-3 text-center" style="min-width: 100px; background-color: #F8FAFC;">
+                                    <div class="text-muted" style="font-size: 10px; font-weight: 700;">TOTAL POPULATION</div>
+                                    <div id="detail_total_population" class="fw-bold text-dark fs-5">1</div>
+                                </div>
+
+                                <div class="bg-light border rounded-3 p-2 px-3 text-center" style="min-width: 100px; background-color: #F8FAFC;">
+                                    <div class="text-muted" style="font-size: 10px; font-weight: 700;">ACTIVE POPULATION</div>
+                                    <div id="detail_active_population" class="fw-bold text-dark fs-5">1</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 Grid Sections (2x2) -->
+                    <div class="row g-4">
+
+                        <!-- 1. Contract Info Card -->
+                        <div class="col-lg-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #DBEAFE; color: #2563EB;">
+                                        <i class="bi bi-file-earmark-text fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Contract Info</h5>
+                                        <div class="text-muted" style="font-size: 12px;">Key contract details and billing settings</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-column gap-2">
+                                    <!-- Contract Start -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-calendar-event text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT START</div>
+                                            <div id="detail_contract_start" class="fw-bold text-dark" style="font-size: 13px;">2025-10-01</div>
+                                        </div>
+                                    </div>
+                                    <!-- Contract End -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-calendar-event text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT END</div>
+                                            <div id="detail_contract_end" class="fw-bold text-dark" style="font-size: 13px;">2029-12-02</div>
+                                        </div>
+                                    </div>
+                                    <!-- Contract No -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-file-earmark text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT NO.</div>
+                                            <div id="detail_contract_no" class="fw-bold text-dark" style="font-size: 13px;">CONTRACT2025</div>
+                                        </div>
+                                    </div>
+                                    <!-- Contract File -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-file-earmark-arrow-down text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT FILE</div>
+                                            <div id="detail_contract_file" class="fw-bold text-dark" style="font-size: 13px;">-</div>
+                                        </div>
+                                    </div>
+                                    <!-- Billing Type -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-arrow-repeat text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">BILLING TYPE</div>
+                                            <div id="detail_billing_type" class="fw-bold text-dark" style="font-size: 13px;">Per Member</div>
+                                        </div>
+                                    </div>
+                                    <!-- Default Currency -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-cash-stack text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">DEFAULT CURRENCY</div>
+                                            <div id="detail_currency" class="fw-bold text-dark" style="font-size: 13px;">tnd</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Contact Info Card -->
+                        <div class="col-lg-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #FFEDD5; color: #EA580C;">
+                                        <i class="bi bi-telephone fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Contact Info</h5>
+                                        <div class="text-muted" style="font-size: 12px;">Primary contact details for communication</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-column gap-2">
+                                    <!-- Contact Person -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-person text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTACT PERSON</div>
+                                            <div id="detail_contact_person" class="fw-bold text-dark" style="font-size: 13px;">Mr X</div>
+                                        </div>
+                                    </div>
+                                    <!-- Designation -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-briefcase text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">DESIGNATION</div>
+                                            <div id="detail_contact_designation" class="fw-bold text-dark" style="font-size: 13px;">CEO</div>
+                                        </div>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-envelope text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">EMAIL</div>
+                                            <div id="detail_contact_email" class="fw-bold text-dark" style="font-size: 13px;">MrX@star.com</div>
+                                        </div>
+                                    </div>
+                                    <!-- Invoice Email -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-envelope-check text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">INVOICE EMAIL</div>
+                                            <div id="detail_invoice_email" class="fw-bold text-dark" style="font-size: 13px;">Invoice@star.com</div>
+                                        </div>
+                                    </div>
+                                    <!-- Phone -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-telephone text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">PHONE</div>
+                                            <div id="detail_contact_phone" class="fw-bold text-dark" style="font-size: 13px;">0021671225566</div>
+                                        </div>
+                                    </div>
+                                    <!-- Alt Phone -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-telephone-plus text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">ALT PHONE</div>
+                                            <div id="detail_alt_phone" class="fw-bold text-dark" style="font-size: 13px;">-</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Location Info Card -->
+                        <div class="col-lg-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #F3E8FF; color: #9333EA;">
+                                        <i class="bi bi-geo-alt fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Location Info</h5>
+                                        <div class="text-muted" style="font-size: 12px;">Primary contact details for Location</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-column gap-2">
+                                    <!-- Address 1 -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-geo-alt text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">ADDRESS 1</div>
+                                            <div id="detail_address1" class="fw-bold text-dark" style="font-size: 13px;">Eiffel 2</div>
+                                        </div>
+                                    </div>
+                                    <!-- Address 2 -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-geo-alt text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">ADDRESS 2</div>
+                                            <div id="detail_address2" class="fw-bold text-dark" style="font-size: 13px;">Le kram</div>
+                                        </div>
+                                    </div>
+                                    <!-- City -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-building text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CITY</div>
+                                            <div id="detail_city" class="fw-bold text-dark" style="font-size: 13px;">cheikh zayed</div>
+                                        </div>
+                                    </div>
+                                    <!-- Postal Code -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-hash text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">POSTAL CODE</div>
+                                            <div id="detail_postal_code" class="fw-bold text-dark" style="font-size: 13px;">2021</div>
+                                        </div>
+                                    </div>
+                                    <!-- Country -->
+                                    <div class="bg-light border rounded-3 p-2.5 px-3 d-flex align-items-center gap-3" style="background-color: #F8FAFC;">
+                                        <i class="bi bi-globe text-secondary fs-6"></i>
+                                        <div>
+                                            <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">COUNTRY</div>
+                                            <div id="detail_country" class="fw-bold text-dark" style="font-size: 13px;">UAE</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Statistics Card -->
+                        <div class="col-lg-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white" style="border-color: #E2E8F0 !important;">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #DCFCE7; color: #16A34A;">
+                                        <i class="bi bi-bar-chart-line fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark" style="font-size: 15px;">Statistics</h5>
+                                    </div>
+                                </div>
+
+                                <div class="row g-2 pt-2">
+                                    <!-- Total -->
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #F0FDF4; border-color: #DCFCE7 !important; height: 135px;">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <i class="bi bi-people text-success fs-5"></i>
+                                                <span class="badge rounded-pill bg-success-subtle text-success" style="font-size: 10px;">100%</span>
+                                            </div>
+                                            <div>
+                                                <div id="stat_total" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                <div class="text-muted" style="font-size: 11px;">Total</div>
+                                            </div>
+                                            <div class="w-100 rounded-pill" style="height: 4px; background-color: #10B981;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Active -->
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #FFF7ED; border-color: #FFEDD5 !important; height: 135px;">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <i class="bi bi-activity text-warning fs-5" style="color: #F97316 !important;"></i>
+                                                <span class="badge rounded-pill" style="font-size: 10px; color: #EA580C !important; background-color: #FFEDD5 !important;">100%</span>
+                                            </div>
+                                            <div>
+                                                <div id="stat_active" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                <div class="text-muted" style="font-size: 11px;">Active</div>
+                                            </div>
+                                            <div class="w-100 rounded-pill" style="height: 4px; background-color: #F97316;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Group Policy -->
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #F5F3FF; border-color: #DDD6FE !important; height: 135px;">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <i class="bi bi-hash fs-5" style="color: #8B5CF6;"></i>
+                                                <span class="badge rounded-pill" style="font-size: 10px; color: #7C3AED; background-color: #DDD6FE;">100%</span>
+                                            </div>
+                                            <div>
+                                                <div id="stat_group_policy" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                <div class="text-muted" style="font-size: 11px;">Group Policy</div>
+                                            </div>
+                                            <div class="w-100 rounded-pill" style="height: 4px; background-color: #8B5CF6;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Total Accounts -->
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 rounded-3 border d-flex flex-column justify-content-between" style="background-color: #EFF6FF; border-color: #DBEAFE !important; height: 135px;">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <i class="bi bi-layers text-primary fs-5"></i>
+                                                <span class="badge rounded-pill bg-primary-subtle text-primary" style="font-size: 10px;">100%</span>
+                                            </div>
+                                            <div>
+                                                <div id="stat_total_accounts" class="fw-bold text-dark fs-3 lh-1 mb-1">1</div>
+                                                <div class="text-muted" style="font-size: 11px;">Total Accounts</div>
+                                            </div>
+                                            <div class="w-100 rounded-pill" style="height: 4px; background-color: #3B82F6;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Partner Details View -->
+
     </div>
 
     <script>
@@ -488,6 +1238,60 @@
             if(e) e.preventDefault();
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('add-partner-form').style.display = 'none';
+            showPartnerList();
+        }
+
+        function showPartnerList(e) {
+            if(e) e.preventDefault();
+            let detailsView = document.getElementById('partner-details-view');
+            let listCard = document.getElementById('partner-list-card');
+            if (detailsView) detailsView.style.display = 'none';
+            if (listCard) listCard.style.display = 'block';
+        }
+
+        function openPartnerDetails(partner) {
+            let detailsView = document.getElementById('partner-details-view');
+            let listCard = document.getElementById('partner-list-card');
+            let addForm = document.getElementById('add-partner-form');
+            let mainContent = document.getElementById('main-content');
+
+            if (addForm) addForm.style.display = 'none';
+            if (mainContent) mainContent.style.display = 'block';
+            if (listCard) listCard.style.display = 'none';
+            if (detailsView) detailsView.style.display = 'block';
+
+            if (partner) {
+                let name = partner.name || 'Allianz Partners Middle East & Africa';
+                let logo = partner.logo || (name ? name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase() : 'AP');
+                let type = partner.type || 'Insurance Provider';
+                let code = partner.internal_code || partner.code || 'STA-INS-002';
+                let status = partner.status || 'Active';
+
+                document.getElementById('detail_logo_box').innerText = logo;
+                document.getElementById('detail_partner_name').innerText = name;
+                document.getElementById('detail_partner_type_text').innerText = type;
+                document.getElementById('detail_partner_code').innerText = 'Partner ID: ' + code;
+                
+                let statusBadgeText = document.getElementById('detail_status_badge_text');
+                if (statusBadgeText) {
+                    statusBadgeText.innerText = status;
+                }
+
+                // Contact Info
+                if (partner.contact_name) document.getElementById('detail_contact_person').innerText = partner.contact_name;
+                if (partner.contact_email) document.getElementById('detail_contact_email').innerText = partner.contact_email;
+                if (partner.contact_phone) document.getElementById('detail_contact_phone').innerText = partner.contact_phone;
+                
+                // Location Info
+                if (partner.location) {
+                    let parts = partner.location.split(',');
+                    document.getElementById('detail_address1').innerText = parts[0] ? parts[0].trim() : 'Eiffel 2';
+                    document.getElementById('detail_address2').innerText = parts[1] ? parts[1].trim() : 'Le kram';
+                    document.getElementById('detail_city').innerText = parts[2] ? parts[2].trim() : 'cheikh zayed';
+                }
+                if (partner.city) document.getElementById('detail_city').innerText = partner.city;
+                if (partner.country) document.getElementById('detail_country').innerText = partner.country;
+            }
         }
     </script>
 @endsection

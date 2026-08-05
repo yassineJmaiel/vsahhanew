@@ -476,154 +476,195 @@
                     <!-- ================= START STEP 4 (SUCCESS STATE) ================= -->
                     <div id="wizard-step-4" style="display: none;">
 
-    <div class="text-center mb-5">
-        <div class="d-inline-flex justify-content-center align-items-center rounded-circle mb-3 success-icon-circle">
-            <i class="bi bi-check-lg success-icon"></i>
-        </div>
+                        <!-- Top Icon & Banner -->
+                        <div class="text-center mb-4 pt-2">
+                            <div class="d-inline-flex justify-content-center align-items-center rounded-circle mb-3" style="width: 64px; height: 64px; background-color: #E6F4EA;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
 
-        <h2 class="fs-2 fw-bold text-dark mb-1">
-            Partner Successfully Created
-        </h2>
+                            <h2 class="fs-2 fw-bold text-dark mb-1" style="color: #1E293B; font-weight: 700;">
+                                Partner Successfully Updated
+                            </h2>
 
-        <p class="fs-6 fw-semibold text-teal">
-            <i class="bi bi-check2"></i> Added to Partner Management
-        </p>
-    </div>
+                            <p class="fs-6 fw-semibold mb-0 d-flex align-items-center justify-content-center gap-1" style="color: #26C6A0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Added to Partner Management
+                            </p>
+                        </div>
 
+                        <!-- Main Card Details Box -->
+                        <div class="rounded-4 p-4 mb-4 border" style="background-color: #F8FAFC; border-color: #E2E8F0 !important;">
+                            <div class="row g-4">
 
-    <div class="bg-light rounded-4 p-4 mb-5 border">
+                                <!-- Left Column: PARTNER DETAILS -->
+                                <div class="col-lg-5">
+                                    <h4 class="fw-bold mb-3" style="font-size: 11px; letter-spacing: 0.8px; color: #0B4F8A; text-transform: uppercase;">
+                                        PARTNER DETAILS
+                                    </h4>
+                                    <div class="d-flex gap-3 align-items-stretch">
+                                        <!-- Logo Box -->
+                                        <div id="partner_logo_box" class="rounded-3 d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0" style="width: 140px; height: 140px; background-color: #002B66; border: 1px solid #E2E8F0;">
+                                            <img id="partner_logo_img" src="" alt="Partner Logo" style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;" onerror="this.style.display='none'; document.getElementById('partner_logo_fallback').style.display='flex';">
+                                            <div id="partner_logo_fallback" class="w-100 h-100 d-flex flex-column align-items-center justify-content-center text-white p-2 text-center" style="background: #002B66;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="9" cy="7" r="4"></circle>
+                                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
 
-        <h3 class="fs-7 fw-bold text-secondary mb-3 letter-spacing-1">
-            CONTACT DETAILS
-        </h3>
+                                        <!-- Stacked Field Cards -->
+                                        <div class="d-flex flex-column justify-content-between flex-grow-1 gap-2">
+                                            <!-- Partner Name -->
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #0B4F8A;">
+                                                    <i class="bi bi-person"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">PARTNER NAME</div>
+                                                    <div id="partner_name_display" class="fw-bold text-dark text-truncate" style="font-size: 14px; color: #1E293B;">AXA</div>
+                                                </div>
+                                            </div>
+                                            <!-- Partner Type -->
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #0B4F8A;">
+                                                    <i class="bi bi-shield"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">PARTNER TYPE</div>
+                                                    <div id="partner_type_display" class="fw-bold text-dark text-truncate" style="font-size: 14px; color: #1E293B;">DKEEE</div>
+                                                </div>
+                                            </div>
+                                            <!-- Partner Code -->
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #0B4F8A;">
+                                                    <i class="bi bi-barcode"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">PARTNER CODE</div>
+                                                    <div id="partner_code_display" class="fw-bold text-dark text-truncate" style="font-size: 14px; color: #1E293B;">CRZPDPF-TR</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <div class="row g-3">
+                                <!-- Right Column: CONTACT DETAILS -->
+                                <div class="col-lg-7">
+                                    <h4 class="fw-bold mb-3" style="font-size: 11px; letter-spacing: 0.8px; color: #10B981; text-transform: uppercase;">
+                                        CONTACT DETAILS
+                                    </h4>
+                                    <div class="row g-2">
+                                        <!-- Full Name -->
+                                        <div class="col-sm-6">
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3 h-100">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #10B981;">
+                                                    <i class="bi bi-person"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">FULL NAME</div>
+                                                    <div id="contact_name_display" class="fw-semibold text-dark text-truncate" style="font-size: 13px;">Sarah Mitchell</div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-            <div class="col-md-6">
-                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                    <div class="me-3">
-                        <i class="bi bi-person text-custom-blue fs-5"></i>
+                                        <!-- Email Address -->
+                                        <div class="col-sm-6">
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3 h-100">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #10B981;">
+                                                    <i class="bi bi-envelope"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">EMAIL ADDRESS</div>
+                                                    <div id="contact_email_display" class="fw-semibold text-dark text-truncate" style="font-size: 13px;">sarah.mitchell@company.com</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Phone Number -->
+                                        <div class="col-sm-6">
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3 h-100">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #10B981;">
+                                                    <i class="bi bi-telephone"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">PHONE NUMBER</div>
+                                                    <div id="contact_phone_display" class="fw-semibold text-dark text-truncate" style="font-size: 13px;">+1 (555) 234-8901</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Company -->
+                                        <div class="col-sm-6">
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3 h-100">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #10B981;">
+                                                    <i class="bi bi-building"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">COMPANY</div>
+                                                    <div id="contact_company_display" class="fw-semibold text-dark text-truncate" style="font-size: 13px;">Acme Corporation</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Role -->
+                                        <div class="col-sm-6">
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3 h-100">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #10B981;">
+                                                    <i class="bi bi-briefcase"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">ROLE</div>
+                                                    <div id="contact_role_display" class="fw-semibold text-dark text-truncate" style="font-size: 13px;">Product Manager</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Location -->
+                                        <div class="col-sm-6">
+                                            <div class="bg-white border rounded-3 p-2 px-3 d-flex align-items-center gap-3 h-100">
+                                                <div class="fs-5 d-flex align-items-center" style="color: #10B981;">
+                                                    <i class="bi bi-geo-alt"></i>
+                                                </div>
+                                                <div class="text-truncate">
+                                                    <div class="text-muted detail-label-sm text-uppercase" style="font-size: 9px; font-weight: 700; color: #64748B;">LOCATION</div>
+                                                    <div id="contact_location_display" class="fw-semibold text-dark text-truncate" style="font-size: 13px;">San Francisco, CA</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Actions -->
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center pt-2 gap-3">
+                            <div class="text-muted fs-7 mb-2 mb-md-0" style="color: #94A3B8; font-size: 13px;">
+                                Created on <span id="partner_created_at_display">July 21, 2026 at 3:45 PM</span>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 align-items-center">
+                                <button type="button" class="btn btn-outline-secondary rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center gap-2 border" style="border-color: #CBD5E1 !important; color: #334155; font-size: 13px; background-color: white;" onclick="openPartnerDetailsFromCreatedForm()">
+                                    <i class="bi bi-eye"></i> View Partner
+                                </button>
+
+                                <button type="button" class="btn rounded-pill px-4 py-2 fw-bold text-white" style="background-color: #26C6A0; font-size: 13px;" onclick="hideDisplay(event)">
+                                    Partners
+                                </button>
+
+                                <button type="button" class="btn rounded-pill px-4 py-2 fw-bold text-white d-inline-flex align-items-center gap-2" style="background-color: #0B4F8A; font-size: 13px;" onclick="resetAndAddNewPartner()">
+                                    <i class="bi bi-plus-lg"></i> Add New Partner
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
-                    <div>
-                        <div class="text-muted detail-label-sm">FULL NAME</div>
-                        <div id="name" class="fw-semibold text-dark fs-6"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6">
-                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                    <div class="me-3">
-                        <i class="bi bi-envelope text-custom-blue fs-5"></i>
-                    </div>
-                    <div>
-                        <div class="text-muted detail-label-sm">EMAIL ADDRESS</div>
-                        <div id="partner_email" class="fw-semibold text-dark fs-6"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6">
-                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                    <div class="me-3">
-                        <i class="bi bi-telephone text-custom-blue fs-5"></i>
-                    </div>
-                    <div>
-                        <div class="text-muted detail-label-sm">PHONE NUMBER</div>
-                        <div id="partner_phone" class="fw-semibold text-dark fs-6"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6">
-                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                    <div class="me-3">
-                        <i class="bi bi-building text-custom-blue fs-5"></i>
-                    </div>
-                    <div>
-                        <div class="text-muted detail-label-sm">COMPANY</div>
-                        <div id="partner_company" class="fw-semibold text-dark fs-6"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6">
-                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                    <div class="me-3">
-                        <i class="bi bi-briefcase text-custom-blue fs-5"></i>
-                    </div>
-                    <div>
-                        <div class="text-muted detail-label-sm">ROLE</div>
-                        <div id="partner_role" class="fw-semibold text-dark fs-6"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6">
-                <div class="d-flex align-items-center bg-white border rounded-3 p-3 h-100">
-                    <div class="me-3">
-                        <i class="bi bi-geo-alt text-custom-blue fs-5"></i>
-                    </div>
-                    <div>
-                        <div class="text-muted detail-label-sm">LOCATION</div>
-                        <div id="partner_location" class="fw-semibold text-dark fs-6"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <hr class="mb-4">
-
-
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-
-        <div class="text-muted mb-3 mb-md-0 fs-7">
-            Created on 
-            <span id="partner_created_at"></span>
-        </div>
-
-
-        <div class="d-flex flex-wrap gap-2">
-
-            <button type="button" 
-                class="btn btn-outline-secondary rounded-pill px-4 fw-semibold border bg-white text-dark">
-
-                <i class="bi bi-eye"></i> View Partner
-
-            </button>
-
-
-            <button type="button" 
-                class="btn btn-primary-blue rounded-pill px-4 fw-bold"
-                onclick="hideDisplay(event)">
-
-                Partners
-
-            </button>
-
-
-            <button type="button" 
-                class="btn btn-primary-teal rounded-pill px-4 fw-bold"
-                onclick="goToStep(1)">
-
-                <i class="bi bi-plus"></i> Add Another Partner
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
                     <!-- ================= END STEP 4 ================= -->
 
                 </form>
@@ -631,74 +672,6 @@
         </div>
     </div>
 </div>
-
-{{-- <script>
-    function goToStep(step) {
-        // Hide all steps
-        document.getElementById('wizard-step-1').style.display = 'none';
-        document.getElementById('wizard-step-2').style.display = 'none';
-        document.getElementById('wizard-step-3').style.display = 'none';
-        document.getElementById('wizard-step-4').style.display = 'none';
-        
-        // Show target step
-        document.getElementById('wizard-step-' + step).style.display = (step === 4 ? 'block' : 'flex');
-
-        if (step === 4) {
-            // Success state UI changes
-            document.getElementById('stepper-header-container').style.display = 'none';
-            document.getElementById('stepper-hr').style.display = 'none';
-            document.getElementById('main-page-title').innerText = 'Partner Added';
-            document.getElementById('header-btn-save').style.display = 'none';
-            document.getElementById('header-btn-cancel').style.display = 'none';
-            // Removed form-wrapper border manipulation
-        } else {
-            // Reset header if we go back
-            document.getElementById('stepper-header-container').style.display = 'flex';
-            document.getElementById('stepper-hr').style.display = 'block';
-            document.getElementById('main-page-title').innerText = 'Add New Partner';
-            document.getElementById('header-btn-save').style.display = 'inline-block';
-            document.getElementById('header-btn-cancel').style.display = 'inline-block';
-            // Removed form-wrapper border manipulation
-
-            // Reset headers to default gray state
-            for(let i=1; i<=3; i++) {
-                let h = document.getElementById('step-header-' + i);
-                let circle = h.querySelector('.step-circle');
-                let text = h.querySelector('.step-text');
-                
-                circle.style.backgroundColor = 'transparent';
-                circle.style.color = '#94A3B8';
-                circle.style.borderColor = '#dee2e6';
-                circle.innerHTML = i;
-                text.style.color = '#94A3B8';
-                text.style.fontWeight = '400';
-            }
-
-            // Apply completed styles to previous steps
-            for(let i=1; i<step; i++) {
-                let h = document.getElementById('step-header-' + i);
-                let circle = h.querySelector('.step-circle');
-                
-                circle.style.backgroundColor = '#0B4F8A';
-                circle.style.color = 'white';
-                circle.style.borderColor = '#0B4F8A';
-                circle.innerHTML = '<i class="bi bi-check-lg"></i>';
-            }
-
-            // Apply active styles to current step
-            let currentHeader = document.getElementById('step-header-' + step);
-            let currentCircle = currentHeader.querySelector('.step-circle');
-            let currentText = currentHeader.querySelector('.step-text');
-            
-            currentCircle.style.backgroundColor = '#0B4F8A';
-            currentCircle.style.color = 'white';
-            currentCircle.style.borderColor = '#0B4F8A';
-            currentText.style.color = '#1E293B';
-            currentText.style.fontWeight = '600';
-        }
-    }
-</script> --}}
-
 
 <script>
     function goToStep(step) {
@@ -715,7 +688,7 @@
             // Success state UI changes
             document.getElementById('stepper-header-container').style.display = 'none';
             document.getElementById('stepper-hr').style.display = 'none';
-            document.getElementById('main-page-title').innerText = 'Partner Added';
+            document.getElementById('main-page-title').innerText = 'Partner Edited';
             document.getElementById('header-btn-save').style.display = 'none';
             document.getElementById('header-btn-cancel').style.display = 'none';
             document.querySelector('.form-wrapper').style.borderColor = 'transparent';
@@ -768,9 +741,11 @@
         }
     }
 
-    
+    function resetAndAddNewPartner() {
+        document.getElementById('partnerForm').reset();
+        goToStep(1);
+    }
 </script>
-
 
 <script>
 document.getElementById('generateCode').addEventListener('click', function(e){
@@ -783,105 +758,133 @@ document.getElementById('generateCode').addEventListener('click', function(e){
         return;
     }
 
-    // Prendre les 3 premières lettres du nom
     let prefix = name
-        .replace(/[^a-zA-Z]/g, '') // supprimer espaces et caractères spéciaux
+        .replace(/[^a-zA-Z]/g, '')
         .substring(0, 3)
         .toUpperCase();
 
-    // Générer nombre aléatoire
     let random = Math.floor(10000 + Math.random() * 90000);
-
     let code = prefix + '-' + random;
 
     document.getElementById('internal_code').value = code;
 });
 
-
 document.getElementById('createPartner').addEventListener('click', function(e){
-
     e.preventDefault();
 
     let form = document.getElementById('partnerForm');
-
     let formData = new FormData(form);
 
+    let partnerName = document.querySelector('input[name="name"]')?.value || 'AXA';
+    let partnerType = document.querySelector('select[name="partner_type"]')?.value || 'DKEEE';
+    let internalCode = document.querySelector('input[name="internal_code"]')?.value || 'CRZPDPF-TR';
 
-    fetch("{{ route('partners.store') }}", {
+    let contactName = document.querySelector('input[name="contact_name"]')?.value || 'Sarah Mitchell';
+    let contactEmail = document.querySelector('input[name="contact_email"]')?.value || 'sarah.mitchell@company.com';
+    let contactPhone = document.querySelector('input[name="contact_phone"]')?.value || '+1 (555) 234-8901';
+    let countryCode = document.querySelector('input[name="country_code"]')?.value || '';
+    let citySelect = document.querySelector('select[name="city"]');
+    let cityText = citySelect ? citySelect.options[citySelect.selectedIndex]?.text || citySelect.value : 'San Francisco';
+    let countrySelect = document.querySelector('select[name="country"]');
+    let countryText = countrySelect ? countrySelect.options[countrySelect.selectedIndex]?.text || countrySelect.value : 'CA';
 
-        method: "POST",
+    let logoUrl = document.querySelector('input[name="logo_link"]')?.value;
+    let logoFileInput = document.querySelector('input[name="logo"]');
 
-        headers: {
-            "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
-            "Accept": "application/json"
-        },
+    // Set initial form field values
+    document.getElementById('partner_name_display').innerText = partnerName;
+    document.getElementById('partner_type_display').innerText = partnerType;
+    document.getElementById('partner_code_display').innerText = internalCode;
 
-        body: formData
+    document.getElementById('contact_name_display').innerText = contactName;
+    document.getElementById('contact_email_display').innerText = contactEmail;
+    document.getElementById('contact_phone_display').innerText = (countryCode ? countryCode + ' ' : '') + contactPhone;
+    document.getElementById('contact_company_display').innerText = partnerName || 'Acme Corporation';
+    document.getElementById('contact_role_display').innerText = 'Product Manager';
+    document.getElementById('contact_location_display').innerText = (cityText || 'San Francisco') + ', ' + (countryText || 'CA');
 
-    })
+    let now = new Date();
+    let options = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
+    document.getElementById('partner_created_at_display').innerText = now.toLocaleString('en-US', options).replace(' at', ' at');
 
-    .then(response => response.json())
+    // Handle logo image preview
+    let logoImg = document.getElementById('partner_logo_img');
+    let logoFallback = document.getElementById('partner_logo_fallback');
 
-    .then(data => {
-
-    console.log(data);
-
-    if(data.success){
-
-        let partner = data.partner;
-
-
-        document.getElementById('name').innerHTML =
-            partner.contact_name ?? '-';
-
-
-        document.getElementById('partner_email').innerHTML =
-            partner.contact_email ?? '-';
-
-
-        document.getElementById('partner_phone').innerHTML =
-            partner.contact_phone ?? '-';
-
-
-        document.getElementById('partner_company').innerHTML =
-            partner.name ?? '-';
-
-
-        document.getElementById('partner_role').innerHTML =
-            partner.contact_position ?? '-';
-
-
-        document.getElementById('partner_location').innerHTML =
-            (partner.city ?? '-') + ', ' + (partner.country ?? '-');
-
-
-        document.getElementById('partner_created_at').innerHTML =
-            data.date;
-
-
-        // Show Step 4
-        goToStep(4);
-
+    if (logoFileInput && logoFileInput.files && logoFileInput.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function(evt) {
+            logoImg.src = evt.target.result;
+            logoImg.style.display = 'block';
+            if(logoFallback) logoFallback.style.display = 'none';
+        }
+        reader.readAsDataURL(logoFileInput.files[0]);
+    } else if (logoUrl) {
+        logoImg.src = logoUrl;
+        logoImg.style.display = 'block';
+        if(logoFallback) logoFallback.style.display = 'none';
+    } else {
+        logoImg.style.display = 'none';
+        if(logoFallback) logoFallback.style.display = 'flex';
     }
 
-})
+    let csrfToken = document.querySelector('input[name="_token"]')?.value;
+    if (csrfToken) {
+        fetch("{{ route('partners.store') }}", {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": csrfToken,
+                "Accept": "application/json"
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success && data.partner){
+                let p = data.partner;
+                if(p.name) document.getElementById('partner_name_display').innerText = p.name;
+                if(p.partner_type) document.getElementById('partner_type_display').innerText = p.partner_type;
+                if(p.internal_code) document.getElementById('partner_code_display').innerText = p.internal_code;
+                if(p.contact_name) document.getElementById('contact_name_display').innerText = p.contact_name;
+                if(p.contact_email) document.getElementById('contact_email_display').innerText = p.contact_email;
+                if(p.contact_phone) document.getElementById('contact_phone_display').innerText = (p.country_code ? p.country_code + ' ' : '') + p.contact_phone;
+                if(p.city || p.country) document.getElementById('contact_location_display').innerText = (p.city || '') + (p.city && p.country ? ', ' : '') + (p.country || '');
+                if(data.date) document.getElementById('partner_created_at_display').innerText = data.date;
+                if(p.logo) {
+                    logoImg.src = '/storage/' + p.logo;
+                    logoImg.style.display = 'block';
+                    if(logoFallback) logoFallback.style.display = 'none';
+                }
+            }
+        })
+        .catch(err => console.log(err));
+    }
 
-
-    .catch(error => {
-
-        console.log(error);
-
-    });
-
-
+    goToStep(4);
 });
 
+function openPartnerDetailsFromCreatedForm() {
+    let name = document.getElementById('partner_name_display')?.innerText;
+    let type = document.getElementById('partner_type_display')?.innerText;
+    let code = document.getElementById('partner_code_display')?.innerText;
+    let contactName = document.getElementById('contact_name_display')?.innerText;
+    let contactEmail = document.getElementById('contact_email_display')?.innerText;
+    let contactPhone = document.getElementById('contact_phone_display')?.innerText;
+    let location = document.getElementById('contact_location_display')?.innerText;
 
+    if (typeof openPartnerDetails === 'function') {
+        openPartnerDetails({
+            name: name,
+            type: type,
+            internal_code: code,
+            contact_name: contactName,
+            contact_email: contactEmail,
+            contact_phone: contactPhone,
+            location: location,
+            status: 'Active'
+        });
+    }
+}
 </script>
-
-
-
-
-
 
 <!-- End Partner Information Form Card -->
