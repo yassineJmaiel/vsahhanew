@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 class PartnerController extends Controller
 {
-    
+    public function index()
+    {
+        return view('partnermanagement');
+    }
+
+
 
 public function store(Request $request)
 {

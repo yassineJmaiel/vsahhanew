@@ -26,9 +26,6 @@ Route::middleware('jwt.session')->group(function () {
         return view('group-management');
     })->name('groupmanagement');
 
-    Route::get('/partners', function () {
-        return view('partners.index');
-    })->name('partners.index');
 
     Route::get('/add-partner', function () {
         return view('add-partner-form');
