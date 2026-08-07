@@ -18,9 +18,7 @@ Route::middleware('jwt.session')->group(function () {
         return view('testdashboard');
     })->name('dashboard');
 
-    Route::get('/partnermanagement', function () {
-        return view('partnermanagement');
-    })->name('partnermanagement');
+    Route::get('/partnermanagement', [PartnerController::class, 'index'])->name('partnermanagement');
 
     Route::get('/group-management', function () {
         return view('group-management');

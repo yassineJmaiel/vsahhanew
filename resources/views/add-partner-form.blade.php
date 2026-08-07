@@ -46,23 +46,29 @@
     <div class="card shadow-sm border-0 mx-auto form-card-container">
         <!-- Stepper Header -->
         <div id="stepper-header-container" class="card-header bg-white border-bottom-0 pt-4 pb-3 px-4 px-xl-5 d-flex justify-content-between align-items-center flex-wrap gap-3 stepper-header">
-            <div class="stepper d-flex align-items-center flex-wrap gap-2 gap-md-0 stepper-nav">
+            <div class="stepper d-flex align-items-center stepper-nav">
                 <!-- Step 1 Header -->
-                <div id="step-header-1" class="step active d-flex align-items-center gap-2">
-                    <span class="step-circle">1</span>
-                    <span class="step-text">Partner Information</span>
+                <div id="step-header-1" class="step active d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="step-circle">1</span>
+                        <span class="step-text">Partner Information</span>
+                    </div>
+                    <div class="step-line step-line-custom d-none d-md-block"></div>
                 </div>
-                <div class="step-line d-none d-md-block mx-3 flex-grow-1 step-line-custom"></div>
                 <!-- Step 2 Header -->
-                <div id="step-header-2" class="step d-flex align-items-center gap-2">
-                    <span class="step-circle border inactive">2</span>
-                    <span class="step-text inactive">Address & GPS</span>
+                <div id="step-header-2" class="step d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="step-circle border inactive">2</span>
+                        <span class="step-text inactive">Address & GPS</span>
+                    </div>
+                    <div class="step-line step-line-custom d-none d-md-block"></div>
                 </div>
-                <div class="step-line d-none d-md-block mx-3 flex-grow-1 step-line-custom"></div>
                 <!-- Step 3 Header -->
-                <div id="step-header-3" class="step d-flex align-items-center gap-2">
-                    <span class="step-circle border inactive">3</span>
-                    <span class="step-text inactive">Contact & Contract</span>
+                <div id="step-header-3" class="step d-flex align-items-center">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="step-circle border inactive">3</span>
+                        <span class="step-text inactive">Contact & Contract</span>
+                    </div>
                 </div>
             </div>
             <div class="status-indicator">
@@ -703,41 +709,31 @@
             document.querySelector('.form-wrapper').style.borderColor = '#3b82f6';
             document.querySelector('.form-wrapper').classList.add('border');
 
-            // Reset headers to default gray state
+            // Reset all to default inactive state
             for(let i=1; i<=3; i++) {
                 let h = document.getElementById('step-header-' + i);
-                let circle = h.querySelector('.step-circle');
+                h.classList.remove('active', 'completed');
                 let text = h.querySelector('.step-text');
-                
-                circle.style.backgroundColor = 'transparent';
-                circle.style.color = '#94A3B8';
-                circle.style.borderColor = '#dee2e6';
+                text.classList.add('inactive');
+                let circle = h.querySelector('.step-circle');
                 circle.innerHTML = i;
-                text.style.color = '#94A3B8';
-                text.style.fontWeight = '400';
             }
 
             // Apply completed styles to previous steps
             for(let i=1; i<step; i++) {
                 let h = document.getElementById('step-header-' + i);
+                h.classList.add('completed');
+                let text = h.querySelector('.step-text');
+                text.classList.remove('inactive');
                 let circle = h.querySelector('.step-circle');
-                
-                circle.style.backgroundColor = '#0B4F8A';
-                circle.style.color = 'white';
-                circle.style.borderColor = '#0B4F8A';
                 circle.innerHTML = '<i class="bi bi-check-lg"></i>';
             }
 
             // Apply active styles to current step
             let currentHeader = document.getElementById('step-header-' + step);
-            let currentCircle = currentHeader.querySelector('.step-circle');
+            currentHeader.classList.add('active');
             let currentText = currentHeader.querySelector('.step-text');
-            
-            currentCircle.style.backgroundColor = '#0B4F8A';
-            currentCircle.style.color = 'white';
-            currentCircle.style.borderColor = '#0B4F8A';
-            currentText.style.color = '#1E293B';
-            currentText.style.fontWeight = '600';
+            currentText.classList.remove('inactive');
         }
     }
 

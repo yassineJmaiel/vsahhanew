@@ -1977,3 +1977,98 @@ body {
     width: 140px;
     display: inline-block;
 }
+
+/* --- Stepper Header Styles --- */
+.stepper-header {
+    display: flex !important;
+    height: 96px !important;
+    padding: 32px 136px 32px 32px !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    align-self: stretch !important; 
+    border-bottom: 1px solid #E2E8F0 !important; 
+    justify-content: space-between !important;
+}
+.stepper-nav {
+    display: flex !important;
+    width: 663px !important;
+    height: 32px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 32px !important;
+    flex-wrap: nowrap !important;
+}
+.step {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 229px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+}
+.step-line-custom {
+    width: 40px !important;
+    height: 1px !important;
+    background: #E2E8F0 !important;
+    flex-grow: 0 !important;
+    margin: 0 !important;
+    align-self: center !important;
+}
+.step-text {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: normal !important; 
+    color: #1E293B !important;
+}
+.step-text.inactive {
+    color: #94A3B8 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important; 
+}
+.step-circle {
+    display: inline-flex !important;
+    padding: 1px 5px 2px 5px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 16px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border: 1px solid #E2E8F0 !important;
+    color: #94A3B8 !important;
+    background: transparent !important;
+}
+.step.active .step-circle {
+    background-color: #0B4F8A !important;
+    color: white !important;
+    border: none !important;
+}
+.step.completed .step-circle {
+    background-color: #0B4F8A !important;
+    color: #26C6A0 !important;
+    font-size: 24px !important;
+    border: none !important;
+}
+.step.active .step-text {
+    color: #1E293B !important;
+    font-weight: 600 !important;
+}
+.step.completed .step-text {
+    color: #94A3B8 !important;
+    font-weight: 500 !important;
+}
+.status-badge-active {
+    background-color: #E8F5E9 !important;
+    color: #065F46 !important;
+    padding: 6px 12px !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+    white-space: nowrap !important;
+}
