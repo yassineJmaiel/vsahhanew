@@ -18,17 +18,14 @@ Route::middleware('jwt.session')->group(function () {
         return view('testdashboard');
     })->name('dashboard');
 
-  /*   Route::get('/partnermanagement', function () {
-        return view('partnermanagement');
-    })->name('partnermanagement') */;
+
+    Route::get('/partnermanagement', [PartnerController::class, 'index'])->name('partnermanagement');
+
 
     Route::get('/group-management', function () {
         return view('group-management');
     })->name('groupmanagement');
 
-    Route::get('/partners', function () {
-        return view('partners.index');
-    })->name('partners.index');
 
     Route::get('/add-partner', function () {
         return view('add-partner-form');
@@ -40,8 +37,6 @@ Route::middleware('jwt.session')->group(function () {
 });
 
 
-Route::get('/partnermanagement', [PartnerController::class, 'index'])
-    ->name('partnermanagement');
 Route::resource('partners', PartnerController::class);
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
