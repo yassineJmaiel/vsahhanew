@@ -109,10 +109,10 @@
                                 </label>
                                 <select class="form-select" required name="partner_type">
                                     <option value="" selected disabled>Select partner category</option>
-                                    <option value="standard">Standard</option>
-                                    <option value="premium">Premium</option>
-                                    <option value="corporate">Corporate</option>
-                                </select>
+                                    <option value="Insurance Provider">Insurance Provider</option>
+                                <option value="Insurance Broker">Insurance Broker</option>
+                                    <option value="Third Party Administrator">Third Party Administrator</option>
+                              </select>
                                 <div class="form-text">Standard, Premium, or Corporate partner.</div>
                                 <div class="mt-2">
                                     <a href="#" id="generateCode" class="auto-generate-link">
