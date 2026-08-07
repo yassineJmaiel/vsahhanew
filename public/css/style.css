@@ -501,7 +501,8 @@ body {
     background: var(--bg-surface);
     box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.03), 0 2px 10px 0 rgba(0, 0, 0, 0.04);
     display: flex;
-    height: 384px;
+    min-height: 384px;
+    height: auto;
     padding: 24px;
     flex-direction: column;
     justify-content: center;
@@ -1072,7 +1073,8 @@ body {
 }
 
 .form-notice-box {
-    max-width: 350px;
+    width: 100%;
+    max-width: 456px;
 }
 
 .form-notice-text {
@@ -1155,14 +1157,25 @@ body {
     color: #FFF;
 }
 
+.form-btn-group {
+    display: flex;
+    width: 100%;
+    max-width: 287px;
+    height: 41px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
 
 .form-actions-custom {
     display: flex;
-    padding: 39px 0 0 0;
+    padding: 40px 0 0 0;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     border-top: 1px solid #E2E8F0;
     margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 
@@ -1994,18 +2007,20 @@ body {
 }
 .stepper-nav {
     display: flex !important;
-    width: 663px !important;
-    height: 32px !important;
+    width: 100% !important;
+    max-width: 663px !important;
+    height: auto !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
     gap: 32px !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
 }
 .step {
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
-    width: 229px !important;
+    flex: 1 1 auto !important;
+    min-width: 150px !important;
     height: 32px !important;
     flex-shrink: 0 !important;
 }
@@ -2208,4 +2223,53 @@ body {
     font-size: 12px;
     font-weight: 600;
     line-height: normal;
+}
+
+/* ==========================================================================
+   DataTables Custom Styling
+   ========================================================================== */
+.dataTables_wrapper .dataTables_info {
+    color: #6B7280;
+    font-size: 13px;
+    padding-top: 0 !important;
+}
+
+.dataTables_wrapper .pagination {
+    margin: 0;
+    gap: 6px;
+}
+
+.dataTables_wrapper .page-item .page-link {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px !important;
+    border: 1px solid #E5E7EB;
+    background: #FFFFFF;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.dataTables_wrapper .page-item.active .page-link {
+    background-color: #0B4F8A !important;
+    border-color: #0B4F8A !important;
+    color: #FFFFFF !important;
+}
+
+.dataTables_wrapper .page-item.disabled .page-link {
+    background-color: #FFFFFF;
+    color: #9CA3AF;
+    border-color: #E5E7EB;
+    opacity: 0.7;
+}
+
+.dataTables_wrapper .page-item:not(.active):not(.disabled):hover .page-link {
+    background-color: #F3F4F6;
+    border-color: #D1D5DB;
 }
