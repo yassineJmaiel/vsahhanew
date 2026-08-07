@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Partner;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+
 class PartnerController extends Controller
 {
     public function index()
@@ -60,22 +60,33 @@ class PartnerController extends Controller
         ];
 
         $mappedPartners = $partners->map(function($partner) {
+            $address = array_filter([$partner->address_line1, $partner->address_line2]);
+            $cityCountry = array_filter([$partner->city, $partner->country]);
+
             return [
                 'id' => $partner->id,
+                'internal_code' => $partner->internal_code ?? 'N/A',
                 'logo' => strtoupper(substr($partner->name, 0, 2)),
                 'name' => $partner->name,
                 'desc' => $partner->description ?? 'No description provided.',
                 'contact_name' => $partner->contact_name ?? 'N/A',
                 'contact_email' => $partner->contact_email ?? 'N/A',
+                'contact_phone' => $partner->contact_phone ?? 'N/A',
                 'coverage' => $partner->country ?? 'N/A',
                 'specialty' => $partner->partner_type ?? 'N/A',
                 'policies' => 'N/A',
                 'members' => 'N/A',
                 'type' => $partner->partner_type ?? 'N/A',
                 'type_icon' => 'bi-shield',
-                'location' => ($partner->city && $partner->country) ? $partner->city . ', ' . $partner->country : ($partner->country ?? 'N/A'),
+                'city' => $partner->city ?? 'N/A',
+                'country' => $partner->country ?? 'N/A',
+                'location' => implode(', ', $cityCountry) ?: 'N/A',
+                'address' => implode(', ', $address) ?: 'N/A',
                 'status' => ucfirst($partner->status),
                 'contract' => $partner->contract_start ? 'Started: ' . $partner->contract_start : 'N/A',
+                'contract_start' => $partner->contract_start ?? 'N/A',
+                'contract_end' => $partner->contract_end ?? 'N/A',
+                'website' => $partner->website ?? 'N/A',
             ];
         });
 

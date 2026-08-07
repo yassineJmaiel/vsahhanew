@@ -1353,16 +1353,19 @@
                 if (partner.contact_name) document.getElementById('detail_contact_person').innerText = partner.contact_name;
                 if (partner.contact_email) document.getElementById('detail_contact_email').innerText = partner.contact_email;
                 if (partner.contact_phone) document.getElementById('detail_contact_phone').innerText = partner.contact_phone;
-                
+
                 // Location Info
-                if (partner.location) {
-                    let parts = partner.location.split(',');
+                if (partner.address) {
+                    let parts = partner.address.split(',');
                     document.getElementById('detail_address1').innerText = parts[0] ? parts[0].trim() : 'Eiffel 2';
                     document.getElementById('detail_address2').innerText = parts[1] ? parts[1].trim() : 'Le kram';
-                    document.getElementById('detail_city').innerText = parts[2] ? parts[2].trim() : 'cheikh zayed';
                 }
                 if (partner.city) document.getElementById('detail_city').innerText = partner.city;
                 if (partner.country) document.getElementById('detail_country').innerText = partner.country;
+
+                // Contract Info
+                if (partner.contract_start) document.getElementById('detail_contract_start').innerText = partner.contract_start;
+                if (partner.contract_end) document.getElementById('detail_contract_end').innerText = partner.contract_end;
             }
         }
     </script>
