@@ -117,20 +117,19 @@
         <div class="row g-3 mb-4">
             @foreach($stats as $stat)
                 <div class="col-12 col-sm-6 col-xl-3">
-                    <div class="stat-card clickable-stat" 
-                         onclick="selectStatCard(this, '{{ $stat['active_bg'] }}', '{{ $stat['default_color'] }}', '{{ $stat['filter'] }}')"
-                         data-default-color="{{ $stat['default_color'] }}"
-                         style="display: flex; height: 85px; padding: 16px; justify-content: center; align-items: flex-start; gap: 16px; border-radius: 12px; border: 1px solid #EEF0F4; background: #FFFFFF; box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.04); cursor: pointer; transition: all 0.3s ease;">
+                    <div class="stat-card stat-{{ $stat['default_color'] }} clickable-stat" 
+                         onclick="selectStatCard(this, '{{ $stat['default_color'] }}', '{{ $stat['filter'] }}')"
+                         data-default-color="{{ $stat['default_color'] }}">
                         
-                        <div class="stat-border" style="background: {{ $stat['border'] }}; transition: opacity 0.3s ease;"></div>
+                        <div class="stat-border border-{{ $stat['default_color'] }}"></div>
                         
                         <div class="stat-icon {{ $stat['default_color'] }}">
                             {!! $stat['svg'] !!}
                         </div>
                         
-                        <div style="flex-grow: 1;">
-                            <h3 class="stat-value text-{{ $stat['default_color'] }}" style="transition: color 0.3s ease;">{{ $stat['value'] }}</h3>
-                            <p class="stat-label mb-0" style="transition: color 0.3s ease;">{{ $stat['title'] }}</p>
+                        <div class="stat-content">
+                            <h3 class="stat-value text-{{ $stat['default_color'] }}">{{ $stat['value'] }}</h3>
+                            <p class="stat-label">{{ $stat['title'] }}</p>
                         </div>
                     </div>
                 </div>
@@ -138,61 +137,19 @@
         </div>
 
         <script>
-            function selectStatCard(element, activeBg, defaultColor, filter) {
-                // Reset all cards to their default appearance
-                resetAllStatCards();
+            function selectStatCard(element, defaultColor, filter) {
+                // Remove active classes from all cards
+                document.querySelectorAll('.stat-card').forEach(card => {
+                    card.classList.remove('active-blue', 'active-green', 'active-yellow', 'active-red');
+                });
                 
-                // Set the clicked element to 'active' state
-                element.style.background = activeBg;
+                // Add active class to clicked card
+                element.classList.add('active-' + defaultColor);
                 
-                // Hide its border
-                const borderEl = element.querySelector('.stat-border');
-                if(borderEl) {
-                    borderEl.style.opacity = '0';
-                }
-                
-                // Change text colors to white
-                const valueEl = element.querySelector('.stat-value');
-                if(valueEl) {
-                    valueEl.classList.remove('text-' + defaultColor);
-                    valueEl.style.setProperty('color', '#FFFFFF', 'important');
-                }
-                
-                const labelEl = element.querySelector('.stat-label');
-                if(labelEl) {
-                    labelEl.style.setProperty('color', '#FFFFFF', 'important');
-                }
-
                 // Filter rows in the table
                 filterPartners(filter);
             }
-            
-            function resetAllStatCards() {
-                document.querySelectorAll('.clickable-stat').forEach(card => {
-                    // Reset background
-                    card.style.background = '#FFFFFF';
-                    
-                    // Show border
-                    const borderEl = card.querySelector('.stat-border');
-                    if(borderEl) {
-                        borderEl.style.opacity = '1';
-                    }
-                    
-                    const defaultColor = card.getAttribute('data-default-color');
-                    
-                    // Reset text colors
-                    const valueEl = card.querySelector('.stat-value');
-                    if(valueEl) {
-                        valueEl.classList.add('text-' + defaultColor);
-                        valueEl.style.removeProperty('color');
-                    }
-                    
-                    const labelEl = card.querySelector('.stat-label');
-                    if(labelEl) {
-                        labelEl.style.removeProperty('color');
-                    }
-                });
-            }
+
 
             function filterPartners(filter) {
                 const rows = document.querySelectorAll('.partner-row');
@@ -306,6 +263,19 @@
                                                 </div>
                                                 <span>{{ $partner['type'] }}</span>
                                             </div>
+                                            <a href="#" onclick="display(); event.stopPropagation();" class="edit-partner-btn mt-2">
+                                                Edit Partner
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                    <g clip-path="url(#clip0_1249_184)">
+                                                        <path d="M8.75027 2.91623L11.0838 5.24952M12.3521 3.97343C12.6605 3.6651 12.8338 3.24689 12.8339 2.81079C12.8339 2.37468 12.6607 1.95642 12.3523 1.64802C12.044 1.33961 11.6257 1.16631 11.1896 1.16626C10.7534 1.16621 10.3351 1.33939 10.0267 1.64772L2.24082 9.43451C2.10537 9.56955 2.0052 9.73581 1.94912 9.91866L1.17847 12.4573C1.1634 12.5077 1.16226 12.5613 1.17518 12.6124C1.1881 12.6634 1.2146 12.71 1.25186 12.7472C1.28912 12.7844 1.33577 12.8108 1.38683 12.8237C1.4379 12.8365 1.49149 12.8353 1.54192 12.8201L4.0814 12.0501C4.2641 11.9946 4.43036 11.895 4.56561 11.7602L12.3521 3.97343Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1249_184">
+                                                            <rect width="14" height="14" fill="white"/>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </a>
                                         </td>
                                         <td>
                                             <div class="detail-cell">
@@ -406,11 +376,11 @@
 
                                         <!-- Edit Partner Link -->
                                         <div>
-                                            <a href="#" onclick="display()" class="text-decoration-none d-inline-flex align-items-center gap-1.5" style="color: #0B4F8A; font-family: Inter, sans-serif; font-size: 12px; font-weight: 700;">
+                                            <a href="#" onclick="display()" class="edit-partner-btn">
                                                 Edit Partner
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" style="width: 14px; height: 14px; flex-shrink: 0;">
                                                     <g clip-path="url(#clip0_1148_684)">
-                                                        <path d="M8.75027 2.91623L11.0838 5.24952M12.3521 3.97343C12.6605 3.6651 12.8338 3.24689 12.8339 2.81079C12.8339 2.37468 12.6607 1.95642 12.3523 1.64802C12.044 1.33961 11.6257 1.16631 11.1896 1.16626C10.7534 1.16621 10.3351 1.33939 10.0267 1.64772L2.24082 9.43451C2.10537 9.56955 2.0052 9.73581 1.94912 9.91866L1.17847 12.4573C1.1634 12.5077 1.16226 12.5613 1.17518 12.6124C1.1881 12.6634 1.2146 12.71 1.25186 12.7472C1.28912 12.7844 1.33577 12.8108 1.38683 12.8237C1.4379 12.8365 1.49149 12.8353 1.54192 12.8201L4.0814 12.0501C4.2641 11.9946 4.43036 11.895 4.56561 11.7602L12.3521 3.97343Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M8.75027 2.91623L11.0838 5.24952M12.3521 3.97343C12.6605 3.6651 12.8338 3.24689 12.8339 2.81079C12.8339 2.37468 12.6607 1.95642 12.3523 1.64802C12.044 1.33961 11.6257 1.16631 11.1896 1.16626C10.7534 1.16621 10.3351 1.33939 10.0267 1.64772L2.24082 9.43451C2.10537 9.56955 2.0052 9.73581 1.94912 9.91866L1.17847 12.4573C1.1634 12.5077 1.16226 12.5613 1.17518 12.6124C1.1881 12.6634 1.2146 12.71 1.25186 12.7472C1.28912 12.7844 1.33577 12.8108 1.38683 12.8237C1.4379 12.8365 1.49149 12.8353 1.54192 12.8201L4.0814 12.0501C4.2641 11.9946 4.43036 11.895 4.56561 11.7602L12.3521 3.97343Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                                     </g>
                                                     <defs>
                                                         <clipPath id="clip0_1148_684">
@@ -996,7 +966,7 @@
                                         </span>
                                     </div>
                                     <div>
-                                        <a href="#" onclick="display()" class="text-decoration-none fw-semibold d-inline-flex align-items-center gap-1" style="font-size: 13px; color: #0B4F8A;">
+                                        <a href="#" onclick="display()" class="edit-partner-btn">
                                             Edit Partner <i class="bi bi-pencil ms-1"></i>
                                         </a>
                                     </div>

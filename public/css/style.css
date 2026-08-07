@@ -460,9 +460,12 @@ body {
 }
 
 .detail-cell {
-    display: flex;
+    display: inline-flex;
+    padding-right: 9px;
     align-items: center;
     gap: 8px;
+    border-radius: 999px;
+    background: #FFF;
     color: var(--text-secondary);
     font-size: 13px;
     font-weight: 400;
@@ -2071,4 +2074,138 @@ body {
     letter-spacing: 0.5px !important;
     border: none !important;
     white-space: nowrap !important;
+}
+
+/* --- Stat Cards Default Style overrides --- */
+.stat-card {
+    display: flex;
+    height: 85px;
+    padding: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 12px;
+    border: 1px solid #EEF0F4;
+    background: #FFFFFF;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stat-content {
+    flex-grow: 1;
+}
+
+.stat-value {
+    transition: color 0.3s ease;
+}
+
+.stat-label {
+    transition: color 0.3s ease;
+    margin-bottom: 0;
+}
+
+.stat-border {
+    width: 4px;
+    min-height: 100%;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-border.border-blue { background: #0B4F8A; }
+.stat-border.border-green { background: #10B981; }
+.stat-border.border-yellow { background: #F59E0B; }
+.stat-border.border-red { background: #EF4444; }
+
+/* Active States for Stat Cards */
+.stat-card.active-blue { background: #0B4F8A; border-color: #0B4F8A; }
+.stat-card.active-green { background: #10B981; border-color: #10B981; }
+.stat-card.active-yellow { background: #F59E0B; border-color: #F59E0B; }
+.stat-card.active-red { background: #EF4444; border-color: #EF4444; }
+
+.stat-card.active-blue .stat-border,
+.stat-card.active-green .stat-border,
+.stat-card.active-yellow .stat-border,
+.stat-card.active-red .stat-border {
+    background: #FFFFFF;
+    opacity: 1;
+}
+
+.stat-card.active-blue .stat-value, .stat-card.active-blue .stat-label,
+.stat-card.active-green .stat-value, .stat-card.active-green .stat-label,
+.stat-card.active-yellow .stat-value, .stat-card.active-yellow .stat-label,
+.stat-card.active-red .stat-value, .stat-card.active-red .stat-label {
+    color: #FFFFFF !important;
+}
+
+/* Make icon background white when active and apply color to icon */
+.stat-card.active-blue .stat-icon,
+.stat-card.active-green .stat-icon,
+.stat-card.active-yellow .stat-icon,
+.stat-card.active-red .stat-icon {
+    background: #FFFFFF !important;
+}
+.stat-card.active-blue .stat-icon svg path { stroke: #0B4F8A; }
+.stat-card.active-green .stat-icon svg path { stroke: #10B981; }
+.stat-card.active-yellow .stat-icon svg path { stroke: #F59E0B; }
+.stat-card.active-red .stat-icon svg path { stroke: #EF4444; }
+
+/* Edit Partner Pill Button */
+.edit-partner-btn {
+    display: flex;
+    width: 110px;
+    padding: 6px 10px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    background: #FFF;
+    color: #0B4F8A;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.edit-partner-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.edit-partner-btn:hover {
+    background: #0B4F8A;
+    color: #FFFFFF;
+}
+
+.edit-partner-btn:hover svg path {
+    stroke: #FFFFFF;
+}
+
+/* Sidebar Link Figma overrides */
+.sidebar-link.active {
+    background: rgba(255, 255, 255, 0.1) !important; /* from image */
+    border-left: none !important;
+    box-shadow: none !important;
+}
+
+.sidebar-badge-green {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    padding: 2px 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    background: #00A878;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
 }
