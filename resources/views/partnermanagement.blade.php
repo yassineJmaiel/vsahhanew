@@ -202,7 +202,13 @@
                                     <tr class="partner-row" data-status="{{ $partner['status'] }}" style="cursor: pointer;" onclick="openPartnerDetails({{ json_encode($partner) }})">
                                         <td style="min-width: 350px;">
                                             <div class="d-flex gap-3">
-                                                <div class="partner-logo">{{ $partner['logo'] }}</div>
+                                                <div class="partner-logo" style="overflow: hidden; padding: 0;">
+                                                    @if($partner['logo_url'])
+                                                        <img src="{{ $partner['logo_url'] }}" alt="{{ $partner['name'] }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                                                    @else
+                                                        {{ $partner['logo'] }}
+                                                    @endif
+                                                </div>
                                                 <div>
                                                     <h6 class="partner-name">{{ $partner['name'] }}</h6>
                                                     <p class="partner-desc">{{ $partner['desc'] }}</p>
@@ -440,7 +446,8 @@
                                                 <i class="bi bi-file-earmark-arrow-down text-secondary fs-6"></i>
                                                 <div>
                                                     <div class="text-muted text-uppercase" style="font-size: 9px; font-weight: 700;">CONTRACT FILE</div>
-                                                    <div id="detail_contract_file" class="fw-bold text-dark" style="font-size: 13px;">-</div>
+                                                    <a id="detail_contract_file" href="#" target="_blank" class="fw-bold" style="font-size: 13px; display: none;"></a>
+                                                    <div id="detail_contract_file_empty" class="fw-bold text-dark" style="font-size: 13px;">-</div>
                                                 </div>
                                             </div>
                                             <!-- Billing Type -->
@@ -784,7 +791,13 @@
                 let code = partner.internal_code || partner.code || 'STA-INS-002';
                 let status = partner.status || 'Active';
 
-                document.getElementById('detail_logo_box').innerText = logo;
+                let logoBox = document.getElementById('detail_logo_box');
+                if (partner.logo_url) {
+                    logoBox.innerHTML = `<img src="${partner.logo_url}" alt="${name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">`;
+                } else {
+                    logoBox.innerHTML = '';
+                    logoBox.innerText = logo;
+                }
                 document.getElementById('detail_partner_name').innerText = name;
                 document.getElementById('detail_partner_type_text').innerText = type;
                 document.getElementById('detail_partner_code').innerText = 'Partner ID: ' + code;
@@ -811,6 +824,18 @@
                 // Contract Info
                 if (partner.contract_start) document.getElementById('detail_contract_start').innerText = partner.contract_start;
                 if (partner.contract_end) document.getElementById('detail_contract_end').innerText = partner.contract_end;
+
+                let contractFileLink = document.getElementById('detail_contract_file');
+                let contractFileEmpty = document.getElementById('detail_contract_file_empty');
+                if (partner.contract_file_url) {
+                    contractFileLink.href = partner.contract_file_url;
+                    contractFileLink.innerText = partner.contract_file_name || 'View file';
+                    contractFileLink.style.display = 'inline';
+                    contractFileEmpty.style.display = 'none';
+                } else {
+                    contractFileLink.style.display = 'none';
+                    contractFileEmpty.style.display = 'block';
+                }
             }
         }
     </script>

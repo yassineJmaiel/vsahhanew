@@ -67,6 +67,7 @@ class PartnerController extends Controller
                 'id' => $partner->id,
                 'internal_code' => $partner->internal_code ?? 'N/A',
                 'logo' => strtoupper(substr($partner->name, 0, 2)),
+                'logo_url' => $partner->logo ? asset('storage/' . $partner->logo) : null,
                 'name' => $partner->name,
                 'desc' => $partner->description ?? 'No description provided.',
                 'contact_name' => $partner->contact_name ?? 'N/A',
@@ -86,6 +87,10 @@ class PartnerController extends Controller
                 'contract' => $partner->contract_start ? 'Started: ' . $partner->contract_start : 'N/A',
                 'contract_start' => $partner->contract_start ?? 'N/A',
                 'contract_end' => $partner->contract_end ?? 'N/A',
+                'contract_file_url' => $partner->contract_file ? asset('storage/' . $partner->contract_file) : null,
+                'contract_file_name' => $partner->contract_file
+                    ? ($partner->internal_code ?? 'contract') . '.' . pathinfo($partner->contract_file, PATHINFO_EXTENSION)
+                    : null,
                 'website' => $partner->website ?? 'N/A',
             ];
         });
