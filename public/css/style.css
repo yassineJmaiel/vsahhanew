@@ -758,6 +758,103 @@ body {
     flex-shrink: 0;
 }
 
+/* Step 4 footer for add-partner confirmation flow */
+.add-partner-management-footer {
+    display: flex;
+    padding-top: 24px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-top: 1px solid #E2E8F0;
+    color: #94A3B8;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.add-partner-management-date {
+    color: #94A3B8;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.add-partner-management-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-add-partner-management-view,
+.btn-add-partner-management-partners,
+.btn-add-partner-management-add {
+    display: flex;
+    padding: 12px 20px;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-add-partner-management-view {
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    background: #FFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    color: #475569;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.btn-add-partner-management-view svg,
+.btn-add-partner-management-add svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.btn-add-partner-management-partners {
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    background: linear-gradient(90deg, #26C5A0 0%, #0C528B 100%);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.btn-add-partner-management-add {
+    border-radius: 8px;
+    background: linear-gradient(90deg, #26C6A0 0%, #0B508A 100%);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+}
+
+.btn-add-partner-management-add svg {
+    stroke: #FFF;
+}
+
+.btn-add-partner-management-partners svg,
+.btn-add-partner-management-view svg {
+    stroke: currentColor;
+}
+
 /* ==========================================================================
    Add Partner Form Page & Wizard Components
    ========================================================================== */
@@ -2199,6 +2296,31 @@ body {
 
 .edit-partner-btn:hover svg path {
     stroke: #FFFFFF;
+}
+
+/* Edit Partner Pill Button - Purple variant */
+.edit-partner-btn-purple {
+    display: inline-flex;
+    width: fit-content;
+    padding: 6px 10px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    border: 1px solid #DDD6FE;
+    transition: all 0.2s ease;
+}
+
+.edit-partner-btn-purple:hover {
+    background: #7C3AED;
+    color: #FFFFFF;
 }
 
 /* Sidebar Link Figma overrides */

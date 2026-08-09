@@ -92,6 +92,18 @@ class PartnerController extends Controller
                     ? ($partner->internal_code ?? 'contract') . '.' . pathinfo($partner->contract_file, PATHINFO_EXTENSION)
                     : null,
                 'website' => $partner->website ?? 'N/A',
+                // Raw fields for the edit form
+                'address_line1' => $partner->address_line1 ?? '',
+                'address_line2' => $partner->address_line2 ?? '',
+                'state' => $partner->state ?? '',
+                'postal_code' => $partner->postal_code ?? '',
+                'logo_link' => $partner->logo_link ?? '',
+                'linkedin' => $partner->linkedin ?? '',
+                'description' => $partner->description ?? '',
+                'country_code' => $partner->country_code ?? '',
+                'contract_notes' => $partner->contract_notes ?? '',
+                'partner_type' => $partner->partner_type ?? '',
+                'status_raw' => $partner->status ?? '',
             ];
         });
 
@@ -299,6 +311,63 @@ public function store(Request $request)
     'partner' => $partner,
     'date' => now()->format('F d, Y h:i A')
 ]);
+}
+
+public function update(Request $request, Partner $partner)
+{
+    $request->validate([
+        'name'           => 'required|string|max:255',
+        'partner_type'   => 'required',
+        'status'         => 'required',
+        'address_line1'  => 'required',
+        'city'           => 'required',
+        'country'        => 'required',
+        'contract_start' => 'required',
+        'logo'           => 'nullable|image|max:2048',
+        'contract_file'  => 'nullable|mimes:pdf,doc,docx|max:5000',
+    ]);
+
+    $logoPath = $partner->logo;
+    if ($request->hasFile('logo')) {
+        $logoPath = $request->file('logo')->store('partners/logos', 'public');
+    }
+
+    $contractPath = $partner->contract_file;
+    if ($request->hasFile('contract_file')) {
+        $contractPath = $request->file('contract_file')->store('partners/contracts', 'public');
+    }
+
+    $partner->update([
+        'name'           => $request->name,
+        'internal_code'  => $request->internal_code ?: $partner->internal_code,
+        'partner_type'   => $request->partner_type,
+        'status'         => $request->status,
+        'logo_link'      => $request->logo_link,
+        'logo'           => $logoPath,
+        'website'        => $request->website,
+        'linkedin'       => $request->linkedin,
+        'description'    => $request->description,
+        'address_line1'  => $request->address_line1,
+        'address_line2'  => $request->address_line2,
+        'city'           => $request->city,
+        'state'          => $request->state,
+        'country'        => $request->country,
+        'postal_code'    => $request->postal_code,
+        'contact_name'   => $request->contact_name,
+        'contact_email'  => $request->contact_email,
+        'contact_phone'  => $request->contact_phone,
+        'country_code'   => $request->country_code,
+        'contract_start' => $request->contract_start,
+        'contract_end'   => $request->contract_end,
+        'contract_file'  => $contractPath,
+        'contract_notes' => $request->contract_notes,
+    ]);
+
+    return response()->json([
+        'success' => true,
+        'partner' => $partner->fresh(),
+        'date'    => now()->format('F d, Y h:i A')
+    ]);
 }
 }
 

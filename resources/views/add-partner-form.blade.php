@@ -581,7 +581,7 @@
                                     </svg>
                                 </div>
                                 <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-                                    <h2 id="step4_title" style="color:#0F172A; text-align:center; font-family:Inter,sans-serif; font-size:32px; font-weight:800; margin:0;">Partner Successfully Updated</h2>
+                                    <h2 id="step4_title" style="color:#0F172A; text-align:center; font-family:Inter,sans-serif; font-size:32px; font-weight:800; margin:0;">Partner Successfully Created</h2>
                                     <p style="color:#26C6A0; text-align:center; font-family:Inter,sans-serif; font-size:16px; font-weight:500; margin:0;">✓ Added to Partner Management</p>
                                 </div>
                             </div>
@@ -593,14 +593,15 @@
                                 <div style="min-width:320px; max-width:673px; min-height:277px; border-radius:12px; border:1px solid #E2E8F0; background:#F8FAFC; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:16px; flex:1 1 320px;">
                                     <span style="color:#00008F; font-family:Inter,sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">PARTNER DETAILS</span>
                                     <div style="display:flex; align-items:flex-start; gap:12px; flex-wrap:wrap;">
-                                        <!-- AXA Logo -->
-                                        <div id="partner_logo_box" style="width:120px; min-height:156px; border-radius:8px; background:#00008F; display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden;">
+                                        <!-- Partner Logo -->
+                                        <div id="partner_logo_box" style="width:120px; min-height:156px; border-radius:8px; background:#E2E8F0; display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden;">
                                             <img id="partner_logo_img" src="" alt="Partner Logo" style="max-width:100%; max-height:100%; object-fit:contain; display:none;" onerror="this.style.display='none'; document.getElementById('partner_logo_fallback').style.display='flex';">
                                             <div id="partner_logo_fallback" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="117" viewBox="0 0 197 193" fill="none">
-                                                    <path d="M0.000732422 4.00098C0.000732422 1.79184 1.79159 0.000976562 4.00073 0.000976562H188.219C190.429 0.000976562 192.219 1.79184 192.219 4.00098V188.22C192.219 190.429 190.429 192.22 188.219 192.22H4.00074C1.7916 192.22 0.000732422 190.429 0.000732422 188.22V4.00098Z" fill="#00008F"/>
-                                                    <path d="M116.98 88.4819C114.949 91.1112 116.823 94.9276 120.146 94.9276H121.071C122.312 94.9276 123.483 94.3515 124.24 93.3682L191.184 6.4406C193.21 3.81043 191.335 0 188.015 0H187.311C186.073 0 184.904 0.574022 184.146 1.55433L116.98 88.4819Z" fill="#FF1721"/>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M146.876 137.289C150.226 146.663 157.129 171.055 159.874 172.999H141.75C141.735 172.46 141.707 171.922 141.666 171.385C141.623 170.847 141.566 170.312 141.495 169.778C141.424 169.243 141.339 168.711 141.239 168.182C141.14 167.652 141.026 167.125 140.898 166.602C140.117 163.814 133.561 142.723 133.561 142.723H104.772L100.246 149.139C105.682 166.158 106.02 166.993 106.606 168.496 109.202 172.999H91.8318C91.3817 170.4 91.2127 169.317 91.0776 168.443 89.5669 163.655 85.6305 167.969 84.5577 169.969 83.4751 171.965 82.9946 172.999H69.406C68.9523 170.4 68.7832 169.317 68.6519 168.443 66.989 163.272 63.1853 167.89 62.1015 169.886 61.0262 171.886 60.5627 172.999H47.1226C50.9202 169.383 52.2486 167.831 54.4867 165.198 62.8277 154.298L59.4838 142.723H30.9115C14.6213 164.129 13.979 164.791 13.3307 165.443 8.583 172.257 8.47596 172.999H0V167.608C0.596042 167.092 12.6847 152.087 23.7894 137.289 33.77 124.387 43.1328 111.837 43.9538 110.642 45.9439 107.751 48.811 101.511H63.5819L64.4698 108.645C64.853 109.877 73.8532 139.406 74.0649 139.723L79.0412 133.359 70.5349 107.176C68.5424 102.248 67.8928 101.511H85.1476L85.2425 103.878C85.5089 105.437 85.7096 106.201 86.4115 108.36 90.1106 121.708C101.878 106.957 102.567 105.897 102.775 105.569 103.129 104.875 103.562 103.793 103.861 102.665 104.02 101.511H118.397C115.765 103.434 111.152 109.268 109.602 111.231 94.4216 130.525C95.7462 135.041 96.3909 137.289 97.6 137.289C101.517 132.326 119.334 108.964 120.413 106.963 121.284 105.347 122.566 103.511 123.316 101.511H137.343L138.094 106.857 146.876 137.289ZM125.531 115.175C123.472 119.605 111.35 134.362H130.548C126.827 122.903 126.177 120.32 125.531 115.175ZM51.7717 115.175C49.7123 119.605 37.5908 134.362H56.7882C53.0696 122.903 52.4213 120.32 51.7717 115.175ZM80.6737 159.92L85.959 152.662 82.4946 143.113 77.3857 149.741 80.6737 159.92Z" fill="white"/>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                                    <rect x="3" y="3" width="18" height="18" rx="3" stroke="#94A3B8" stroke-width="1.5"/>
+                                                    <circle cx="8.5" cy="8.5" r="2" stroke="#94A3B8" stroke-width="1.5"/>
+                                                    <path d="M3 16L8.29 11.47C8.68 11.11 9.27 11.13 9.64 11.5L14 16" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+                                                    <path d="M13 14.5L15.29 12.47C15.68 12.11 16.27 12.13 16.64 12.5L21 17" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
                                                 </svg>
                                             </div>
                                         </div>
@@ -615,7 +616,7 @@
                                                 </div>
                                                 <div style="min-width:0;">
                                                     <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">PARTNER NAME</div>
-                                                    <div id="partner_name_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">AXA</div>
+                                                    <div id="partner_name_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                                 </div>
                                             </div>
                                             <!-- Partner Type -->
@@ -627,7 +628,7 @@
                                                 </div>
                                                 <div style="min-width:0;">
                                                     <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">PARTNER TYPE</div>
-                                                    <div id="partner_type_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">INSURANCE</div>
+                                                    <div id="partner_type_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                                 </div>
                                             </div>
                                             <!-- Partner Code -->
@@ -639,7 +640,7 @@
                                                 </div>
                                                 <div style="min-width:0;">
                                                     <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">PARTNER CODE</div>
-                                                    <div id="partner_code_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">CRZPDPF-TR</div>
+                                                    <div id="partner_code_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -659,7 +660,7 @@
                                             </div>
                                             <div style="min-width:0;">
                                                 <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">FULL NAME</div>
-                                                <div id="contact_name_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Sarah Mitchell</div>
+                                                <div id="contact_name_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                             </div>
                                         </div>
                                         <!-- Phone -->
@@ -674,7 +675,7 @@
                                             </div>
                                             <div style="min-width:0;">
                                                 <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">PHONE NUMBER</div>
-                                                <div id="contact_phone_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">+1 (555) 234-8901</div>
+                                                <div id="contact_phone_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                             </div>
                                         </div>
                                         <!-- Company -->
@@ -686,7 +687,7 @@
                                             </div>
                                             <div style="min-width:0;">
                                                 <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">COMPANY</div>
-                                                <div id="contact_company_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Acme Corporation</div>
+                                                <div id="contact_company_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                             </div>
                                         </div>
                                         <!-- Email -->
@@ -698,7 +699,7 @@
                                             </div>
                                             <div style="min-width:0;">
                                                 <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">EMAIL ADDRESS</div>
-                                                <div id="contact_email_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">sarah.mitchell@company.com</div>
+                                                <div id="contact_email_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                             </div>
                                         </div>
                                         <!-- Role -->
@@ -710,7 +711,7 @@
                                             </div>
                                             <div style="min-width:0;">
                                                 <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">ROLE</div>
-                                                <div id="contact_role_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">AGENT</div>
+                                                <div id="contact_role_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                             </div>
                                         </div>
                                         <!-- Location -->
@@ -722,7 +723,7 @@
                                             </div>
                                             <div style="min-width:0;">
                                                 <div style="color:#94A3B8; font-family:Inter,sans-serif; font-size:11px; font-weight:600; text-transform:uppercase;">LOCATION</div>
-                                                <div id="contact_location_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">San Francisco, CA</div>
+                                                <div id="contact_location_display" style="color:#0F172A; font-family:Inter,sans-serif; font-size:14px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">—</div>
                                             </div>
                                         </div>
                                     </div>
@@ -730,21 +731,22 @@
                             </div>
 
                             <!-- Footer bar -->
-                            <div style="display:flex; padding-top:24px; justify-content:space-between; align-items:center; align-self:stretch; border-top:1px solid #E2E8F0; flex-wrap:wrap; gap:12px;">
-                                <span style="color:#94A3B8; font-family:Inter,sans-serif; font-size:13px; font-weight:400;">
-                                    Created on <span id="partner_created_at_display">July 21, 2026 at 3:45 PM</span>
+                            <div class="add-partner-management-footer">
+                                <span class="add-partner-management-date">
+                                    Created on <span id="partner_created_at_display">—</span>
                                 </span>
-                                <div style="display:flex; align-items:flex-start; gap:12px; flex-wrap:wrap;">
-                                    <button type="button" onclick="openPartnerDetailsFromCreatedForm()" style="display:flex; padding:12px 20px; align-items:center; gap:8px; border-radius:8px; border:1px solid #E2E8F0; background:#FFF; box-shadow:0 1px 2px 0 rgba(0,0,0,0.02); color:#475569; font-family:Inter,sans-serif; font-size:13px; font-weight:600; cursor:pointer;">
+                                <div class="add-partner-management-actions">
+                                    <button type="button" class="btn-add-partner-management-view" onclick="openPartnerDetailsFromCreatedForm()">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M1.37443 7.76824C1.31887 7.91792 1.31887 8.08256 1.37443 8.23224C1.91557 9.54434 2.83411 10.6662 4.01361 11.4556C5.19312 12.2451 6.58046 12.6665 7.99977 12.6665C9.41907 12.6665 10.8064 12.2451 11.9859 11.4556C13.1654 10.6662 14.084 9.54434 14.6251 8.23224C14.6807 8.08256 14.6807 7.91792 14.6251 7.76824C14.084 6.45614 13.1654 5.33427 11.9859 4.54484C10.8064 3.75541 9.41907 3.33398 7.99977 3.33398C6.58046 3.33398 5.19312 3.75541 4.01361 4.54484C2.83411 5.33427 1.91557 6.45614 1.37443 7.76824Z" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+                                            <circle cx="8" cy="8" r="2" stroke="#475569" stroke-width="2"/>
                                         </svg>
                                         View Partner
                                     </button>
-                                    <button type="button" onclick="hideDisplay(event)" style="display:flex; padding:12px 20px; align-items:center; gap:8px; border-radius:8px; border:1px solid #E2E8F0; background:linear-gradient(90deg,#26C5A0 0%,#0C528B 100%); box-shadow:0 1px 2px 0 rgba(0,0,0,0.02); color:#FFF; font-family:Inter,sans-serif; font-size:13px; font-weight:600; cursor:pointer;">
+                                    <button type="button" class="btn-add-partner-management-partners" onclick="hideDisplay(event)">
                                         Partners
                                     </button>
-                                    <button type="button" onclick="resetAndAddNewPartner()" style="display:flex; padding:12px 20px; align-items:center; gap:8px; border-radius:8px; background:linear-gradient(90deg,#26C6A0 0%,#0B508A 100%); color:#FFF; font-family:Inter,sans-serif; font-size:13px; font-weight:600; border:none; cursor:pointer;">
+                                    <button type="button" class="btn-add-partner-management-add" onclick="resetAndAddNewPartner()">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="M3.33276 8.00021H12.6672M7.99996 3.33301V12.6674" stroke="white" stroke-width="2" stroke-linecap="round"/>
                                         </svg>
@@ -779,7 +781,7 @@
             // Success state UI changes
             document.getElementById('stepper-header-container').style.display = 'none';
             document.getElementById('stepper-hr').style.display = 'none';
-            document.getElementById('main-page-title').innerText = 'Partner Edited';
+            document.getElementById('main-page-title').innerText = 'Partner Added';
             document.getElementById('header-btn-save').style.display = 'none';
             document.getElementById('header-btn-cancel').style.display = 'none';
             document.querySelector('.form-wrapper').style.borderColor = 'transparent';
@@ -856,18 +858,20 @@
         let form = document.getElementById('partnerForm');
         let formData = new FormData(form);
 
-        let partnerName = document.querySelector('input[name="name"]')?.value || 'AXA';
-        let partnerType = document.querySelector('select[name="partner_type"]')?.value || 'DKEEE';
-        let internalCode = document.querySelector('input[name="internal_code"]')?.value || 'CRZPDPF-TR';
+        let partnerName = document.querySelector('input[name="name"]')?.value || '—';
+        let partnerType = document.querySelector('select[name="partner_type"]')?.value || '—';
+        let internalCode = document.querySelector('input[name="internal_code"]')?.value || '—';
 
-        let contactName = document.querySelector('input[name="contact_name"]')?.value || 'Sarah Mitchell';
-        let contactEmail = document.querySelector('input[name="contact_email"]')?.value || 'sarah.mitchell@company.com';
-        let contactPhone = document.querySelector('input[name="contact_phone"]')?.value || '+1 (555) 234-8901';
+        let contactName = document.querySelector('input[name="contact_name"]')?.value || '—';
+        let contactEmail = document.querySelector('input[name="contact_email"]')?.value || '—';
+        let contactPhone = document.querySelector('input[name="contact_phone"]')?.value || '—';
         let countryCode = document.querySelector('input[name="country_code"]')?.value || '';
         let citySelect = document.querySelector('select[name="city"]');
-        let cityText = citySelect ? citySelect.options[citySelect.selectedIndex]?.text || citySelect.value : 'San Francisco';
+        let citySelectedOpt = citySelect ? citySelect.options[citySelect.selectedIndex] : null;
+        let cityText = (citySelectedOpt && !citySelectedOpt.disabled && citySelectedOpt.value) ? citySelectedOpt.text : '';
         let countrySelect = document.querySelector('select[name="country"]');
-        let countryText = countrySelect ? countrySelect.options[countrySelect.selectedIndex]?.text || countrySelect.value : 'CA';
+        let countrySelectedOpt = countrySelect ? countrySelect.options[countrySelect.selectedIndex] : null;
+        let countryText = (countrySelectedOpt && !countrySelectedOpt.disabled && countrySelectedOpt.value) ? countrySelectedOpt.text : '';
 
         let logoUrl = document.querySelector('input[name="logo_link"]')?.value;
         let logoFileInput = document.querySelector('input[name="logo"]');
@@ -880,9 +884,12 @@
         document.getElementById('contact_name_display').innerText = contactName;
         document.getElementById('contact_email_display').innerText = contactEmail;
         document.getElementById('contact_phone_display').innerText = (countryCode ? countryCode + ' ' : '') + contactPhone;
-        document.getElementById('contact_company_display').innerText = partnerName || 'Acme Corporation';
-        document.getElementById('contact_role_display').innerText = 'Product Manager';
-        document.getElementById('contact_location_display').innerText = (cityText || 'San Francisco') + ', ' + (countryText || 'CA');
+        document.getElementById('contact_company_display').innerText = partnerName || '—';
+        document.getElementById('contact_role_display').innerText = '—';
+        let contactLocationDisplay = document.getElementById('contact_location_display');
+        contactLocationDisplay.innerText = (cityText && countryText) ? cityText + ', ' + countryText : (cityText || countryText || '—');
+        contactLocationDisplay.dataset.city = cityText || '';
+        contactLocationDisplay.dataset.country = countryText || '';
 
         let now = new Date();
         let options = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
@@ -929,7 +936,12 @@
                         if (p.contact_name) document.getElementById('contact_name_display').innerText = p.contact_name;
                         if (p.contact_email) document.getElementById('contact_email_display').innerText = p.contact_email;
                         if (p.contact_phone) document.getElementById('contact_phone_display').innerText = (p.country_code ? p.country_code + ' ' : '') + p.contact_phone;
-                        if (p.city || p.country) document.getElementById('contact_location_display').innerText = (p.city || '') + (p.city && p.country ? ', ' : '') + (p.country || '');
+                        if (p.city || p.country) {
+                            let locEl = document.getElementById('contact_location_display');
+                            locEl.innerText = (p.city || '') + (p.city && p.country ? ', ' : '') + (p.country || '');
+                            if (p.city) locEl.dataset.city = p.city;
+                            if (p.country) locEl.dataset.country = p.country;
+                        }
                         if (data.date) document.getElementById('partner_created_at_display').innerText = data.date;
                         if (p.logo) {
                             logoImg.src = '/storage/' + p.logo;
@@ -951,7 +963,9 @@
         let contactName = document.getElementById('contact_name_display')?.innerText;
         let contactEmail = document.getElementById('contact_email_display')?.innerText;
         let contactPhone = document.getElementById('contact_phone_display')?.innerText;
-        let location = document.getElementById('contact_location_display')?.innerText;
+        let locationEl = document.getElementById('contact_location_display');
+        let city = locationEl?.dataset.city;
+        let country = locationEl?.dataset.country;
 
         if (typeof openPartnerDetails === 'function') {
             openPartnerDetails({
@@ -961,7 +975,8 @@
                 contact_name: contactName,
                 contact_email: contactEmail,
                 contact_phone: contactPhone,
-                location: location,
+                city: city,
+                country: country,
                 status: 'Active'
             });
         }

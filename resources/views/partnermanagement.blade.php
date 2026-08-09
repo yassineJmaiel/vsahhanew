@@ -204,7 +204,7 @@
                                             <div class="d-flex gap-3">
                                                 <div class="partner-logo" style="overflow: hidden; padding: 0;">
                                                     @if($partner['logo_url'])
-                                                        <img src="{{ $partner['logo_url'] }}" alt="{{ $partner['name'] }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                                                        <img src="{{ $partner['logo_url'] }}" alt="{{ $partner['name'] }}" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
                                                     @else
                                                         {{ $partner['logo'] }}
                                                     @endif
@@ -282,7 +282,7 @@
                                                 </div>
                                                 <span>{{ $partner['type'] }}</span>
                                             </div>
-                                            <a href="#" onclick="display(); event.stopPropagation();" class="edit-partner-btn mt-2">
+                                            <a href="#" onclick="displayEdit({{ json_encode($partner) }}); event.stopPropagation();" class="edit-partner-btn mt-2">
                                                 Edit Partner
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                                                     <g clip-path="url(#clip0_1249_184)">
@@ -366,7 +366,7 @@
                                                 Allianz Partners Middle East & Africa
                                             </h4>
                                             <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
-                                                <span id="detail_partner_type_badge" class="badge rounded-pill bg-light border px-2.5 py-1 fw-medium" style="color: #0B4F8A !important; border-color: #CBD5E1 !important;">
+                                                <span id="detail_partner_type_badge" class="badge rounded-pill px-2.5 py-1 fw-medium" style="background: #F3E8FF; color: #7C3AED !important; border: 1px solid #DDD6FE;">
                                                     <i class="bi bi-shield me-1"></i> <span id="detail_partner_type_text">Insurance Provider</span>
                                                 </span>
                                                 <span id="detail_partner_code" class="text-muted" style="font-size: 13px;">
@@ -374,7 +374,7 @@
                                                 </span>
                                             </div>
                                             <div>
-                                                <a href="#" onclick="display()" class="edit-partner-btn">
+                                                <a href="#" onclick="displayEdit(currentPartnerData)" class="edit-partner-btn-purple">
                                                     Edit Partner <i class="bi bi-pencil ms-1"></i>
                                                 </a>
                                             </div>
@@ -748,20 +748,91 @@
         </div>
         <!-- End Add Partner Form -->
 
+        <!-- Start Edit Partner Form -->
+        <div id="edit-partner-form" style="display: none;">
+            @include('edit-partner-form')
+        </div>
+        <!-- End Edit Partner Form -->
+
         
 
     </div>
 
     <script>
+        var currentPartnerData = null;
+
         function display() {
             document.getElementById('main-content').style.display = 'none';
             document.getElementById('add-partner-form').style.display = 'block';
+            document.getElementById('edit-partner-form').style.display = 'none';
         }
 
         function hideDisplay(e) {
             if(e) e.preventDefault();
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('add-partner-form').style.display = 'none';
+            document.getElementById('edit-partner-form').style.display = 'none';
+            showPartnerList();
+        }
+
+        function displayEdit(partner) {
+            if (!partner) return;
+            currentPartnerData = partner;
+
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('add-partner-form').style.display = 'none';
+            document.getElementById('edit-partner-form').style.display = 'block';
+
+            // Pre-fill the edit form fields
+            document.getElementById('edit_partner_id').value = partner.id || '';
+            document.getElementById('edit_partner_name').value = partner.name || '';
+
+            var typeSelect = document.getElementById('edit_partner_type');
+            var pt = partner.partner_type || partner.type || '';
+            for (var i = 0; i < typeSelect.options.length; i++) {
+                if (typeSelect.options[i].value === pt) { typeSelect.selectedIndex = i; break; }
+            }
+
+            document.getElementById('edit_internal_code').value = (partner.internal_code && partner.internal_code !== 'N/A') ? partner.internal_code : '';
+
+            var statusSelect = document.getElementById('edit_status');
+            var sr = (partner.status_raw || partner.status || '').toLowerCase();
+            for (var i = 0; i < statusSelect.options.length; i++) {
+                if (statusSelect.options[i].value === sr) { statusSelect.selectedIndex = i; break; }
+            }
+
+            document.getElementById('edit_logo_link').value = partner.logo_link || '';
+            document.getElementById('edit_website').value = (partner.website && partner.website !== 'N/A') ? partner.website : '';
+            document.getElementById('edit_linkedin').value = partner.linkedin || '';
+            document.getElementById('edit_description').value = partner.description || '';
+
+            // Address fields
+            document.getElementById('edit_address_line1').value = partner.address_line1 || '';
+            document.getElementById('edit_address_line2').value = partner.address_line2 || '';
+            document.getElementById('edit_city').value = (partner.city && partner.city !== 'N/A') ? partner.city : '';
+            document.getElementById('edit_state').value = partner.state || '';
+            document.getElementById('edit_country').value = (partner.country && partner.country !== 'N/A') ? partner.country : '';
+            document.getElementById('edit_postal_code').value = partner.postal_code || '';
+
+            // Contact fields
+            document.getElementById('edit_contact_name').value = (partner.contact_name && partner.contact_name !== 'N/A') ? partner.contact_name : '';
+            document.getElementById('edit_contact_email').value = (partner.contact_email && partner.contact_email !== 'N/A') ? partner.contact_email : '';
+            document.getElementById('edit_contact_phone').value = (partner.contact_phone && partner.contact_phone !== 'N/A') ? partner.contact_phone : '';
+            document.getElementById('edit_country_code').value = partner.country_code || '';
+
+            // Contract fields
+            document.getElementById('edit_contract_start').value = (partner.contract_start && partner.contract_start !== 'N/A') ? partner.contract_start : '';
+            document.getElementById('edit_contract_end').value = (partner.contract_end && partner.contract_end !== 'N/A') ? partner.contract_end : '';
+            document.getElementById('edit_contract_notes').value = partner.contract_notes || '';
+
+            // Reset to step 1
+            editGoToStep(1);
+        }
+
+        function hideEditDisplay(e) {
+            if(e) e.preventDefault();
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('edit-partner-form').style.display = 'none';
             showPartnerList();
         }
 
@@ -774,6 +845,7 @@
         }
 
         function openPartnerDetails(partner) {
+            currentPartnerData = partner;
             let detailsView = document.getElementById('partner-details-view');
             let listCard = document.getElementById('partner-list-card');
             let addForm = document.getElementById('add-partner-form');
@@ -793,7 +865,7 @@
 
                 let logoBox = document.getElementById('detail_logo_box');
                 if (partner.logo_url) {
-                    logoBox.innerHTML = `<img src="${partner.logo_url}" alt="${name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">`;
+                    logoBox.innerHTML = `<img src="${partner.logo_url}" alt="${name}" style="width: 100%; height: 100%; object-fit: contain; border-radius: inherit;">`;
                 } else {
                     logoBox.innerHTML = '';
                     logoBox.innerText = logo;
