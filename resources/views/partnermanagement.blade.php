@@ -18,13 +18,6 @@
             <div class="col-lg-6 col-12">
                 <div class="d-flex flex-wrap justify-content-lg-end gap-3 align-items-center">
                     <div class="search-input-wrapper flex-grow-1 flex-lg-grow-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"
-                            style="flex-shrink: 0;">
-                            <path
-                                d="M6.875 11.875C9.63642 11.875 11.875 9.63642 11.875 6.875C11.875 4.11358 9.63642 1.875 6.875 1.875C4.11358 1.875 1.875 4.11358 1.875 6.875C1.875 9.63642 4.11358 11.875 6.875 11.875Z"
-                                stroke="#9CA3AF" stroke-width="1.25" />
-                            <path d="M13.125 13.125L10.4062 10.4062" stroke="#9CA3AF" stroke-width="1.25" />
-                        </svg>
                         <input type="text" id="customSearchBox" placeholder="Search partners...">
                     </div>
                     <button class="btn btn-custom-primary d-flex align-items-center gap-2" onclick="display()">
@@ -341,13 +334,10 @@
                         <!-- Top Dark Blue Card Header -->
                         <div class="d-flex justify-content-between align-items-center" style="height: 56px; padding: 0 20px; border-radius: 12px 12px 0 0; background: #0B4F8A;">
                             <div class="d-flex align-items-center" style="gap: 10px;">
-                                <div class="d-flex align-items-center justify-content-center" style="height: 28px; padding: 5px 3px 5px 7px; border-radius: 8px; background: #FFF; gap: 4px;">
+                                <div class="d-flex align-items-center justify-content-center" style="height: 28px; padding: 5px 3px 5px 7px; border-radius: 8px; background: rgba(255, 255, 255, 0.12); gap: 4px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;">
-                                        <path d="M12.75 15.75V14.25C12.75 13.4544 12.4339 12.6913 11.8713 12.1287C11.3087 11.5661 10.5456 11.25 9.75 11.25H3.75C2.95435 11.25 2.19129 11.5661 1.62868 12.1287C1.06607 12.6913 0.75 13.4544 0.75 14.25V15.75" stroke="#0B4F8A" stroke-width="1.5"/>
-                                        <path d="M6.75 8.25C8.40685 8.25 9.75 6.90685 9.75 5.25C9.75 3.59315 8.40685 2.25 6.75 2.25C5.09315 2.25 3.75 3.59315 3.75 5.25C3.75 6.90685 5.09315 8.25 6.75 8.25Z" stroke="#0B4F8A" stroke-width="1.5"/>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none" style="flex-shrink:0;">
-                                        <path d="M3.75 6.75C5.40685 6.75 6.75 5.40685 6.75 3.75C6.75 2.09315 5.40685 0.75 3.75 0.75C2.09315 0.75 0.75 2.09315 0.75 3.75C0.75 5.40685 2.09315 6.75 3.75 6.75Z" stroke="#0B4F8A" stroke-width="1.5"/>
+                                        <path d="M12.75 15.75V14.25C12.75 13.4544 12.4339 12.6913 11.8713 12.1287C11.3087 11.5661 10.5456 11.25 9.75 11.25H3.75C2.95435 11.25 2.19129 11.5661 1.62868 12.1287C1.06607 12.6913 0.75 13.4544 0.75 14.25V15.75" stroke="white" stroke-width="1.5"/>
+                                        <path d="M6.75 8.25C8.40685 8.25 9.75 6.90685 9.75 5.25C9.75 3.59315 8.40685 2.25 6.75 2.25C5.09315 2.25 3.75 3.59315 3.75 5.25C3.75 6.90685 5.09315 8.25 6.75 8.25Z" stroke="white" stroke-width="1.5"/>
                                     </svg>
                                 </div>
                                 <h5 class="mb-0" style="color: #FFF; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700;">Partner Details</h5>
@@ -381,22 +371,20 @@
                                                 Allianz Partners Middle East & Africa
                                             </h4>
                                             <div class="d-flex align-items-center flex-wrap" style="gap: 6px;">
-                                                <span id="detail_partner_type_badge" class="badge rounded-pill px-2.5 py-1 fw-medium" style="background: #DBEAFE; color: #0B4F8A !important; border: 1px solid #BFDBFE;">
-                                                    <i class="bi bi-shield me-1"></i> <span id="detail_partner_type_text">Insurance Provider</span>
-                                                </span>
-                                                <span class="d-inline-flex align-items-center" style="padding: 6px 10px; gap: 6px; border-radius: 999px; border: 1px solid #E2E8F0; background: #FFF;">
+                                                <span id="detail_partner_type_badge" class="d-inline-flex align-items-center" style="padding: 6px 10px; gap: 6px; border-radius: 999px; border: 1px solid #E2E8F0; background: #FFF;">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;">
-                                                        <g clip-path="url(#clip0_1009_403)">
+                                                        <g clip-path="url(#clip0_1009_403_badge)">
                                                             <path d="M6.99994 5.8333H7.00577M6.99994 8.16682H7.00577M6.99994 3.49978H7.00577M9.33304 5.8333H9.33887M9.33304 8.16682H9.33887M9.33304 3.49978H9.33887M4.66684 5.8333H4.67267M4.66684 8.16682H4.67267M4.66684 3.49978H4.67267M5.25012 12.8339V11.0837C5.25012 10.929 5.31157 10.7806 5.42095 10.6712C5.53034 10.5618 5.6787 10.5003 5.83339 10.5003H8.16649C8.32118 10.5003 8.46954 10.5618 8.57893 10.6712C8.68831 10.7806 8.74976 10.929 8.74976 11.0837V12.8339M3.50029 1.16626H10.4996C11.1439 1.16626 11.6661 1.68864 11.6661 2.33302V11.6671C11.6661 12.3115 11.1439 12.8339 10.4996 12.8339H3.50029C2.85602 12.8339 2.33374 12.3115 2.33374 11.6671V2.33302C2.33374 1.68864 2.85602 1.16626 3.50029 1.16626Z" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round"/>
                                                         </g>
                                                         <defs>
-                                                            <clipPath id="clip0_1009_403">
+                                                            <clipPath id="clip0_1009_403_badge">
                                                                 <rect width="14" height="14" fill="white"/>
                                                             </clipPath>
                                                         </defs>
                                                     </svg>
-                                                    <span id="detail_partner_code" style="font-family: 'Inter', sans-serif; font-size: 12px;"><span style="color:#64748B; font-weight:400;">Partner ID:</span> <span id="detail_partner_code_value" style="color:#0B4F8A; font-weight:700;">STA-INS-002</span></span>
+                                                    <span id="detail_partner_type_text" style="color: #0B4F8A; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;">Insurance Provider</span>
                                                 </span>
+                                                <span id="detail_partner_code" style="color: #64748B; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400;">Partner ID: <span id="detail_partner_code_value">STA-INS-002</span></span>
                                             </div>
                                             <div>
                                                 <a href="#" onclick="displayEdit(currentPartnerData)" class="d-inline-flex align-items-center text-decoration-none" style="width: 110px; padding: 6px 10px; gap: 6px; border-radius: 999px; background: rgba(25, 94, 153, 0.18); color: #0B4F8A; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;">
@@ -417,7 +405,7 @@
                                     </div>
 
                                     <!-- Right: Status & Population Metrics -->
-                                    <div class="d-flex align-items-center flex-wrap" style="gap: 10px;">
+                                    <div class="d-flex flex-column align-items-start" style="gap: 10px; width: 260px; max-width: 100%;">
                                         <span id="detail_status_badge" class="d-inline-flex align-items-center" style="padding: 6px 10px; gap: 8px; border-radius: 999px; border: 1px solid #A7F3D0; background: #D1FAE5;">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;">
                                                 <g clip-path="url(#clip0_1009_406)">
@@ -432,14 +420,16 @@
                                             <span id="detail_status_badge_text" style="color:#065F46; font-family:'Inter', sans-serif; font-size:12px; font-weight:700;">Active</span>
                                         </span>
 
-                                        <div class="d-flex flex-column align-items-start" style="padding: 10px; gap: 2px; flex: 1 0 0; border-radius: 10px; border: 1px solid #E2E8F0; background: #F8FAFC; min-width: 110px;">
-                                            <div style="color:#64748B; font-family:'Inter', sans-serif; font-size:11px; font-weight:600;">TOTAL POPULATION</div>
-                                            <div id="detail_total_population" style="color:#0F172A; font-family:'Inter', sans-serif; font-size:16px; font-weight:800;">1</div>
-                                        </div>
+                                        <div class="d-flex align-items-start" style="gap: 10px; width: 100%;">
+                                            <div class="d-flex flex-column align-items-start" style="padding: 10px; gap: 2px; flex: 1 0 0; border-radius: 10px; border: 1px solid #E2E8F0; background: #F8FAFC;">
+                                                <div style="color:#64748B; font-family:'Inter', sans-serif; font-size:11px; font-weight:600;">TOTAL POPULATION</div>
+                                                <div id="detail_total_population" style="color:#0F172A; font-family:'Inter', sans-serif; font-size:16px; font-weight:800;">1</div>
+                                            </div>
 
-                                        <div class="d-flex flex-column align-items-start" style="padding: 10px; gap: 2px; flex: 1 0 0; border-radius: 10px; border: 1px solid #E2E8F0; background: #F8FAFC; min-width: 110px;">
-                                            <div style="color:#64748B; font-family:'Inter', sans-serif; font-size:11px; font-weight:600;">ACTIVE POPULATION</div>
-                                            <div id="detail_active_population" style="color:#0F172A; font-family:'Inter', sans-serif; font-size:16px; font-weight:800;">1</div>
+                                            <div class="d-flex flex-column align-items-start" style="padding: 10px; gap: 2px; flex: 1 0 0; border-radius: 10px; border: 1px solid #E2E8F0; background: #F8FAFC;">
+                                                <div style="color:#64748B; font-family:'Inter', sans-serif; font-size:11px; font-weight:600;">ACTIVE POPULATION</div>
+                                                <div id="detail_active_population" style="color:#0F172A; font-family:'Inter', sans-serif; font-size:16px; font-weight:800;">1</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
