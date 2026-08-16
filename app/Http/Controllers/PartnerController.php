@@ -369,5 +369,64 @@ public function update(Request $request, Partner $partner)
         'date'    => now()->format('F d, Y h:i A')
     ]);
 }
+
+    public function insurance()
+    {
+        $totalProviders = Partner::where('partner_type', 'Insurance Provider')->count();
+        $totalBrokers = Partner::where('partner_type', 'Insurance Broker')->count();
+        $totalTpas = Partner::where('partner_type', 'Third Party Administrator')->count();
+
+        $totalInsurance = $totalProviders;
+        $activeInsurance = Partner::where('partner_type', 'Insurance Provider')->where('status', 'active')->count();
+        $awaitingInsurance = Partner::where('partner_type', 'Insurance Provider')->where('status', 'pending')->count();
+
+        $insurancePartners = Partner::where('partner_type', 'Insurance Provider')->get()->map(function($partner) {
+            $cityCountry = array_filter([$partner->city, $partner->country]);
+            return [
+                'id' => $partner->id,
+                'logo' => strtoupper(substr($partner->name, 0, 2)),
+                'logo_url' => $partner->logo ? asset('storage/' . $partner->logo) : null,
+                'name' => $partner->name,
+                'desc' => $partner->description ?? 'No description provided.',
+                'location' => implode(', ', $cityCountry) ?: 'N/A',
+                'status' => ucfirst($partner->status),
+            ];
+        });
+
+        return view('insurance', compact(
+            'totalProviders', 'totalBrokers', 'totalTpas',
+            'totalInsurance', 'activeInsurance', 'awaitingInsurance', 'insurancePartners'
+        ));
+    }
+
+    public function brokers()
+    {
+        $totalProviders = Partner::where('partner_type', 'Insurance Provider')->count();
+        $totalBrokers = Partner::where('partner_type', 'Insurance Broker')->count();
+        $totalTpas = Partner::where('partner_type', 'Third Party Administrator')->count();
+
+        $activeBroker = Partner::where('partner_type', 'Insurance Broker')->where('status', 'active')->count();
+        $awaitingBroker = Partner::where('partner_type', 'Insurance Broker')->where('status', 'pending')->count();
+        $totalBroker = $totalBrokers;
+
+        $brokerPartners = Partner::where('partner_type', 'Insurance Broker')->get()->map(function($partner) {
+            $cityCountry = array_filter([$partner->city, $partner->country]);
+            return [
+                'id' => $partner->id,
+                'logo' => strtoupper(substr($partner->name, 0, 2)),
+                'logo_url' => $partner->logo ? asset('storage/' . $partner->logo) : null,
+                'name' => $partner->name,
+                'desc' => $partner->description ?? 'No description provided.',
+                'location' => implode(', ', $cityCountry) ?: 'N/A',
+                'status' => ucfirst($partner->status),
+            ];
+        });
+
+        return view('boker', compact(
+            'totalProviders', 'totalBrokers', 'totalTpas',
+            'activeBroker', 'awaitingBroker', 'totalBroker', 'brokerPartners'
+        ));
+    }
 }
+
 

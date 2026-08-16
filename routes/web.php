@@ -20,6 +20,8 @@ Route::middleware('jwt.session')->group(function () {
 
 
     Route::get('/partnermanagement', [PartnerController::class, 'index'])->name('partnermanagement');
+    Route::get('/partnermanagement/insurance', [PartnerController::class, 'insurance'])->name('partnermanagement.insurance');
+    Route::get('/partnermanagement/brokers', [PartnerController::class, 'brokers'])->name('partnermanagement.brokers');
 
 
     Route::get('/group-management', function () {
@@ -28,7 +30,7 @@ Route::middleware('jwt.session')->group(function () {
 
 
     Route::get('/add-partner', function () {
-        return view('add-partner-form');
+        return view('add-partner-form', ['standalone' => true]);
     })->name('add-partner');
 
     Route::get('/add-group', function () {

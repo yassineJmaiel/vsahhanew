@@ -65,25 +65,25 @@
                 <ul class="nav nav-pills filter-pills gap-2 flex-nowrap overflow-auto pb-2 pb-lg-0"
                     style="white-space: nowrap;">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">All Partners <span class="badge">{{$countpartner}}</span></a>
+                        <a class="nav-link active" href="{{ route('partnermanagement') }}">All Partners <span class="badge">{{$countpartner}}</span></a>
                     </li>
                     <li class="nav-item">
-    <a class="nav-link" href="#">
-        Insurance <span class="badge">{{ $countInsuranceProvider }}</span>
-    </a>
-</li>
+                        <a class="nav-link" href="{{ route('partnermanagement.insurance') }}">
+                            Insurance <span class="badge">{{ $countInsuranceProvider }}</span>
+                        </a>
+                    </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="#">
-        Brokers <span class="badge">{{ $countInsuranceBroker }}</span>
-    </a>
-</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('partnermanagement.brokers') }}">
+                            Brokers <span class="badge">{{ $countInsuranceBroker }}</span>
+                        </a>
+                    </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="#">
-        TPAs <span class="badge">{{ $countTPA }}</span>
-    </a>
-</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('partnermanagement') }}">
+                            TPAs <span class="badge">{{ $countTPA }}</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-lg-4 col-12">

@@ -1,10 +1,14 @@
+@if(isset($standalone) && $standalone)
+    @extends('theme')
+    @section('content')
+@endif
 <!-- Start Page Header -->
 <div class="page-header add-partner-header">
     <div class="container-fluid p-0">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="header-title-box">
-                    <a href="#" class="back-link btn-back-header text-decoration-none" onclick="hideDisplay(event)">
+                    <a href="{{ route('partnermanagement') }}" class="back-link btn-back-header text-decoration-none" onclick="if(typeof hideDisplay === 'function') { hideDisplay(event); }">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M8.00021 3.33276L3.33301 7.99996L8.00021 12.6672M3.33301 7.99996H12.6674"
                                 stroke="#FFF" stroke-width="2" stroke-linecap="round" />
@@ -36,7 +40,7 @@
                         Save Draft
                     </button>
                     <button class="btn btn-cancel btn-header-cancel mb-2 mb-sm-0" id="header-btn-cancel"
-                        onclick="hideDisplay(event)">
+                        onclick="if(typeof hideDisplay === 'function') { hideDisplay(event); } else { window.location.href='{{ route('partnermanagement') }}'; }">
                         Annuler
                     </button>
                 </div>
@@ -263,7 +267,7 @@
 
                             <div class="form-btn-group">
                                 <button type="button" class="btn btn-form-back"
-                                    onclick="hideDisplay(event)">Back</button>
+                                    onclick="if(typeof hideDisplay === 'function') { hideDisplay(event); } else { window.location.href='{{ route('partnermanagement') }}'; }">Back</button>
                                 <button type="button" class="btn btn-form-continue"
                                     onclick="goToStep(2)">Continue</button>
                             </div>
@@ -982,5 +986,9 @@
         }
     }
 </script>
+
+@if(isset($standalone) && $standalone)
+    @endsection
+@endif
 
 <!-- End Partner Information Form Card -->
