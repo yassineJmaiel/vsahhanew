@@ -140,23 +140,95 @@
         color: #ffffff;
         outline: 1px solid #ffffff;
     }
+    a.custom-filter-pill:not(.active):hover {
+        background: #EFF6FF !important;
+        color: #0B4F8A !important;
+        border-color: #0B4F8A !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+    }
+    a.custom-filter-pill {
+        cursor: pointer;
+    }
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var HOVER_BG    = 'linear-gradient(90deg, #0B4F8A 0.06%, #052A4A 93%)';
+        var HOVER_COLOR = '#FFF';
+        var HOVER_BORDER = 'transparent';
+
+        function applyHover(el, bgDefault, borderDefault, colorDefault) {
+            el.style.transition = 'all 0.2s ease';
+            el.addEventListener('mouseenter', function() {
+                this.style.setProperty('background', HOVER_BG, 'important');
+                this.style.setProperty('color', HOVER_COLOR, 'important');
+                this.style.setProperty('border-color', HOVER_BORDER, 'important');
+                this.style.setProperty('text-decoration', 'none', 'important');
+            });
+            el.addEventListener('mouseleave', function() {
+                this.style.setProperty('background', bgDefault, 'important');
+                this.style.setProperty('color', colorDefault, 'important');
+                this.style.setProperty('border-color', borderDefault, 'important');
+            });
+        }
+
+        // Filter pills
+        document.querySelectorAll('a.custom-filter-pill:not(.active)').forEach(function(pill) {
+            applyHover(pill, '#FFF', '#EEF0F4', '#1E293B');
+        });
+
+        // Outline buttons (Filter, Export, Refresh)
+        document.querySelectorAll('.btn-outline-secondary').forEach(function(btn) {
+            applyHover(btn, '#FFF', '#dee2e6', '#4A5568');
+        });
+
+        // Broker stat cards
+        document.querySelectorAll('.metric-gradient-card').forEach(function(card) {
+            card.style.cursor = 'pointer';
+            card.style.transition = 'all 0.2s ease';
+            card.addEventListener('mouseenter', function() {
+                this.style.setProperty('box-shadow', '0 8px 24px rgba(11,79,138,0.35)', 'important');
+                this.style.setProperty('transform', 'translateY(-2px)', 'important');
+                this.style.setProperty('opacity', '0.92', 'important');
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.removeProperty('box-shadow');
+                this.style.removeProperty('transform');
+                this.style.removeProperty('opacity');
+            });
+        });
+
+    });
+</script>
 
 <div class="container-fluid px-0">
     <!-- Header Area -->
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-        <div>
-            <h1 class="h3 fw-bold text-dark mb-1">Partner Overview</h1>
-            <p class="text-muted mb-0">View metrics, recent activity and network status for all business partners</p>
+    <div class="page-header-bar d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light d-lg-none" id="sidebarToggleBtn">
+                <i class="bi bi-list fs-4"></i>
+            </button>
+            <div>
+                <h1 class="page-header-title mb-1">Partner Management</h1>
+                <p class="page-header-subtitle mb-0">Manage relationships with insurance providers, brokers, and third-party administrators</p>
+            </div>
         </div>
         <div class="d-flex flex-wrap align-items-center gap-2">
-            <a href="{{ route('add-partner') }}" class="btn btn-primary d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2" style="background-color: #015AA8; border-color: #015AA8;">
+            <div class="search-input-wrapper">
+                <i class="bi bi-search" style="color: #757575;"></i>
+                <input type="text" placeholder="Search partners...">
+            </div>
+            <button class="btn btn-primary d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2" style="background-color: #0B4F8A; border-color: #0B4F8A;" onclick="window.location.href='{{ route('add-partner') }}'">
                 <i class="bi bi-plus-lg"></i>
                 <span>Add Partner</span>
-            </a>
+            </button>
             <button class="btn btn-outline-secondary d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2 bg-white" onclick="window.location.reload()">
                 <i class="bi bi-arrow-clockwise"></i>
                 <span>Refresh</span>
+            </button>
+            <button class="btn btn-outline-secondary d-inline-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px;">
+                <i class="bi bi-bell"></i>
             </button>
         </div>
     </div>
@@ -166,25 +238,17 @@
         <div class="card-body p-3 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
             <!-- Filter Pills -->
             <div class="d-flex flex-wrap align-items-center gap-2 overflow-auto py-1">
-                <a href="{{ route('partnermanagement') }}" class="nav-pill-tab">
-                    <span>All Partners</span>
-                    <span class="nav-pill-tab-badge">{{ $totalPartners ?? 3 }}</span>
+                <a href="{{ route('partnermanagement') }}" class="custom-filter-pill">
+                    All Partners <span class="badge-count">{{ $countpartner }}</span>
                 </a>
-                <a href="{{ route('partnermanagement.insurance') }}" class="nav-pill-tab">
-                    <span>Insurance</span>
-                    <span class="nav-pill-tab-badge">{{ $totalProviders ?? 2 }}</span>
+                <a href="{{ route('partnermanagement.insurance') }}" class="custom-filter-pill">
+                    Insurance <span class="badge-count">{{ $totalProviders }}</span>
                 </a>
-                <a href="{{ route('partnermanagement.brokers') }}" class="nav-pill-tab active">
-                    <span>Brokers</span>
-                    <span class="nav-pill-tab-badge">{{ $totalBrokers ?? 0 }}</span>
+                <a href="{{ route('partnermanagement.brokers') }}" class="custom-filter-pill active">
+                    Brokers <span class="badge-count">{{ $totalBrokers }}</span>
                 </a>
-                <a href="{{ route('partnermanagement') }}" class="nav-pill-tab">
-                    <span>TPAs</span>
-                    <span class="nav-pill-tab-badge">{{ $totalTpas ?? 1 }}</span>
-                </a>
-                <a href="{{ route('partnermanagement') }}" class="nav-pill-tab">
-                    <span>Private Company</span>
-                    <span class="nav-pill-tab-badge">1</span>
+                <a href="{{ route('partnermanagement') }}" class="custom-filter-pill">
+                    TPAs <span class="badge-count">{{ $totalTpas }}</span>
                 </a>
             </div>
 

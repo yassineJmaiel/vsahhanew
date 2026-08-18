@@ -372,35 +372,63 @@ public function update(Request $request, Partner $partner)
 
     public function insurance()
     {
+        $countpartner = Partner::count();
         $totalProviders = Partner::where('partner_type', 'Insurance Provider')->count();
         $totalBrokers = Partner::where('partner_type', 'Insurance Broker')->count();
         $totalTpas = Partner::where('partner_type', 'Third Party Administrator')->count();
+        $totalBroker = $totalBrokers;
 
         $totalInsurance = $totalProviders;
         $activeInsurance = Partner::where('partner_type', 'Insurance Provider')->where('status', 'active')->count();
         $awaitingInsurance = Partner::where('partner_type', 'Insurance Provider')->where('status', 'pending')->count();
 
-        $insurancePartners = Partner::where('partner_type', 'Insurance Provider')->get()->map(function($partner) {
+        $insurancePartners = Partner::where('partner_type', 'Insurance Provider')->latest()->get()->map(function($partner) {
             $cityCountry = array_filter([$partner->city, $partner->country]);
+            $address = array_filter([$partner->address_line1, $partner->address_line2]);
+
             return [
                 'id' => $partner->id,
+                'internal_code' => $partner->internal_code ?? 'N/A',
                 'logo' => strtoupper(substr($partner->name, 0, 2)),
                 'logo_url' => $partner->logo ? asset('storage/' . $partner->logo) : null,
                 'name' => $partner->name,
                 'desc' => $partner->description ?? 'No description provided.',
+                'contact_name' => $partner->contact_name ?? 'N/A',
+                'contact_email' => $partner->contact_email ?? 'N/A',
+                'contact_phone' => $partner->contact_phone ?? 'N/A',
                 'location' => implode(', ', $cityCountry) ?: 'N/A',
+                'address' => implode(', ', $address) ?: 'N/A',
+                'type' => $partner->partner_type ?? 'N/A',
+                'partner_type' => $partner->partner_type ?? '',
+                'city' => $partner->city ?? '',
+                'country' => $partner->country ?? '',
                 'status' => ucfirst($partner->status),
+                'status_raw' => $partner->status ?? '',
+                'website' => $partner->website ?? 'N/A',
+                // Raw fields for the edit form
+                'address_line1' => $partner->address_line1 ?? '',
+                'address_line2' => $partner->address_line2 ?? '',
+                'state' => $partner->state ?? '',
+                'postal_code' => $partner->postal_code ?? '',
+                'logo_link' => $partner->logo_link ?? '',
+                'linkedin' => $partner->linkedin ?? '',
+                'description' => $partner->description ?? '',
+                'country_code' => $partner->country_code ?? '',
+                'contract_start' => $partner->contract_start ?? '',
+                'contract_end' => $partner->contract_end ?? '',
+                'contract_notes' => $partner->contract_notes ?? '',
             ];
         });
 
         return view('insurance', compact(
-            'totalProviders', 'totalBrokers', 'totalTpas',
+            'countpartner', 'totalProviders', 'totalBrokers', 'totalTpas', 'totalBroker',
             'totalInsurance', 'activeInsurance', 'awaitingInsurance', 'insurancePartners'
         ));
     }
 
     public function brokers()
     {
+        $countpartner = Partner::count();
         $totalProviders = Partner::where('partner_type', 'Insurance Provider')->count();
         $totalBrokers = Partner::where('partner_type', 'Insurance Broker')->count();
         $totalTpas = Partner::where('partner_type', 'Third Party Administrator')->count();
@@ -422,8 +450,8 @@ public function update(Request $request, Partner $partner)
             ];
         });
 
-        return view('boker', compact(
-            'totalProviders', 'totalBrokers', 'totalTpas',
+        return view('brokers', compact(
+            'countpartner', 'totalProviders', 'totalBrokers', 'totalTpas',
             'activeBroker', 'awaitingBroker', 'totalBroker', 'brokerPartners'
         ));
     }

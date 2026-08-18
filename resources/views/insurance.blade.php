@@ -1,5 +1,7 @@
 @extends('theme')
 
+
+
 @section('content')
 @php
     $isInsurance = request()->routeIs('partnermanagement.insurance');
@@ -105,23 +107,123 @@
         background: linear-gradient(135deg, #10B981 0%, #0B4F8A 100%);
         box-shadow: 0px 18px 40px -12px rgba(16, 185, 129, 0.25);
     }
+    a.custom-filter-pill:not(.active):hover {
+        background: #EFF6FF !important;
+        color: #0B4F8A !important;
+        border-color: #0B4F8A !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+    }
+    a.custom-filter-pill {
+        cursor: pointer;
+    }
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var HOVER_BG    = 'linear-gradient(90deg, #0B4F8A 0.06%, #052A4A 93%)';
+        var HOVER_COLOR = '#FFF';
+        var HOVER_BORDER = 'transparent';
+
+        function applyHover(el, bgDefault, borderDefault, colorDefault) {
+            el.style.transition = 'all 0.2s ease';
+            el.addEventListener('mouseenter', function() {
+                this.style.setProperty('background', HOVER_BG, 'important');
+                this.style.setProperty('color', HOVER_COLOR, 'important');
+                this.style.setProperty('border-color', HOVER_BORDER, 'important');
+                this.style.setProperty('text-decoration', 'none', 'important');
+            });
+            el.addEventListener('mouseleave', function() {
+                this.style.setProperty('background', bgDefault, 'important');
+                this.style.setProperty('color', colorDefault, 'important');
+                this.style.setProperty('border-color', borderDefault, 'important');
+            });
+        }
+
+        // Filter pills
+        document.querySelectorAll('a.custom-filter-pill:not(.active)').forEach(function(pill) {
+            applyHover(pill, '#FFF', '#EEF0F4', '#1E293B');
+        });
+
+        // Outline buttons (Filter, Export, Refresh)
+        document.querySelectorAll('.btn-outline-secondary').forEach(function(btn) {
+            applyHover(btn, '#FFF', '#dee2e6', '#4A5568');
+        });
+
+        // Color definitions for insurance stat cards
+        var ACCENT_COLORS = {
+            'stat-card-blue': {
+                bg: '#EFF6FF',
+                border: '#0B4F8A',
+                shadow: '0 8px 24px rgba(11, 79, 138, 0.18)'
+            },
+            'stat-card-green': {
+                bg: '#ECFDF5',
+                border: '#059669',
+                shadow: '0 8px 24px rgba(5, 150, 105, 0.18)'
+            },
+            'stat-card-orange': {
+                bg: '#FFFBEB',
+                border: '#D97706',
+                shadow: '0 8px 24px rgba(217, 119, 6, 0.18)'
+            }
+        };
+
+        // Stat cards - hover according to each card's color
+        document.querySelectorAll('.stat-card-accent').forEach(function(card) {
+            card.style.transition = 'all 0.2s ease';
+            card.style.cursor = 'pointer';
+            var cfg = null;
+            if (card.classList.contains('stat-card-blue')) cfg = ACCENT_COLORS['stat-card-blue'];
+            else if (card.classList.contains('stat-card-green')) cfg = ACCENT_COLORS['stat-card-green'];
+            else if (card.classList.contains('stat-card-orange')) cfg = ACCENT_COLORS['stat-card-orange'];
+
+            if (cfg) {
+                card.addEventListener('mouseenter', function() {
+                    this.style.setProperty('background', cfg.bg, 'important');
+                    this.style.setProperty('border-color', cfg.border, 'important');
+                    this.style.setProperty('box-shadow', cfg.shadow, 'important');
+                    this.style.setProperty('transform', 'translateY(-2px)', 'important');
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.removeProperty('background');
+                    this.style.removeProperty('border-color');
+                    this.style.removeProperty('box-shadow');
+                    this.style.removeProperty('transform');
+                });
+            }
+        });
+
+    });
+</script>
 
 <div class="container-fluid px-0">
     <!-- Header Section -->
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-        <div>
-            <h1 class="h3 fw-bold text-dark mb-1">Partner Management</h1>
-            <p class="text-muted mb-0">Manage relationships with insurance providers, brokers, and third-party administrators</p>
+    <div class="page-header-bar d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light d-lg-none" id="sidebarToggleBtn">
+                <i class="bi bi-list fs-4"></i>
+            </button>
+            <div>
+                <h1 class="page-header-title mb-1">Partner Management</h1>
+                <p class="page-header-subtitle mb-0">Manage relationships with insurance providers, brokers, and third-party administrators</p>
+            </div>
         </div>
         <div class="d-flex flex-wrap align-items-center gap-2">
-            <a href="{{ route('add-partner') }}" class="btn btn-primary d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2" style="background-color: #0B4F8A; border-color: #0B4F8A;">
+            <div class="search-input-wrapper">
+                <i class="bi bi-search" style="color: #757575;"></i>
+                <input type="text" placeholder="Search partners...">
+            </div>
+            <button class="btn btn-primary d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2" style="background-color: #0B4F8A; border-color: #0B4F8A;" onclick="window.location.href='{{ route('add-partner') }}'">
                 <i class="bi bi-plus-lg"></i>
                 <span>Add Partner</span>
-            </a>
+            </button>
             <button class="btn btn-outline-secondary d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2 bg-white" onclick="window.location.reload()">
                 <i class="bi bi-arrow-clockwise"></i>
                 <span>Refresh</span>
+            </button>
+            <button class="btn btn-outline-secondary d-inline-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px;">
+                <i class="bi bi-bell"></i>
             </button>
         </div>
     </div>
@@ -131,25 +233,17 @@
         <div class="card-body p-3 d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3">
             <!-- Filter Pills -->
             <div class="d-flex flex-wrap align-items-center gap-2 overflow-auto py-1">
-                <a href="{{ route('partnermanagement') }}" class="nav-pill-custom">
-                    <span>All Partners</span>
-                    <span class="nav-pill-badge">{{ $totalPartners ?? ($countpartner ?? 3) }}</span>
+                <a href="{{ route('partnermanagement') }}" class="custom-filter-pill">
+                    All Partners <span class="badge-count">{{ $countpartner }}</span>
                 </a>
-                <a href="{{ route('partnermanagement.insurance') }}" class="nav-pill-custom {{ $isInsurance ? 'active' : '' }}">
-                    <span>Insurance</span>
-                    <span class="nav-pill-badge">{{ $totalInsurance ?? ($countInsuranceProvider ?? 2) }}</span>
+                <a href="{{ route('partnermanagement.insurance') }}" class="custom-filter-pill {{ $isInsurance ? 'active' : '' }}">
+                    Insurance <span class="badge-count">{{ $totalProviders }}</span>
                 </a>
-                <a href="{{ route('partnermanagement.brokers') }}" class="nav-pill-custom {{ !$isInsurance ? 'active' : '' }}">
-                    <span>Brokers</span>
-                    <span class="nav-pill-badge">{{ $totalBroker ?? ($countInsuranceBroker ?? 0) }}</span>
+                <a href="{{ route('partnermanagement.brokers') }}" class="custom-filter-pill {{ !$isInsurance ? 'active' : '' }}">
+                    Brokers <span class="badge-count">{{ $totalBrokers }}</span>
                 </a>
-                <a href="{{ route('partnermanagement') }}" class="nav-pill-custom">
-                    <span>TPAs</span>
-                    <span class="nav-pill-badge">{{ $totalTpas ?? ($countTPA ?? 1) }}</span>
-                </a>
-                <a href="{{ route('partnermanagement') }}" class="nav-pill-custom">
-                    <span>Private Company</span>
-                    <span class="nav-pill-badge">1</span>
+                <a href="{{ route('partnermanagement') }}" class="custom-filter-pill">
+                    TPAs <span class="badge-count">{{ $totalTpas }}</span>
                 </a>
             </div>
 
@@ -191,7 +285,15 @@
                     <div class="stat-card-accent stat-card-blue p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
                         <div>
                             <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #DBEAFE; color: #0B4F8A;">
-                                <i class="bi bi-building fs-5"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                                    <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                                    <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                                    <path d="M10 6h4"/>
+                                    <path d="M10 10h4"/>
+                                    <path d="M10 14h4"/>
+                                    <path d="M10 18h4"/>
+                                </svg>
                             </div>
                             <div class="display-5 fw-extrabold mb-1" style="color: #0B4F8A; font-weight: 800;">
                                 {{ $isInsurance ? ($totalInsurance ?? 2) : ($totalBroker ?? 5) }}
@@ -213,7 +315,10 @@
                     <div class="stat-card-accent stat-card-green p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
                         <div>
                             <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #D1FAE5; color: #059669;">
-                                <i class="bi bi-check-circle fs-5"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="m9 12 2 2 4-4"/>
+                                </svg>
                             </div>
                             <div class="display-5 fw-extrabold mb-1" style="color: #059669; font-weight: 800;">
                                 {{ $isInsurance ? ($activeInsurance ?? 1) : ($activeBroker ?? 1) }}
@@ -267,7 +372,10 @@
                         <div class="position-absolute bg-white rounded-4 shadow-sm opacity-75" style="width: 60px; height: 60px; top: 15px; left: 15px;"></div>
                         
                         <div class="d-flex align-items-center justify-content-center bg-white rounded-4 shadow-sm mx-auto my-auto position-relative z-1" style="width: 72px; height: 72px;">
-                            <i class="bi bi-briefcase fs-2" style="color: #0B4F8A;"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                <rect width="20" height="14" x="2" y="6" rx="2"/>
+                            </svg>
                         </div>
                         <div class="mt-auto position-relative z-1">
                             <span class="badge text-secondary fw-semibold bg-white-50 px-2 py-1" style="font-size: 0.75rem;">
@@ -307,7 +415,12 @@
     <!-- Partner Statistics Header -->
     <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-2 mb-3">
         <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-graph-up-arrow fs-5" style="color: #0B4F8A;"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v16a2 2 0 0 0 2 2h16"/>
+                <path d="M18 17V9"/>
+                <path d="M13 17V5"/>
+                <path d="M8 17v-3"/>
+            </svg>
             <h5 class="fw-bold text-dark mb-0">Partner Statistics</h5>
         </div>
         <span class="text-muted d-none d-sm-inline">•</span>
@@ -321,7 +434,15 @@
             <div class="gradient-metric-card gradient-card-1 h-100 d-flex flex-column justify-content-between">
                 <div>
                     <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-3 mb-3" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px);">
-                        <i class="bi bi-building text-white"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                            <path d="M10 6h4"/>
+                            <path d="M10 10h4"/>
+                            <path d="M10 14h4"/>
+                            <path d="M10 18h4"/>
+                        </svg>
                         <span class="fw-bold small text-white-90">Insurance Providers</span>
                     </div>
                     <div class="d-flex align-items-baseline gap-3 mb-2">
@@ -344,7 +465,10 @@
             <div class="gradient-metric-card gradient-card-2 h-100 d-flex flex-column justify-content-between">
                 <div>
                     <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-3 mb-3" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px);">
-                        <i class="bi bi-briefcase text-white"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            <rect width="20" height="14" x="2" y="6" rx="2"/>
+                        </svg>
                         <span class="fw-bold small text-white-90">Insurance Brokers</span>
                     </div>
                     <div class="d-flex align-items-baseline gap-3 mb-2">

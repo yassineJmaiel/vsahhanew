@@ -1022,3 +1022,55 @@ footer {
   line-height: normal;
   flex-shrink: 0;
 }
+
+/* ===== Custom Filter Pills ===== */
+a.custom-filter-pill {
+    display: inline-flex;
+    height: 48px;
+    padding: 0 16px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 999px;
+    background: #FFF;
+    border: 1px solid #EEF0F4;
+    box-shadow: 0 10px 22px -10px rgba(37, 99, 235, 0.15);
+    color: #1E293B;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+a.custom-filter-pill:not(.active):hover {
+    background: #EFF6FF;
+    color: #0B4F8A;
+    border-color: #0B4F8A;
+    text-decoration: none;
+}
+
+a.custom-filter-pill.active {
+    background: linear-gradient(90deg, #0B4F8A 0.06%, #052A4A 93%);
+    color: #FFF;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+a.custom-filter-pill .badge-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background-color: #F3F4F6;
+    color: #6B7280;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 6px;
+}
+
+a.custom-filter-pill.active .badge-count {
+    background-color: rgba(255, 255, 255, 0.149);
+    color: #FFF;
+    border: none;
+}
