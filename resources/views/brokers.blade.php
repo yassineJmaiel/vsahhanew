@@ -41,6 +41,111 @@
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04), 0px 0px 15px 2px rgba(248, 144, 144, 0.25);
     }
 
+    .stat-card-accent {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        background: #ffffff;
+        cursor: pointer;
+        transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stat-card-accent:hover {
+        transform: translateY(-2px);
+        border-color: transparent;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.18) !important;
+    }
+    .stat-card-accent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 4px;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        transition: opacity 0.2s ease;
+    }
+    .stat-card-accent:hover::before { opacity: 0; }
+    .stat-card-blue::before { background-color: #0B4F8A; }
+    .stat-card-green::before { background-color: #059669; }
+    .stat-card-orange::before { background-color: #D97706; }
+
+    .stat-card-blue:hover { background: linear-gradient(270deg, #0B4F8A 0.08%, #072E51 99.92%); }
+    .stat-card-green:hover { background: linear-gradient(270deg, #059669 0.03%, #026244 99.97%); }
+    .stat-card-orange:hover { background: linear-gradient(90deg, #BC5308 0.06%, #D97706 99.94%); }
+
+    .stat-icon-box { transition: background 0.2s ease, color 0.2s ease; }
+    .stat-value { transition: color 0.2s ease; }
+    .stat-label { transition: color 0.2s ease; }
+    .stat-badge { transition: background 0.2s ease, color 0.2s ease; }
+
+    .stat-card-accent:hover .stat-icon-box {
+        background: rgba(255, 255, 255, 0.2) !important;
+        color: #ffffff !important;
+    }
+    .stat-card-accent:hover .stat-value { color: #ffffff !important; }
+    .stat-card-accent:hover .stat-label { color: rgba(255, 255, 255, 0.85) !important; }
+    .stat-card-accent:hover .stat-badge {
+        background: rgba(255, 255, 255, 0.18) !important;
+        color: #ffffff !important;
+    }
+
+    .banner-illus-box {
+        background: linear-gradient(90deg, #e2e8f0 0%, #f1f5f9 100%);
+        border-radius: 24px;
+        min-height: 220px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    @keyframes illus-slide-up-a {
+        0% { opacity: 0; transform: translateY(14px); }
+        6% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes illus-slide-up-b {
+        0% { opacity: 0; transform: translateY(14px); }
+        7% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes illus-pop-scale {
+        0% { opacity: 0; transform: scale(0.75); }
+        9% { opacity: 1; transform: scale(1); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes illus-pop-circle {
+        0% { opacity: 0; transform: scale(0.8); }
+        5% { opacity: 1; transform: scale(1); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    .illus-anim-a { animation: illus-slide-up-a 9s ease-out infinite; }
+    .illus-anim-b { animation: illus-slide-up-b 9s ease-out infinite; }
+    .illus-anim-icon { animation: illus-pop-scale 9s ease-out infinite; }
+    .illus-anim-circle { animation: illus-pop-circle 9s ease-out infinite; }
+
+    .btn-empty-state-cta {
+        display: flex;
+        width: 100%;
+        height: 48px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 12px;
+        background-color: #0B4F8A;
+        border-color: #0B4F8A;
+        color: #ffffff;
+        box-shadow: 0 10px 24px -10px rgba(11, 79, 138, 0.20);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+    .btn-empty-state-cta:hover,
+    .btn-empty-state-cta:focus {
+        background-color: #112127;
+        border-color: #112127;
+        color: #ffffff;
+        box-shadow: 0 10px 24px -10px rgba(11, 79, 138, 0.20);
+    }
+
     .icon-wrapper-glass {
         width: 40px;
         height: 40px;
@@ -266,107 +371,155 @@
         </div>
     </div>
 
-    <!-- Metric Cards Grid -->
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-6 g-3 mb-4">
-        <!-- 1. Total Partners -->
-        <div class="col">
-            <div class="metric-gradient-card metric-card-1 h-100 d-flex flex-column justify-content-between">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                    <span class="fw-semibold text-white-90 small">Total Partners</span>
-                    <div class="icon-wrapper-glass text-white">
-                        <i class="bi bi-building fs-5"></i>
-                    </div>
-                </div>
+    <!-- Broker Statistics Card Container -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4" style="background-color: #F8FAFC;">
+        <div class="card-body p-4">
+            <!-- Card Header -->
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mb-4">
+                <h6 class="fw-bold text-uppercase tracking-wide text-secondary mb-0" style="font-size: 0.85rem;">
+                    Insurance Broker Statistics
+                </h6>
                 <div>
-                    <h2 class="display-6 fw-bold mb-2">{{ $totalPartners ?? 2 }}</h2>
-                    <div class="d-flex align-items-center gap-2">
-                        <span class="badge rounded-pill bg-white text-primary fw-bold px-2 py-1 small">+0%</span>
-                        <span class="text-white-50 small">this month</span>
-                    </div>
+                    <span class="badge rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center gap-2" style="background-color: #EFF6FF; color: #0B4F8A; border: 1px solid #BFDBFE;">
+                        <i class="bi bi-calendar3"></i>
+                        Last 30 days
+                        <i class="bi bi-chevron-down ms-1"></i>
+                    </span>
                 </div>
             </div>
-        </div>
 
-        <!-- 2. Active Brokers -->
-        <div class="col">
-            <div class="metric-gradient-card metric-card-2 h-100 d-flex flex-column justify-content-between">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                    <span class="fw-semibold text-white-90 small">Active Brokers</span>
-                    <div class="icon-wrapper-glass text-white">
-                        <i class="bi bi-shield-check fs-5"></i>
+            <!-- Stat Cards Row -->
+            <div class="row g-3">
+                <!-- Card 1: Total Broker Partnerships -->
+                <div class="col-12 col-md-4">
+                    <div class="stat-card-accent stat-card-blue p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stat-icon-box d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #DBEAFE; color: #0B4F8A;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                    <path d="M13.3336 17.5V15.8333C13.3336 14.9493 12.9824 14.1014 12.3572 13.4763C11.7321 12.8512 10.8841 12.5 10 12.5H4.99962C4.11549 12.5 3.26758 12.8512 2.6424 13.4763C2.01723 14.1014 1.66602 14.9493 1.66602 15.8333V17.5M13.3336 2.60661C14.0485 2.79192 14.6816 3.20933 15.1335 3.79333C15.5854 4.37733 15.8306 5.09485 15.8306 5.83327C15.8306 6.5717 15.5854 7.28922 15.1335 7.87322C14.6816 8.45722 14.0485 8.87463 13.3336 9.05994M18.334 17.4999V15.8332C18.3335 15.0947 18.0876 14.3772 17.6351 13.7935C17.1826 13.2098 16.549 12.7929 15.8338 12.6082M10.8334 5.83333C10.8334 7.67428 9.34091 9.16667 7.49982 9.16667C5.65872 9.16667 4.16622 7.67428 4.16622 5.83333C4.16622 3.99238 5.65872 2.5 7.49982 2.5C9.34091 2.5 10.8334 3.99238 10.8334 5.83333Z"/>
+                                </svg>
+                            </div>
+                            <div class="stat-value display-5 fw-extrabold mb-1" style="color: #0B4F8A; font-weight: 800;">
+                                {{ $totalBroker }}
+                            </div>
+                            <div class="stat-label fw-semibold text-secondary mb-3" style="font-size: 0.9rem;">
+                                Total broker partnerships
+                            </div>
+                        </div>
+                        <div>
+                            <span class="stat-badge badge rounded-pill px-2.5 py-1.5 fw-semibold d-inline-flex align-items-center gap-1" style="background-color: #DBEAFE; color: #0B4F8A;">
+                                <i class="bi bi-dash"></i> No change
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <h2 class="display-6 fw-bold mb-2">{{ $activeBroker ?? 0 }}</h2>
-                    <span class="text-white-80 small">Partners ready for distribution</span>
-                </div>
-            </div>
-        </div>
 
-        <!-- 3. Pending Approval -->
-        <div class="col">
-            <div class="metric-gradient-card metric-card-3 h-100 d-flex flex-column justify-content-between">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                    <span class="fw-semibold text-white-90 small">Pending Approval</span>
-                    <div class="icon-wrapper-glass text-white">
-                        <i class="bi bi-clock fs-5"></i>
+                <!-- Card 2: Currently Live and Producing -->
+                <div class="col-12 col-md-4">
+                    <div class="stat-card-accent stat-card-green p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stat-icon-box d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #D1FAE5; color: #059669;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="m9 12 2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="stat-value display-5 fw-extrabold mb-1" style="color: #059669; font-weight: 800;">
+                                {{ $activeBroker }}
+                            </div>
+                            <div class="stat-label fw-semibold text-secondary mb-3" style="font-size: 0.9rem;">
+                                Currently live and producing
+                            </div>
+                        </div>
+                        <div>
+                            <span class="stat-badge badge rounded-pill px-2.5 py-1.5 fw-semibold d-inline-flex align-items-center gap-1" style="background-color: #D1FAE5; color: #059669;">
+                                <i class="bi bi-shield-check"></i> Healthy
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <h2 class="display-6 fw-bold mb-2">{{ $awaitingBroker ?? 0 }}</h2>
-                    <span class="text-white-80 small">Awaiting verification</span>
-                </div>
-            </div>
-        </div>
 
-        <!-- 4. Insurance Providers -->
-        <div class="col">
-            <div class="metric-gradient-card metric-card-4 h-100 d-flex flex-column justify-content-between">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                    <span class="fw-semibold text-white-90 small">Insurance Providers</span>
-                    <div class="icon-wrapper-glass text-white">
-                        <i class="bi bi-file-earmark-text fs-5"></i>
+                <!-- Card 3: Awaiting Review or Onboarding -->
+                <div class="col-12 col-md-4">
+                    <div class="stat-card-accent stat-card-orange p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stat-icon-box d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #FFEDD5; color: #D97706;">
+                                <i class="bi bi-clock-history fs-5"></i>
+                            </div>
+                            <div class="stat-value display-5 fw-extrabold mb-1" style="color: #D97706; font-weight: 800;">
+                                {{ $awaitingBroker }}
+                            </div>
+                            <div class="stat-label fw-semibold text-secondary mb-3" style="font-size: 0.9rem;">
+                                Awaiting review or onboarding
+                            </div>
+                        </div>
+                        <div>
+                            <span class="stat-badge badge rounded-pill px-2.5 py-1.5 fw-semibold d-inline-flex align-items-center gap-1" style="background-color: #FFEDD5; color: #D97706;">
+                                <i class="bi bi-hourglass-split"></i> Pending
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <h2 class="display-6 fw-bold mb-2">{{ $totalProviders ?? 0 }}</h2>
-                    <span class="text-white-80 small">Provider network</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. TPAs -->
-        <div class="col">
-            <div class="metric-gradient-card metric-card-5 h-100 d-flex flex-column justify-content-between">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                    <span class="fw-semibold text-white-90 small">TPAs</span>
-                    <div class="icon-wrapper-glass text-white">
-                        <i class="bi bi-diagram-3 fs-5"></i>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="display-6 fw-bold mb-2">{{ $totalTpas ?? 1 }}</h2>
-                    <span class="text-white-80 small">Third-party administrators</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 6. Inactive Partners -->
-        <div class="col">
-            <div class="metric-gradient-card metric-card-6 h-100 d-flex flex-column justify-content-between">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                    <span class="fw-semibold text-white-90 small">Inactive Partners</span>
-                    <div class="icon-wrapper-glass text-white">
-                        <i class="bi bi-exclamation-triangle fs-5"></i>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="display-6 fw-bold mb-2">1</h2>
-                    <span class="text-white-80 small">Needs attention</span>
                 </div>
             </div>
         </div>
     </div>
+
+    @if($totalBroker == 0)
+    <!-- Empty State Callout Banner -->
+    <div class="card border border-light-subtle shadow-sm rounded-4 mb-5">
+        <div class="card-body p-4 p-lg-5">
+            <div class="row align-items-center g-4">
+                <!-- Left Decorative Banner Box -->
+                <div class="col-12 col-lg-4 col-xl-3">
+                    <div class="banner-illus-box d-flex flex-column justify-content-between p-3 position-relative">
+                        <!-- Floating graphic element shapes -->
+                        <div class="illus-anim-circle position-absolute rounded-circle" style="width: 220px; height: 220px; right: -40px; bottom: -60px; background: rgba(11, 79, 138, 0.08);"></div>
+                        <div class="illus-anim-a position-absolute bg-white shadow-sm" style="width: 72px; height: 72px; top: 18px; left: 18px; border-radius: 20px; opacity: 0.9;"></div>
+                        <div class="illus-anim-b position-absolute bg-white shadow-sm" style="width: 92px; height: 92px; bottom: 18px; right: 18px; border-radius: 24px; opacity: 0.85;"></div>
+
+                        <div class="illus-anim-icon d-flex align-items-center justify-content-center bg-white rounded-4 shadow-sm mx-auto my-auto position-relative z-1" style="width: 72px; height: 72px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B4F8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="mt-auto position-relative z-1">
+                            <span class="badge text-secondary fw-semibold bg-white-50 px-2 py-1" style="font-size: 0.75rem;">
+                                Insurance Brokers
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Text & Action Content -->
+                <div class="col-12 col-lg-8 col-xl-9">
+                    <div class="d-flex flex-column gap-3">
+                        <div>
+                            <h2 class="fw-bold text-dark mb-2" style="font-size: 1.75rem;">No insurance brokers yet</h2>
+                            <p class="text-secondary mb-0" style="font-size: 1.05rem; line-height: 1.6;">
+                                Add your first broker to start managing relationships, documents, and communication in one place.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{ route('add-partner') }}" class="btn btn-empty-state-cta fw-bold shadow-sm">
+                                <i class="bi bi-plus-circle-fill"></i>
+                                <span>Add Insurance Broker</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="text-decoration-none fw-semibold d-inline-flex align-items-center gap-1" style="color: #0B4F8A;">
+                                <span>Learn more</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 
     <!-- Middle Section: Partner Overview, Distribution, and Activity -->
     <div class="row g-4 mb-4">

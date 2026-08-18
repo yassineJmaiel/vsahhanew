@@ -20,6 +20,28 @@ class PartnerController extends Controller
         $pendingPartners = $partners->where('status', 'pending')->count();
         $inactivePartners = $partners->where('status', 'inactive')->count();
 
+        // ── Trend badges (month-over-month deltas) ─────────────────────────────
+        $now   = now();
+        $start = $now->copy()->startOfMonth();
+        $prevStart = $now->copy()->subMonth()->startOfMonth();
+        $prevEnd   = $now->copy()->subMonth()->endOfMonth();
+
+        $prevTotal   = Partner::whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevActive  = Partner::where('status', 'active')->whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevPending = Partner::where('status', 'pending')->whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevInactive= Partner::where('status', 'inactive')->whereBetween('created_at', [$prevStart, $prevEnd])->count();
+
+        $calcTrend = function(int $current, int $previous): array {
+            if ($previous === 0) {
+                return ['label' => $current > 0 ? 'New' : '—', 'dir' => $current > 0 ? 'up' : 'neutral'];
+            }
+            $pct = round((($current - $previous) / $previous) * 100);
+            return [
+                'label' => ($pct >= 0 ? '+' : '') . $pct . '%',
+                'dir'   => $pct > 0 ? 'up' : ($pct < 0 ? 'down' : 'neutral'),
+            ];
+        };
+
         $stats = [
             [
                 'title' => 'Total Partners',
@@ -29,6 +51,7 @@ class PartnerController extends Controller
                 'border' => '#0B4F8A',
                 'active_bg' => '#0B4F8A',
                 'filter' => 'all',
+                'trend' => $calcTrend($totalPartners, $prevTotal),
             ],
             [
                 'title' => 'Active Partners',
@@ -38,6 +61,7 @@ class PartnerController extends Controller
                 'border' => '#00A878',
                 'active_bg' => '#10B981',
                 'filter' => 'Active',
+                'trend' => $calcTrend($activePartners, $prevActive),
             ],
             [
                 'title' => 'Pending Approvals',
@@ -47,6 +71,7 @@ class PartnerController extends Controller
                 'border' => '#F59E0B',
                 'active_bg' => '#F59E0B',
                 'filter' => 'Pending',
+                'trend' => $calcTrend($pendingPartners, $prevPending),
             ],
             [
                 'title' => 'Incomplete',
@@ -56,6 +81,7 @@ class PartnerController extends Controller
                 'border' => '#EF4444',
                 'active_bg' => '#EF4444',
                 'filter' => 'Inactive',
+                'trend' => $calcTrend($inactivePartners, $prevInactive),
             ],
         ];
 

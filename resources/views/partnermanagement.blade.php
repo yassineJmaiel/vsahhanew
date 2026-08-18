@@ -275,6 +275,74 @@
         .stat-mini-bar.animated {
             animation: statBarGrow 0.6s cubic-bezier(.22,.68,0,1.05) forwards;
         }
+
+        /* ── Trend badge (Figma) ───────────────────────────────────────────────── */
+        .stat-value-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .trend-badge {
+            display: inline-flex;
+            padding: 6px 10px;
+            align-items: center;
+            gap: 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            font-size: 12px;
+            line-height: 1;
+            animation:
+                kf_trend_opacity 9s linear infinite,
+                kf_trend_translate 9s linear infinite;
+            white-space: nowrap;
+            align-self: center;
+            height: auto;
+            flex-shrink: 0;
+            min-width: max-content;
+        }
+
+        .trend-badge--down {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+        .trend-badge-label {
+            color: #FFF;
+            font-family: Inter, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .trend-badge-icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes kf_trend_opacity {
+            0%       { opacity: 0; }
+            0.889%   { animation-timing-function: cubic-bezier(0, 0, 0.2, 1); opacity: 0; }
+            5%       { opacity: 1; }
+            100%     { opacity: 1; }
+        }
+        @keyframes kf_trend_translate {
+            0%       { translate: 0px 6px; }
+            0.889%   { animation-timing-function: cubic-bezier(0, 0, 0.2, 1); translate: 0px 6px; }
+            5%       { translate: 0px 0px; }
+            100%     { translate: 0px 0px; }
+        }
+
+        /* badge disappears when card goes solid-active (inherits white bg) */
+        .stat-card[class*="active-"] .trend-badge {
+            border-color: rgba(255, 255, 255, 0.30);
+            background: rgba(255, 255, 255, 0.18);
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -416,7 +484,29 @@
                             </div>
 
                             <div class="stat-content">
-                                <h3 class="stat-value text-{{ $stat['default_color'] }}">{{ $stat['value'] }}</h3>
+                                <div class="stat-value-row">
+                                    <h3 class="stat-value text-{{ $stat['default_color'] }}">{{ $stat['value'] }}</h3>
+                                    @if(!empty($stat['trend']) && ($stat['trend']['label'] ?? '—') !== '—')
+                                        <span class="trend-badge trend-badge--{{ $stat['trend']['dir'] }}">
+                                            <span class="trend-badge-icon">
+                                                @if($stat['trend']['dir'] === 'up')
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M2 9L9.5 1.5M9.5 1.5H4M9.5 1.5V7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                @elseif($stat['trend']['dir'] === 'down')
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M2 2.5L9.5 10M9.5 10H4M9.5 10V4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                @else
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M2 6H10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                                    </svg>
+                                                @endif
+                                            </span>
+                                            <span class="trend-badge-label">{{ $stat['trend']['label'] }}</span>
+                                        </span>
+                                    @endif
+                                </div>
                                 <p class="stat-label">{{ $stat['title'] }}</p>
                             </div>
                         </div>
