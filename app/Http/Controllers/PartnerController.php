@@ -461,6 +461,7 @@ public function update(Request $request, Partner $partner)
 
         $activeBroker = Partner::where('partner_type', 'Insurance Broker')->where('status', 'active')->count();
         $awaitingBroker = Partner::where('partner_type', 'Insurance Broker')->where('status', 'pending')->count();
+        $inactivePartners = Partner::where('status', 'inactive')->count();
         $totalBroker = $totalBrokers;
 
         $brokerPartners = Partner::where('partner_type', 'Insurance Broker')->get()->map(function($partner) {
@@ -478,7 +479,7 @@ public function update(Request $request, Partner $partner)
 
         return view('brokers', compact(
             'countpartner', 'totalProviders', 'totalBrokers', 'totalTpas',
-            'activeBroker', 'awaitingBroker', 'totalBroker', 'brokerPartners'
+            'activeBroker', 'awaitingBroker', 'inactivePartners', 'totalBroker', 'brokerPartners'
         ));
     }
 }

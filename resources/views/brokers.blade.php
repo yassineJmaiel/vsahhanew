@@ -371,95 +371,97 @@
         </div>
     </div>
 
-    <!-- Broker Statistics Card Container -->
-    <div class="card border-0 shadow-sm rounded-4 mb-4" style="background-color: #F8FAFC;">
-        <div class="card-body p-4">
-            <!-- Card Header -->
-            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mb-4">
-                <h6 class="fw-bold text-uppercase tracking-wide text-secondary mb-0" style="font-size: 0.85rem;">
-                    Insurance Broker Statistics
-                </h6>
-                <div>
-                    <span class="badge rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center gap-2" style="background-color: #EFF6FF; color: #0B4F8A; border: 1px solid #BFDBFE;">
-                        <i class="bi bi-calendar3"></i>
-                        Last 30 days
-                        <i class="bi bi-chevron-down ms-1"></i>
+    <!-- Broker Summary Metrics -->
+    <div class="row g-3 mb-4">
+        <div class="col-12 col-sm-6 col-xl-2">
+            <div class="metric-gradient-card metric-card-1 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <span class="fw-semibold text-white-90 small">Total Partners</span>
+                    <span class="icon-wrapper-glass">
+                        <i class="bi bi-people-fill fs-5"></i>
                     </span>
                 </div>
+                <div>
+                    <div class="display-6 fw-bold mb-2">{{ $countpartner }}</div>
+                </div>
+                <div class="d-flex align-items-center gap-2 text-white-90 small">
+                    <span class="badge rounded-pill px-2 py-1" style="background: rgba(255,255,255,0.15);">{{ $countpartner > 0 ? 'this month' : '0%' }}</span>
+                </div>
             </div>
+        </div>
 
-            <!-- Stat Cards Row -->
-            <div class="row g-3">
-                <!-- Card 1: Total Broker Partnerships -->
-                <div class="col-12 col-md-4">
-                    <div class="stat-card-accent stat-card-blue p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
-                        <div>
-                            <div class="stat-icon-box d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #DBEAFE; color: #0B4F8A;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                                    <path d="M13.3336 17.5V15.8333C13.3336 14.9493 12.9824 14.1014 12.3572 13.4763C11.7321 12.8512 10.8841 12.5 10 12.5H4.99962C4.11549 12.5 3.26758 12.8512 2.6424 13.4763C2.01723 14.1014 1.66602 14.9493 1.66602 15.8333V17.5M13.3336 2.60661C14.0485 2.79192 14.6816 3.20933 15.1335 3.79333C15.5854 4.37733 15.8306 5.09485 15.8306 5.83327C15.8306 6.5717 15.5854 7.28922 15.1335 7.87322C14.6816 8.45722 14.0485 8.87463 13.3336 9.05994M18.334 17.4999V15.8332C18.3335 15.0947 18.0876 14.3772 17.6351 13.7935C17.1826 13.2098 16.549 12.7929 15.8338 12.6082M10.8334 5.83333C10.8334 7.67428 9.34091 9.16667 7.49982 9.16667C5.65872 9.16667 4.16622 7.67428 4.16622 5.83333C4.16622 3.99238 5.65872 2.5 7.49982 2.5C9.34091 2.5 10.8334 3.99238 10.8334 5.83333Z"/>
-                                </svg>
-                            </div>
-                            <div class="stat-value display-5 fw-extrabold mb-1" style="color: #0B4F8A; font-weight: 800;">
-                                {{ $totalBroker }}
-                            </div>
-                            <div class="stat-label fw-semibold text-secondary mb-3" style="font-size: 0.9rem;">
-                                Total broker partnerships
-                            </div>
-                        </div>
-                        <div>
-                            <span class="stat-badge badge rounded-pill px-2.5 py-1.5 fw-semibold d-inline-flex align-items-center gap-1" style="background-color: #DBEAFE; color: #0B4F8A;">
-                                <i class="bi bi-dash"></i> No change
-                            </span>
-                        </div>
-                    </div>
+        <div class="col-12 col-sm-6 col-xl-2">
+            <div class="metric-gradient-card metric-card-2 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <span class="fw-semibold text-white-90 small">Active Brokers</span>
+                    <span class="icon-wrapper-glass">
+                        <i class="bi bi-check-circle-fill fs-5"></i>
+                    </span>
                 </div>
+                <div>
+                    <div class="display-6 fw-bold mb-2">{{ $activeBroker }}</div>
+                </div>
+                <div class="text-white-90 small">Partners ready for distribution</div>
+            </div>
+        </div>
 
-                <!-- Card 2: Currently Live and Producing -->
-                <div class="col-12 col-md-4">
-                    <div class="stat-card-accent stat-card-green p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
-                        <div>
-                            <div class="stat-icon-box d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #D1FAE5; color: #059669;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="m9 12 2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <div class="stat-value display-5 fw-extrabold mb-1" style="color: #059669; font-weight: 800;">
-                                {{ $activeBroker }}
-                            </div>
-                            <div class="stat-label fw-semibold text-secondary mb-3" style="font-size: 0.9rem;">
-                                Currently live and producing
-                            </div>
-                        </div>
-                        <div>
-                            <span class="stat-badge badge rounded-pill px-2.5 py-1.5 fw-semibold d-inline-flex align-items-center gap-1" style="background-color: #D1FAE5; color: #059669;">
-                                <i class="bi bi-shield-check"></i> Healthy
-                            </span>
-                        </div>
-                    </div>
+        <div class="col-12 col-sm-6 col-xl-2">
+            <div class="metric-gradient-card metric-card-3 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <span class="fw-semibold text-white-90 small">Pending Approval</span>
+                    <span class="icon-wrapper-glass">
+                        <i class="bi bi-hourglass-split fs-5"></i>
+                    </span>
                 </div>
+                <div>
+                    <div class="display-6 fw-bold mb-2">{{ $awaitingBroker }}</div>
+                </div>
+                <div class="text-white-90 small">Awaiting verification</div>
+            </div>
+        </div>
 
-                <!-- Card 3: Awaiting Review or Onboarding -->
-                <div class="col-12 col-md-4">
-                    <div class="stat-card-accent stat-card-orange p-4 h-100 shadow-sm d-flex flex-column justify-content-between">
-                        <div>
-                            <div class="stat-icon-box d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 40px; height: 40px; background-color: #FFEDD5; color: #D97706;">
-                                <i class="bi bi-clock-history fs-5"></i>
-                            </div>
-                            <div class="stat-value display-5 fw-extrabold mb-1" style="color: #D97706; font-weight: 800;">
-                                {{ $awaitingBroker }}
-                            </div>
-                            <div class="stat-label fw-semibold text-secondary mb-3" style="font-size: 0.9rem;">
-                                Awaiting review or onboarding
-                            </div>
-                        </div>
-                        <div>
-                            <span class="stat-badge badge rounded-pill px-2.5 py-1.5 fw-semibold d-inline-flex align-items-center gap-1" style="background-color: #FFEDD5; color: #D97706;">
-                                <i class="bi bi-hourglass-split"></i> Pending
-                            </span>
-                        </div>
-                    </div>
+        <div class="col-12 col-sm-6 col-xl-2">
+            <div class="metric-gradient-card metric-card-4 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <span class="fw-semibold text-white-90 small">Insurance Providers</span>
+                    <span class="icon-wrapper-glass">
+                        <i class="bi bi-building fs-5"></i>
+                    </span>
                 </div>
+                <div>
+                    <div class="display-6 fw-bold mb-2">{{ $totalProviders }}</div>
+                </div>
+                <div class="text-white-90 small">Provider network</div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-xl-2">
+            <div class="metric-gradient-card metric-card-5 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <span class="fw-semibold text-white-90 small">TPAs</span>
+                    <span class="icon-wrapper-glass">
+                        <i class="bi bi-person-badge-fill fs-5"></i>
+                    </span>
+                </div>
+                <div>
+                    <div class="display-6 fw-bold mb-2">{{ $totalTpas }}</div>
+                </div>
+                <div class="text-white-90 small">Third-party administrators</div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-xl-2">
+            <div class="metric-gradient-card metric-card-6 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <span class="fw-semibold text-white-90 small">Inactive Partners</span>
+                    <span class="icon-wrapper-glass">
+                        <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+                    </span>
+                </div>
+                <div>
+                    <div class="display-6 fw-bold mb-2">{{ $inactivePartners }}</div>
+                </div>
+                <div class="text-white-90 small">Needs attention</div>
             </div>
         </div>
     </div>
